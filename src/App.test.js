@@ -1,9 +1,17 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import App from "./App";
+import { shallow } from "enzyme";
 
-it("renders without crashing", () => {
-    const div = document.createElement("div");
-    ReactDOM.render(<App />, div);
-    ReactDOM.unmountComponentAtNode(div);
+const defaultProps = () => ({});
+const setup = (overrideProps = {}) => {
+	const props = Object.assign({}, defaultProps(), overrideProps);
+	const wrapper = shallow(<App {...props} />);
+	return { wrapper, props };
+};
+
+describe("<App />", () => {
+	it("renders", () => {
+		const { wrapper } = setup();
+		expect(wrapper).toMatchSnapshot();
+	});
 });
