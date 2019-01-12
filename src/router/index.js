@@ -5,27 +5,11 @@ import BookList from "../components/BookList.jsx";
 import BookDetail from "../components/BookDetail.jsx";
 
 const AppRouter = () => (
-	<Router>
-		<div>
-			<nav>
-				<ul>
-					<li>
-						<Link to="/">List</Link>
-					</li>
-					<li>
-						<Link to="/add/">Add</Link>
-					</li>
-					<li>
-						<Link to="/detail/">Detail</Link>
-					</li>
-				</ul>
-			</nav>
-
-			<Route path="/" component={BookAdd} />
-			<Route path="/list/" exact component={BookList} />
-			<Route path="/detail/" component={BookDetail} />
-		</div>
-	</Router>
+	<div>
+		<Route path="/add/" component={BookAdd} />
+		<Route path="/" exact component={BookList} />
+		<Route path="/detail/" component={BookDetail} />
+	</div>
 );
 
 export default AppRouter;

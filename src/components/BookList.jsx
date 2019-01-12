@@ -11,9 +11,23 @@ class BookList extends Component {
 				<h2>
 					BookList
 				</h2>
-				<p>
-					dolor set elit nullum vitae.
-				</p>
+				<ul>
+					<li>
+						<a href="/#/detail/">
+							dolor set elit nullum vitae.
+						</a>
+					</li>
+					<li>
+						<a href="/#/detail/">
+							dolor set elit nullum vitae.
+						</a>
+					</li>
+					<li>
+						<a href="/#/detail/">
+							dolor set elit nullum vitae.
+						</a>
+					</li>
+				</ul>
 			</div>
 		);
 	}

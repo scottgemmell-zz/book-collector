@@ -17,7 +17,7 @@ const FieldInput = ({ id, name, value, title, helpText, placeholderText, hideLab
 				inputRef={inputRef}
 				type="text" 
 				name={name}
-				value={value}
+				defaultValue={value}
 				placeholder={placeholderText}
 				bsClass={`form-control ${modifier}`}
 			/>

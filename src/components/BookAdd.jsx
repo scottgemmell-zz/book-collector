@@ -27,11 +27,8 @@ class BookAdd extends Component {
 		return (
 			<div>
 				<h2>
-					BookAdd
+					Add
 				</h2>
-				<p>
-					dolor set elit nullum vitae.
-				</p>
 
 				<Form onSubmit={this.handleSubmit}>
 					<FieldInput 
@@ -40,6 +37,7 @@ class BookAdd extends Component {
 						}} 
 						id="fieldTitle" 
 						name="title"
+						value="Child 44"
 						placeholderText="Title" 
 						title="Enter a Title"
 						hideLabel={true} 
@@ -52,11 +50,13 @@ class BookAdd extends Component {
 						}} 
 						id="fieldAuthor" 
 						name="author"
+						value="Tom Rob Smith"
 						placeholderText="Author" 
 						title="Enter a Author"
 						hideLabel={true} 
 						modifier="c-controls__input c-controls__input--author"
 					/>
+					
 					<Button bsStyle="primary" type="submit">
 						Add Book
 					</Button>

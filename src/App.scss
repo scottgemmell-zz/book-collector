@@ -25,11 +25,28 @@ code {
 	.App-header {
 		background-color: $color-bg;
 		display: flex;
-		flex-direction: row;
+		flex-flow: row nowrap;
+		justify-content: flex-start;
+		
 		
 		h1 {
-			color: white;
 			font-size: calc(10px + 2vmin);
+
+			a {
+				color: white;
+			}
+		}
+	}
+
+	.App-action {
+		margin-left: auto;
+		display: flex;
+		align-items: center;
+		margin-right: 30px;
+		
+		a {
+			background-color: #5adafd;
+			color: black;
 		}
 	}
 }
