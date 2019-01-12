@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Grid } from "react-bootstrap";
 import logo from "./logo.svg";
 import "./App.scss";
 
@@ -12,6 +13,16 @@ class App extends Component {
 						Book collector
 					</h1>
 				</header>
+				<main>
+					<Grid>
+						<h2>
+							Lorem ipsum
+						</h2>
+						<p>
+							dolor set elit nullum vitae.
+						</p>
+					</Grid>
+				</main>
 			</div>
 		);
 	}

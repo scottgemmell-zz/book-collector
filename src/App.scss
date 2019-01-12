@@ -17,17 +17,20 @@ code {
   
 .App {
 	.App-logo {
-	animation: App-logo-spin infinite 20s linear;
-	height: 10vmin;
-	padding: 10px 0;
+		animation: App-logo-spin infinite 20s linear;
+		height: 10vmin;
+		padding: 10px 0;
 	}
 
 	.App-header {
-	background-color: $color-bg;
-	display: flex;
-	flex-direction: row;
-	font-size: calc(10px + 1vmin);
-	color: white;
+		background-color: $color-bg;
+		display: flex;
+		flex-direction: row;
+		
+		h1 {
+			color: white;
+			font-size: calc(10px + 2vmin);
+		}
 	}
 }
 
