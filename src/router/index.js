@@ -21,8 +21,8 @@ const AppRouter = () => (
 				</ul>
 			</nav>
 
-			<Route path="/" exact component={BookList} />
-			<Route path="/add/" component={BookAdd} />
+			<Route path="/" component={BookAdd} />
+			<Route path="/list/" exact component={BookList} />
 			<Route path="/detail/" component={BookDetail} />
 		</div>
 	</Router>
