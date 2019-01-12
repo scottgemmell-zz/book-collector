@@ -17,76 +17,8 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <header
-        className="App-header"
-      >
-        <img
-          alt="logo"
-          className="App-logo"
-          src="logo.svg"
-        />
-        <h1>
-          Book collector
-        </h1>
-      </header>,
-      "className": "App",
-    },
-    "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": Array [
-          <img
-            alt="logo"
-            className="App-logo"
-            src="logo.svg"
-          />,
-          <h1>
-            Book collector
-          </h1>,
-        ],
-        "className": "App-header",
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "alt": "logo",
-            "className": "App-logo",
-            "src": "logo.svg",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": "img",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Book collector",
-          },
-          "ref": null,
-          "rendered": "Book collector",
-          "type": "h1",
-        },
-      ],
-      "type": "header",
-    },
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <header
+      "children": Array [
+        <header
           className="App-header"
         >
           <img
@@ -98,10 +30,26 @@ ShallowWrapper {
             Book collector
           </h1>
         </header>,
-        "className": "App",
-      },
-      "ref": null,
-      "rendered": Object {
+        <main>
+          <Grid
+            bsClass="container"
+            componentClass="div"
+            fluid={false}
+          >
+            <h2>
+              Lorem ipsum
+            </h2>
+            <p>
+              dolor set elit nullum vitae.
+            </p>
+          </Grid>
+        </main>,
+      ],
+      "className": "App",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
@@ -147,6 +95,560 @@ ShallowWrapper {
         ],
         "type": "header",
       },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <Grid
+            bsClass="container"
+            componentClass="div"
+            fluid={false}
+          >
+            <h2>
+              Lorem ipsum
+            </h2>
+            <p>
+              dolor set elit nullum vitae.
+            </p>
+          </Grid>,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "bsClass": "container",
+            "children": Array [
+              <h2>
+                Lorem ipsum
+              </h2>,
+              <p>
+                dolor set elit nullum vitae.
+              </p>,
+            ],
+            "componentClass": "div",
+            "fluid": false,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Lorem ipsum",
+              },
+              "ref": null,
+              "rendered": "Lorem ipsum",
+              "type": "h2",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "dolor set elit nullum vitae.",
+              },
+              "ref": null,
+              "rendered": "dolor set elit nullum vitae.",
+              "type": "p",
+            },
+          ],
+          "type": [Function],
+        },
+        "type": "main",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <header
+            className="App-header"
+          >
+            <img
+              alt="logo"
+              className="App-logo"
+              src="logo.svg"
+            />
+            <h1>
+              Book collector
+            </h1>
+          </header>,
+          <main>
+            <Grid
+              bsClass="container"
+              componentClass="div"
+              fluid={false}
+            >
+              <h2>
+                Lorem ipsum
+              </h2>
+              <p>
+                dolor set elit nullum vitae.
+              </p>
+            </Grid>
+          </main>,
+        ],
+        "className": "App",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <img
+                alt="logo"
+                className="App-logo"
+                src="logo.svg"
+              />,
+              <h1>
+                Book collector
+              </h1>,
+            ],
+            "className": "App-header",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "logo",
+                "className": "App-logo",
+                "src": "logo.svg",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Book collector",
+              },
+              "ref": null,
+              "rendered": "Book collector",
+              "type": "h1",
+            },
+          ],
+          "type": "header",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <Grid
+              bsClass="container"
+              componentClass="div"
+              fluid={false}
+            >
+              <h2>
+                Lorem ipsum
+              </h2>
+              <p>
+                dolor set elit nullum vitae.
+              </p>
+            </Grid>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "bsClass": "container",
+              "children": Array [
+                <h2>
+                  Lorem ipsum
+                </h2>,
+                <p>
+                  dolor set elit nullum vitae.
+                </p>,
+              ],
+              "componentClass": "div",
+              "fluid": false,
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Lorem ipsum",
+                },
+                "ref": null,
+                "rendered": "Lorem ipsum",
+                "type": "h2",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "dolor set elit nullum vitae.",
+                },
+                "ref": null,
+                "rendered": "dolor set elit nullum vitae.",
+                "type": "p",
+              },
+            ],
+            "type": [Function],
+          },
+          "type": "main",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`<App /> renders 2 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <App />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <header
+          className="App-header"
+        >
+          <img
+            alt="logo"
+            className="App-logo"
+            src="logo.svg"
+          />
+          <h1>
+            Book collector
+          </h1>
+        </header>,
+        <main>
+          <Grid
+            bsClass="container"
+            componentClass="div"
+            fluid={false}
+          >
+            <h2>
+              Lorem ipsum
+            </h2>
+            <p>
+              dolor set elit nullum vitae.
+            </p>
+          </Grid>
+        </main>,
+      ],
+      "className": "App",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <img
+              alt="logo"
+              className="App-logo"
+              src="logo.svg"
+            />,
+            <h1>
+              Book collector
+            </h1>,
+          ],
+          "className": "App-header",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "alt": "logo",
+              "className": "App-logo",
+              "src": "logo.svg",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Book collector",
+            },
+            "ref": null,
+            "rendered": "Book collector",
+            "type": "h1",
+          },
+        ],
+        "type": "header",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <Grid
+            bsClass="container"
+            componentClass="div"
+            fluid={false}
+          >
+            <h2>
+              Lorem ipsum
+            </h2>
+            <p>
+              dolor set elit nullum vitae.
+            </p>
+          </Grid>,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "bsClass": "container",
+            "children": Array [
+              <h2>
+                Lorem ipsum
+              </h2>,
+              <p>
+                dolor set elit nullum vitae.
+              </p>,
+            ],
+            "componentClass": "div",
+            "fluid": false,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Lorem ipsum",
+              },
+              "ref": null,
+              "rendered": "Lorem ipsum",
+              "type": "h2",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "dolor set elit nullum vitae.",
+              },
+              "ref": null,
+              "rendered": "dolor set elit nullum vitae.",
+              "type": "p",
+            },
+          ],
+          "type": [Function],
+        },
+        "type": "main",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <header
+            className="App-header"
+          >
+            <img
+              alt="logo"
+              className="App-logo"
+              src="logo.svg"
+            />
+            <h1>
+              Book collector
+            </h1>
+          </header>,
+          <main>
+            <Grid
+              bsClass="container"
+              componentClass="div"
+              fluid={false}
+            >
+              <h2>
+                Lorem ipsum
+              </h2>
+              <p>
+                dolor set elit nullum vitae.
+              </p>
+            </Grid>
+          </main>,
+        ],
+        "className": "App",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <img
+                alt="logo"
+                className="App-logo"
+                src="logo.svg"
+              />,
+              <h1>
+                Book collector
+              </h1>,
+            ],
+            "className": "App-header",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "logo",
+                "className": "App-logo",
+                "src": "logo.svg",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Book collector",
+              },
+              "ref": null,
+              "rendered": "Book collector",
+              "type": "h1",
+            },
+          ],
+          "type": "header",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <Grid
+              bsClass="container"
+              componentClass="div"
+              fluid={false}
+            >
+              <h2>
+                Lorem ipsum
+              </h2>
+              <p>
+                dolor set elit nullum vitae.
+              </p>
+            </Grid>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "bsClass": "container",
+              "children": Array [
+                <h2>
+                  Lorem ipsum
+                </h2>,
+                <p>
+                  dolor set elit nullum vitae.
+                </p>,
+              ],
+              "componentClass": "div",
+              "fluid": false,
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Lorem ipsum",
+                },
+                "ref": null,
+                "rendered": "Lorem ipsum",
+                "type": "h2",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "dolor set elit nullum vitae.",
+                },
+                "ref": null,
+                "rendered": "dolor set elit nullum vitae.",
+                "type": "p",
+              },
+            ],
+            "type": [Function],
+          },
+          "type": "main",
+        },
+      ],
       "type": "div",
     },
   ],

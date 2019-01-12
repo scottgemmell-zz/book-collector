@@ -14,4 +14,8 @@ describe("<App />", () => {
 		const { wrapper } = setup();
 		expect(wrapper).toMatchSnapshot();
 	});
+	it("renders 2", () => {
+		const { wrapper } = setup();
+		expect(wrapper).toMatchSnapshot();
+	});
 });

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Grid } from "react-bootstrap";
 import logo from "./logo.svg";
 import "./App.scss";
+import AppRouter from "./router";
 
 class App extends Component {
 	render() {
@@ -15,12 +16,7 @@ class App extends Component {
 				</header>
 				<main>
 					<Grid>
-						<h2>
-							Lorem ipsum
-						</h2>
-						<p>
-							dolor set elit nullum vitae.
-						</p>
+						<AppRouter />
 					</Grid>
 				</main>
 			</div>
