@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Form, Button } from "react-bootstrap";
 import FieldInput from "./FieldInput.jsx";
-import { addBook } from "../redux/actions/books.actions";
+import { startAddingBook } from "../redux/actions/books.actions";
 
 class BookAdd extends Component {
 	constructor(props){
@@ -15,9 +15,9 @@ class BookAdd extends Component {
 	handleSubmit(e){
 		e.preventDefault();
 
-		const { addBook } = this.props;
+		const { startAddingBook } = this.props;
 
-		addBook({ 
+		startAddingBook({ 
 			title: this.titleInput.value, 
 			author: this.authorInput.value, 
 		});
@@ -68,7 +68,7 @@ class BookAdd extends Component {
 
 BookAdd.propTypes = {
 	handleSubmit: PropTypes.func,
-	addBook: PropTypes.func,
+	startAddingBook: PropTypes.func,
 };
 
-export default connect(null, { addBook })(BookAdd);
+export default connect(null, { startAddingBook })(BookAdd);

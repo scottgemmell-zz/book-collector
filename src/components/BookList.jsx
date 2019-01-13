@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class BookList extends Component {
 	// constructor(props){
@@ -13,19 +14,19 @@ class BookList extends Component {
 				</h2>
 				<ul>
 					<li>
-						<a href="/#/detail/">
-							dolor set elit nullum vitae.
-						</a>
+						<Link to="/detail/">
+							dolor set elit nullum vitae
+						</Link>.
 					</li>
 					<li>
-						<a href="/#/detail/">
-							dolor set elit nullum vitae.
-						</a>
+						<Link to="/detail/">
+							dolor set elit nullum vitae
+						</Link>.
 					</li>
 					<li>
-						<a href="/#/detail/">
-							dolor set elit nullum vitae.
-						</a>
+						<Link to="/detail/">
+							dolor set elit nullum vitae
+						</Link>.
 					</li>
 				</ul>
 			</div>

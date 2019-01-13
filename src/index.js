@@ -7,7 +7,8 @@ import { composeWithDevTools } from "redux-devtools-extension/developmentOnly";
 import rootReducer from "./redux/reducers";
 import App from "./App";
 import thunk from "redux-thunk";
-import { database } from "./database/config.js";
+// import { database } from "./database/config.js";
+import { BrowserRouter as Router } from "react-router-dom";
 
 const logger = createLogger({
 	// ...options
@@ -43,8 +44,8 @@ const store = createStore(
 );
 
 ReactDOM.render(
-	<Provider store={store}>
+	<Router><Provider store={store}>
 		<App />
-	</Provider>, 
+	</Provider></Router>, 
 	document.getElementById("root")
 );

@@ -2,14 +2,18 @@ import { ADD_BOOK, SET_BOOKS } from "../constants";
 
 const initState = {};
 
-export const booksReducer = (books = initState, action) => {
+export const booksReducer = (state = initState, action) => {
 	switch(action.type) {
 		
 		case SET_BOOKS:
 			return action.payload;
 		case ADD_BOOK:
-			return action.payload;
+			return {
+				...state,
+				[state.books]: action.payload,
+
+			};
 		default:
-			return books;
+			return state;
 	}
 };
