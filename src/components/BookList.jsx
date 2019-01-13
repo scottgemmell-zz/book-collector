@@ -1,37 +1,47 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import { startFetchingBooks } from "../redux/actions/books.actions";
+import * as R from "ramda";
 
 class BookList extends Component {
 	// constructor(props){
 	// 	super(props);
+
+	// 	this.fetchBooks = this.fetchBooks.bind(this);
 	// }
 
+	componentDidMount() {
+		const { startFetchingBooks } = this.props;
+		startFetchingBooks();
+	}
+
 	render(){
+		const { books } = this.props;
+
+		if (R.isEmpty(books)) {
+			return <div></div>;
+		}
+
 		return (
 			<div>
 				<h2>
 					BookList
 				</h2>
 				<ul>
-					<li>
-						<Link to="/detail/">
-							dolor set elit nullum vitae
-						</Link>.
-					</li>
-					<li>
-						<Link to="/detail/">
-							dolor set elit nullum vitae
-						</Link>.
-					</li>
-					<li>
-						<Link to="/detail/">
-							dolor set elit nullum vitae
-						</Link>.
-					</li>
+					{books.map((book, i) => {
+						return (<li key={i}>
+							<Link to="/detail/">{book.title}</Link> - {book.author}
+						</li>);
+					})}
 				</ul>
 			</div>
 		);
 	}
 }
 
-export default BookList;
+const mapStateToProps = (state) => {
+	return { books: state.books };
+}
+
+export default connect(mapStateToProps, { startFetchingBooks })(BookList);
