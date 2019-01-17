@@ -5,7 +5,7 @@ import "./App.scss";
 import { Route, Link } from "react-router-dom";
 import BookAdd from "./components/BookAdd.jsx";
 import BookList from "./components/BookList.jsx";
-import BookDetail from "./components/BookDetail.jsx";
+import Book from "./components/Book.jsx";
 
 class App extends Component {
 	render() {
@@ -26,9 +26,9 @@ class App extends Component {
 				</header>
 				<main>
 					<Grid>
-						<Route path="/add/" component={BookAdd} />
 						<Route path="/" exact component={BookList} />
-						<Route path="/detail/" component={BookDetail} />
+						<Route path="/add/" component={BookAdd} />
+						<Route path={"/book/:id"} component={Book} />
 					</Grid>
 				</main>
 			</div>
