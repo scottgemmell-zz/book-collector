@@ -37,7 +37,7 @@ class BookList extends Component {
 				<ul className="list">
 					{books.map((book, i) => {
 						return (<li className="list__item" key={i}>
-							<Link to="/detail/">{book.title}</Link> - {book.author} 
+							<Link to={`/book/${i}`}>{book.title}</Link> - {book.author} 
 							<br/>
 							<Button 
 								bsSize="xsmall"

@@ -22,6 +22,12 @@ code {
 }
   
 .App {
+
+	h2,
+	.h2 {
+		margin-bottom: 20px;
+	}
+
 	.App-logo {
 		animation: App-logo-spin infinite 20s linear;
 		height: 10vmin;
@@ -33,28 +39,26 @@ code {
 		display: flex;
 		flex-flow: row nowrap;
 		justify-content: flex-start;
+		align-items: center;
 		
 		
 		h1 {
 			font-size: calc(10px + 2vmin);
+			margin: 0;
 
 			a {
 				color: white;
 			}
 		}
 	}
-
-	.App-action {
+	
+	.btn {
+		background-color: #5adafd;
+		color: black;
 		margin-left: auto;
-		display: flex;
-		align-items: center;
 		margin-right: 30px;
-		
-		a {
-			background-color: #5adafd;
-			color: black;
-		}
 	}
+	
 }
 
 @keyframes App-logo-spin {

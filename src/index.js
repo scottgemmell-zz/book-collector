@@ -9,6 +9,7 @@ import App from "./App";
 import thunk from "redux-thunk";
 // import { database } from "./database/config.js";
 import { BrowserRouter as Router } from "react-router-dom";
+import "./assets/scss/Master.scss";
 
 const logger = createLogger({
 	// ...options
