@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Route } from "react-router-dom";
 
 class Book extends Component {
 	// constructor(props){
