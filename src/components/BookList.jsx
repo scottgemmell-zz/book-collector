@@ -37,12 +37,25 @@ class BookList extends Component {
 				<ul className="list">
 					{books.map((book, i) => {
 						return (<li className="list__item" key={i}>
-							<Link to={`/book/${i}`}>{book.title}</Link> - {book.author} 
-							<br/>
-							<Button 
-								bsSize="xsmall"
-								onClick={this.handleDelete}
-							>Delete</Button>
+							<div>
+								<h3>
+									<Link className="list__title" to={`/book/${i}`}>{book.title}</Link>
+								</h3>
+								<p className="h4">
+									{book.author}
+								</p>
+							</div>
+							<div className="list__action">
+								<Button 
+									bsSize="xsmall"
+									onClick={this.handleDelete}
+								>Edit</Button> 
+								<Button 
+									// bsStyle="danger"
+									bsSize="xsmall"
+									onClick={this.handleDelete}
+								>Delete</Button>
+							</div>
 						</li>);
 					})}
 				</ul>

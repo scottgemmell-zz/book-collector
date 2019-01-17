@@ -16,8 +16,33 @@ code {
 }
 
 .list {
+	padding: 0;
+
 	.list__item {
+		display: flex;
+		justify-content: flex-start;
+
+		background-color: #f0f0f0;
+		border-radius: 10px;
 		margin-bottom: 20px;
+		padding: 20px;
+
+		h3 {
+			margin-top: 0;
+		}
+		.h4 {
+			margin-bottom: 0;
+		}
+	}
+	.list__action {
+		margin-left: auto;
+
+		button {
+			margin-left: 5px;
+		}
+	}
+	.list__title {
+		margin-right: 20px;
 	}
 }
   
@@ -40,6 +65,13 @@ code {
 		flex-flow: row nowrap;
 		justify-content: flex-start;
 		align-items: center;
+
+		.btn {
+			background-color: #5adafd;
+			color: black;
+			margin-left: auto;
+			margin-right: 30px;
+		}
 		
 		
 		h1 {
@@ -52,12 +84,7 @@ code {
 		}
 	}
 	
-	.btn {
-		background-color: #5adafd;
-		color: black;
-		margin-left: auto;
-		margin-right: 30px;
-	}
+	
 	
 }
 
