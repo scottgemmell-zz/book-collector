@@ -2,7 +2,7 @@ import firebase from "firebase/app";
 import "firebase/database";
 
 const config = {
-	apiKey: "AIzaSyDlS39S0IqphnNCscw1TV7WV9mWtst6tQw",
+	apiKey: process.env.API_KEY,
 	authDomain: "books-collector.firebaseapp.com",
 	databaseURL: "https://books-collector.firebaseio.com",
 	projectId: "books-collector",

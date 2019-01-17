@@ -24,3 +24,7 @@ yarn-error.log*
 
 package.lock
 yarn.lock
+
+# sg
+
+.env
