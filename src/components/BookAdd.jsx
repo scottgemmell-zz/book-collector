@@ -18,6 +18,7 @@ class BookAdd extends Component {
 		const { startAddingBook } = this.props;
 
 		startAddingBook({ 
+			id: this.idInput.value, 
 			title: this.titleInput.value, 
 			author: this.authorInput.value, 
 		});
@@ -31,6 +32,19 @@ class BookAdd extends Component {
 				</h2>
 
 				<Form onSubmit={this.handleSubmit}>
+					<FieldInput 
+						inputRef={(input) => {
+							this.idInput = input;
+						}} 
+						id="fieldId" 
+						name="id"
+						value=""
+						placeholderText="ID" 
+						title="Enter an ID"
+						hideLabel={true} 
+						modifier="c-controls__input c-controls__input--id"
+					/>
+
 					<FieldInput 
 						inputRef={(input) => {
 							this.titleInput = input;

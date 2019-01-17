@@ -1,25 +1,31 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { startFetchingBooks } from "../redux/actions/books.actions";
+import { Button } from "react-bootstrap";
+import { startFetchingBooks, startDeletingBook } from "../redux/actions/books.actions";
 import * as R from "ramda";
 
 class BookList extends Component {
-	// constructor(props){
-	// 	super(props);
-
-	// 	this.fetchBooks = this.fetchBooks.bind(this);
-	// }
+	constructor(props){
+		super(props);
+		this.handleDelete = this.handleDelete.bind(this);
+	}
 
 	componentDidMount() {
 		const { startFetchingBooks } = this.props;
 		startFetchingBooks();
 	}
 
+	handleDelete(e){
+		console.log("handleDelete", e.target.value);
+		// const { startDeletingBook } = this.props;
+		// startDeletingBook(id);
+	}
+
 	render(){
 		const { books } = this.props;
 
-		if (R.isEmpty(books)) {
+		if (!books || R.isEmpty(books)) {
 			return <div></div>;
 		}
 
@@ -28,10 +34,15 @@ class BookList extends Component {
 				<h2>
 					BookList
 				</h2>
-				<ul>
+				<ul className="list">
 					{books.map((book, i) => {
-						return (<li key={i}>
-							<Link to="/detail/">{book.title}</Link> - {book.author}
+						return (<li className="list__item" key={i}>
+							<Link to="/detail/">{book.title}</Link> - {book.author} 
+							<br/>
+							<Button 
+								bsSize="xsmall"
+								onClick={this.handleDelete}
+							>Delete</Button>
 						</li>);
 					})}
 				</ul>
@@ -44,4 +55,4 @@ const mapStateToProps = (state) => {
 	return { books: state.books };
 }
 
-export default connect(mapStateToProps, { startFetchingBooks })(BookList);
+export default connect(mapStateToProps, { startFetchingBooks, startDeletingBook })(BookList);
