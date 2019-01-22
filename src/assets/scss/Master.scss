@@ -15,6 +15,12 @@ code {
 	  monospace;
 }
 
+.c-book {
+	background-color: #f0f0f0;
+	padding: 20px;
+	border-radius: 10px;
+}
+
 .list {
 	padding: 0;
 
@@ -22,10 +28,8 @@ code {
 		display: flex;
 		justify-content: flex-start;
 
-		background-color: #f0f0f0;
-		border-radius: 10px;
+		
 		margin-bottom: 20px;
-		padding: 20px;
 
 		h3 {
 			margin-top: 0;

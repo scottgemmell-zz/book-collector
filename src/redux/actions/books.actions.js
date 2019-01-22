@@ -1,5 +1,10 @@
 //import uuid from "uuid/v5";
-import { ADD_BOOK, FETCH_BOOKS, SET_BOOKS, DELETE_BOOK } from "../constants";
+import { 
+	ADD_BOOK, 
+	FETCH_BOOKS, 
+	//SET_BOOKS, 
+	DELETE_BOOK 
+} from "../constants";
 import { database } from "../../database/config.js"; 
 
 export const startAddingBook = book => (dispatch) => {
@@ -40,10 +45,10 @@ export const addBook = book => ({
 	payload: book,
 });
 
-export const setBooks = books => ({
-	type: SET_BOOKS,
-	payload: books,
-});
+// export const setBooks = books => ({
+// 	type: SET_BOOKS,
+// 	payload: books,
+// });
 
 export const fetchBooks = books => ({
 	type: FETCH_BOOKS,
