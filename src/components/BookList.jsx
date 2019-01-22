@@ -28,7 +28,7 @@ class BookList extends Component {
 						return (<li className="list__item c-book" key={book.id}>
 							<div>
 								<h3>
-									<Link className="list__title" to={`/book/${book.id}`}>
+									<Link className="list__title" to={`/book/view/${book.id}`}>
 										{book.title}
 									</Link>
 								</h3>

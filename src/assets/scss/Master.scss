@@ -21,6 +21,12 @@ code {
 	border-radius: 10px;
 }
 
+.field--disabled {
+	.control-label {
+		color: #aaa;
+	}
+}
+
 .list {
 	padding: 0;
 

@@ -15,20 +15,26 @@ class BookAdd extends Component {
 	handleSubmit(e){
 		e.preventDefault();
 
-		const { startAddingBook } = this.props;
+		console.log("edit")
 
-		startAddingBook({ 
-			id: this.idInput.value, 
-			title: this.titleInput.value, 
-			author: this.authorInput.value, 
-		});
+		// const { startAddingBook } = this.props;
+
+		// startAddingBook({ 
+		// 	id: this.idInput.value, 
+		// 	title: this.titleInput.value, 
+		// 	author: this.authorInput.value, 
+		// });
 	}
 
 	render(){
+
+		const { match: { params: { id } }, books } = this.props;
+		const book = books.find(book => book.id === id);
+
 		return (
 			<div>
 				<h2>
-					Add
+					Edit
 				</h2>
 				<div className="c-book">
 					<Form onSubmit={this.handleSubmit}>
@@ -37,9 +43,9 @@ class BookAdd extends Component {
 								this.idInput = input;
 							}} 
 							id="fieldId" 
+							disabled 
 							name="id"
-							value=""
-							placeholderText="ID" 
+							value={book.id}
 							title="Enter an ID"
 							hideLabel={true} 
 							modifier="c-controls__input c-controls__input--id"
@@ -51,8 +57,7 @@ class BookAdd extends Component {
 							}} 
 							id="fieldTitle" 
 							name="title"
-							value="Child 44"
-							placeholderText="Title" 
+							value={book.title}
 							title="Enter a Title"
 							hideLabel={true} 
 							modifier="c-controls__input c-controls__input--title"
@@ -64,15 +69,14 @@ class BookAdd extends Component {
 							}} 
 							id="fieldAuthor" 
 							name="author"
-							value="Tom Rob Smith"
-							placeholderText="Author" 
+							value={book.author}
 							title="Enter a Author"
 							hideLabel={true} 
 							modifier="c-controls__input c-controls__input--author"
 						/>
 						
 						<Button bsStyle="primary" type="submit">
-							Add Book
+							Edit Book
 						</Button>
 					</Form>
 				</div>
@@ -86,4 +90,8 @@ BookAdd.propTypes = {
 	startAddingBook: PropTypes.func,
 };
 
-export default connect(null, { startAddingBook })(BookAdd);
+const mapStateToProps = state => ({
+	books: state.books,
+});
+
+export default connect(mapStateToProps, { startAddingBook })(BookAdd);

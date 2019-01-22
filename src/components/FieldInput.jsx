@@ -4,30 +4,33 @@ import {
 	FormGroup, FormControl, ControlLabel, HelpBlock,
 } from "react-bootstrap";
 
-const FieldInput = ({ id, name, value, title, helpText, placeholderText, hideLabel, modifier, inputRef }) => {
+const FieldInput = ({ id, name, value, title, helpText, placeholderText, disabled, hideLabel, modifier, inputRef }) => {
 	return (
-		<FormGroup
-			controlId={id}
-		>
-			<ControlLabel className={hideLabel ? "u-visibility-hidden" : ""}>
-				{title}
-			</ControlLabel>
-			{" "}
-			<FormControl
-				inputRef={inputRef}
-				type="text" 
-				name={name}
-				defaultValue={value}
-				placeholder={placeholderText}
-				bsClass={`form-control ${modifier}`}
-			/>
-			<FormControl.Feedback />
+		<div className={`field ${disabled ? "field--disabled" : ""}`}>
+			<FormGroup
+				controlId={id}
+			>
+				<ControlLabel className={hideLabel ? "u-visibility-hidden" : ""}>
+					{title}
+				</ControlLabel>
+				{" "}
+				<FormControl
+					inputRef={inputRef}
+					type="text" 
+					disabled={disabled} 
+					name={name}
+					defaultValue={value}
+					placeholder={placeholderText}
+					bsClass={`form-control ${modifier}`}
+				/>
+				<FormControl.Feedback />
 
-			{helpText && <HelpBlock>
-				{helpText}
-			</HelpBlock>}
+				{helpText && <HelpBlock>
+					{helpText}
+				</HelpBlock>}
 
-		</FormGroup>
+			</FormGroup>
+		</div>
 	);
 };
 

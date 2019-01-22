@@ -5,6 +5,7 @@ import { Route, Link } from "react-router-dom";
 import BookAdd from "./components/BookAdd.jsx";
 import BookList from "./components/BookList.jsx";
 import Book from "./components/Book.jsx";
+import BookEdit from "./components/BookEdit.jsx";
 
 class App extends Component {
 	render() {
@@ -26,7 +27,8 @@ class App extends Component {
 					<Grid>
 						<Route path="/" exact component={BookList} />
 						<Route path="/add/" component={BookAdd} />
-						<Route path={"/book/:id"} component={Book} />
+						<Route path={"/book/view/:id"} component={Book} />
+						<Route path={"/book/edit/:id"} component={BookEdit} />
 					</Grid>
 				</main>
 			</div>

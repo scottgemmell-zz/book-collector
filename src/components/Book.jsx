@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import { startDeletingBook } from "../redux/actions/books.actions";
 import { Button } from "react-bootstrap";
 
@@ -45,9 +46,12 @@ class Book extends Component {
 						</dl>		
 					</div>
 					<div className="list__action">
-						<Button 
+						<Link className="list__title" to={`/book/edit/${book.id}`}>
+							Edit	
+						</Link>
+						{/* <Button 
 							bsSize="xsmall" 
-						>Edit</Button>
+						>Edit</Button> */}
 						{" "}
 						<Button 
 							bsStyle="danger"
