@@ -3,6 +3,7 @@ import {
 	FETCH_BOOKS, 
 	SET_BOOKS, 
 	DELETE_BOOK, 
+	EDIT_BOOK,
 } from "../constants";
 
 const initState = {};
@@ -17,6 +18,12 @@ export const booksReducer = (state = initState, action) => {
 		case FETCH_BOOKS:
 			return action.payload;
 		case ADD_BOOK:
+			return {
+				...state,
+				[state.books]: action.payload,
+
+			};
+		case EDIT_BOOK:
 			return {
 				...state,
 				[state.books]: action.payload,
