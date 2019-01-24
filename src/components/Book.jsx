@@ -24,7 +24,14 @@ class Book extends Component {
 		const { match: { params: { id } }, books } = this.props;
 
 		console.log({books});
-		// 
+
+		// N/A
+		// if (loading === true) {
+		// 	return <div className="u-spinner">
+		// 		<img src={spinner} alt="Loading..." />
+		// 	</div>;
+		// }
+
 		if (!books || R.isEmpty(books)) {
 			return <div></div>;
 		}

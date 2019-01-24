@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { startFetchingBooks, startDeletingBook } from "../redux/actions/books.actions";
 import * as R from "ramda";
+import spinner from "../assets/svg/spinner.svg";
 
 class BookList extends Component {
 
@@ -18,11 +19,18 @@ class BookList extends Component {
 			return <div></div>;
 		}
 
+		// if (loading === true) {
+		// 	return <div className="u-spinner">
+		// 		<img src={spinner} alt="Loading..." />
+		// 	</div>;
+		// }
+
 		return (
 			<div>
 				<h2>
 					BookList
 				</h2>
+	
 				<ul className="list">
 					{books.map((book) => {
 						return (<li className="list__item c-book" key={book.id}>

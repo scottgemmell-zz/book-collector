@@ -8,9 +8,7 @@ import {
 const initState = [];
 
 export const booksReducer = (state = initState, action) => {
-
-	console.log({ state, action})
-
+	console.log({ state, action});
 	switch(action.type) {
 	
 		case DELETE_BOOK:
@@ -25,7 +23,6 @@ export const booksReducer = (state = initState, action) => {
 				...action.payload,
 			];
 		case EDIT_BOOK:
-
 			return state.map(book => book.id === action.id 
 				? { ...book, author: action.author, title: action.title }
 				: book
