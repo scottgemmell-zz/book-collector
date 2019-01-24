@@ -1,34 +1,36 @@
 import { 
 	ADD_BOOK, 
 	FETCH_BOOKS, 
-	SET_BOOKS, 
 	DELETE_BOOK, 
 	EDIT_BOOK,
 } from "../constants";
 
-const initState = {};
+const initState = [];
 
 export const booksReducer = (state = initState, action) => {
+
+	console.log({ state, action})
+
 	switch(action.type) {
-		
-		case SET_BOOKS:
-			return action.payload;
+	
 		case DELETE_BOOK:
-			return action.payload;
+			return state.filter(book => 
+				book.id !== action.deleteId
+			);
 		case FETCH_BOOKS:
 			return action.payload;
 		case ADD_BOOK:
-			return {
+			return [
 				...state,
-				[state.books]: action.payload,
-
-			};
+				...action.payload,
+			];
 		case EDIT_BOOK:
-			return {
-				...state,
-				[state.books]: action.payload,
 
-			};
+			return state.map(book => book.id === action.id 
+				? { ...book, author: action.author, title: action.title }
+				: book
+			);
+
 		default:
 			return state;
 	}

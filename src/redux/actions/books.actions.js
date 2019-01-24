@@ -1,8 +1,7 @@
 //import uuid from "uuid/v5";
 import { 
 	ADD_BOOK, 
-	FETCH_BOOKS, 
-	//SET_BOOKS, 
+	FETCH_BOOKS,
 	EDIT_BOOK, 
 	DELETE_BOOK 
 } from "../constants";
@@ -58,15 +57,12 @@ export const addBook = book => ({
 	payload: book,
 });
 
-export const editBook = book => ({
+export const editBook = ({ id, author, title }) => ({
 	type: EDIT_BOOK,
-	payload: book,
+	id,
+	author,
+	title,
 });
-
-// export const setBooks = books => ({
-// 	type: SET_BOOKS,
-// 	payload: books,
-// });
 
 export const fetchBooks = books => ({
 	type: FETCH_BOOKS,
@@ -75,5 +71,5 @@ export const fetchBooks = books => ({
 
 export const deleteBook = id => ({
 	type: DELETE_BOOK,
-	payload: id,
+	deleteId: id,
 });

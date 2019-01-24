@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { startDeletingBook } from "../redux/actions/books.actions";
 import { Button } from "react-bootstrap";
+import * as R from "ramda";
 
 class Book extends Component {
 	
@@ -21,6 +22,13 @@ class Book extends Component {
 	render(){
 
 		const { match: { params: { id } }, books } = this.props;
+
+		console.log({books});
+		// 
+		if (!books || R.isEmpty(books)) {
+			return <div></div>;
+		}
+
 		const book = books.find(book => book.id === id);
 
 		return (
