@@ -10,6 +10,8 @@ import thunk from "redux-thunk";
 // import { database } from "./database/config.js";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./assets/scss/Master.scss";
+import { booksMiddleware } from "./redux/middleware/books.middleware";
+import { apiMiddleware } from "./redux/middleware/api.middleware";
 
 const logger = createLogger({
 	// ...options
@@ -23,12 +25,12 @@ const composeEnhancers = composeWithDevTools({
 
 // create the feature middleware array
 const featureMiddleware = [
-	//forecastsMiddleware
+	booksMiddleware,
 ];
 
 // create the core middleware array
 const coreMiddleware = [
-	//apiMiddleware
+	apiMiddleware,
 ];
 //
 
