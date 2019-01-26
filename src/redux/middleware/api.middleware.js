@@ -4,12 +4,12 @@ export const apiMiddleware = ({ dispatch }) => next => action => {
 	next(action); 
 
 	if(action.type.includes(API_REQUEST)) {
-		const { url, method, feature } = action.meta;
-		
+		const { meta: { url, method, feature }, payload:body } = action;
+		// console.log({ url, method, feature, body });
 		fetch(
 			url, { 
 				method, 
-				body: action.payload 
+				body
 			})
 			.then( (response) => {
 				if (response.status >= 200 && response.status < 300) {
@@ -20,9 +20,10 @@ export const apiMiddleware = ({ dispatch }) => next => action => {
 				}
 			})
 			.then( response => { 
-				response.json() 
+				// response.clone().json(); 
+				response.json();
 			})
-			.then( data => dispatch(apiSuccess(data, feature)))
+			.then( data => dispatch(apiSuccess({ data, feature })))
 			.catch( error => dispatch(apiError({ error, feature })));
 	} 
 };

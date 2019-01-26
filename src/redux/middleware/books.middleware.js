@@ -3,24 +3,12 @@ import {
 	// addBook, 
 	// editBook, 
 	// deleteBook, 
-	setBooks 
+	//setBooks 
 } from "../actions/books.actions.js";
 import { API_ERROR, apiRequest, API_SUCCESS } from "../actions/api.actions";
 //import { setLoader } from "../actions/ui.actions";
 // import { setNotification } from "../actions/notifications.actions.js";
 // import { database } from "../../database/config.js"; 
-
-// export const startAddingBook = book => (dispatch) => {
-// 	return database.ref(`books/${book.id}`).set({ 
-// 		id: book.id, 
-// 		author: book.author, 
-// 		title: book.title, 
-// 	}).then(() => {
-// 		dispatch(addBook(book));
-// 	}).catch((error) => {
-// 		console.log(error);
-// 	});
-// };
 
 // export const startEditingBook = book => (dispatch) => {
 // 	return database.ref(`books/${book.id}`).set({ 
@@ -64,9 +52,8 @@ export const booksMiddleware = () => next => (action) => {
 	
 	switch(action.type) {
 
-
 		case ADD_BOOK:
-		console.log(">>>>>>", action.payload);
+		// console.log(">>>>>>", action.payload);
 
 		next(
 			apiRequest({ 
@@ -91,9 +78,8 @@ export const booksMiddleware = () => next => (action) => {
 		//next(setLoader({ state: true, feature: BOOKS }));
 		break;
 	
-	
-	
 	case `${BOOKS} ${API_SUCCESS}`:
+	//console.log("ap:", action.payload)
 		//next(setBooks({ books: action.payload }));
 		//next(setNotification({ message: "", feature: BOOKS }));
 		//next(setLoader({ state: false, feature: BOOKS }));
