@@ -3,7 +3,7 @@ import {
 	// addBook, 
 	// editBook, 
 	// deleteBook, 
-	//setBooks 
+	setBooks 
 } from "../actions/books.actions.js";
 import { API_ERROR, apiRequest, API_SUCCESS } from "../actions/api.actions";
 //import { setLoader } from "../actions/ui.actions";
@@ -44,7 +44,7 @@ import { API_ERROR, apiRequest, API_SUCCESS } from "../actions/api.actions";
 // };
 
 function getBookListUrl(){
-	return `https://books-collector.firebaseio.com/books.json`; 
+	return "https://books-collector.firebaseio.com/books.json"; 
 }
 
 export const booksMiddleware = () => next => (action) => {
@@ -58,7 +58,7 @@ export const booksMiddleware = () => next => (action) => {
 		next(
 			apiRequest({ 
 				body: JSON.stringify(action.payload),
-				method: "POST", 
+				method: "PUT", 
 				url: getBookListUrl(), 
 				feature: BOOKS, 
 			})
@@ -80,13 +80,13 @@ export const booksMiddleware = () => next => (action) => {
 	
 	case `${BOOKS} ${API_SUCCESS}`:
 	//console.log("ap:", action.payload)
-		//next(setBooks({ books: action.payload }));
+		next(setBooks({ books: action.payload }));
 		//next(setNotification({ message: "", feature: BOOKS }));
 		//next(setLoader({ state: false, feature: BOOKS }));
 		break;
 
 	case `${BOOKS} ${API_ERROR}`:
-		//next(setBooks({ books: action.payload }));
+		next(setBooks({ books: action.payload }));
 		// next(setNotification({ 
 		// 	message: action.payload.message, 
 		// 	// status: action.payload.status, 

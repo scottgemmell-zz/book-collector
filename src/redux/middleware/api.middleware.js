@@ -9,7 +9,11 @@ export const apiMiddleware = ({ dispatch }) => next => action => {
 		fetch(
 			url, { 
 				method, 
-				body
+				body,
+				// headers: {
+				// 	"Accept": "application/json",
+				// 	"Content-Type": "application/json"
+				// },
 			})
 			.then( (response) => {
 				if (response.status >= 200 && response.status < 300) {
@@ -19,11 +23,8 @@ export const apiMiddleware = ({ dispatch }) => next => action => {
 					throw Error(response.statusText);
 				}
 			})
-			.then( response => { 
-				// response.clone().json(); 
-				response.json();
-			})
-			.then( data => dispatch(apiSuccess({ data, feature })))
+			.then(response => response.json())
+			.then(data => dispatch(apiSuccess(data, feature)))
 			.catch( error => dispatch(apiError({ error, feature })));
 	} 
 };
