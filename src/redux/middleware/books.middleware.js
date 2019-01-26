@@ -1,4 +1,4 @@
-import { BOOKS, FETCH_BOOKS } from "../constants";
+import { BOOKS, ADD_BOOK, FETCH_BOOKS } from "../constants";
 import { 
 	// addBook, 
 	// editBook, 
@@ -6,7 +6,7 @@ import {
 	setBooks 
 } from "../actions/books.actions.js";
 import { API_ERROR, apiRequest, API_SUCCESS } from "../actions/api.actions";
-import { setLoader } from "../actions/ui.actions";
+//import { setLoader } from "../actions/ui.actions";
 // import { setNotification } from "../actions/notifications.actions.js";
 // import { database } from "../../database/config.js"; 
 
@@ -61,13 +61,17 @@ function getBookListUrl(){
 
 export const booksMiddleware = () => next => (action) => {
 	next(action);
-
-	switch(action.type) {
 	
-	case FETCH_BOOKS:
-		next(apiRequest({ 
-				body: null, 
-				method: "GET", 
+	switch(action.type) {
+
+
+		case ADD_BOOK:
+		console.log(">>>>>>", action.payload);
+
+		next(
+			apiRequest({ 
+				body: JSON.stringify(action.payload),
+				method: "POST", 
 				url: getBookListUrl(), 
 				feature: BOOKS, 
 			})
@@ -75,14 +79,28 @@ export const booksMiddleware = () => next => (action) => {
 		//next(setLoader({ state: true, feature: BOOKS }));
 		break;
 	
+	case FETCH_BOOKS:
+		next(
+			apiRequest({ 
+				body: null, 
+				method: "GET", 
+				url: getBookListUrl(), 
+				feature: BOOKS,
+			})
+		);
+		//next(setLoader({ state: true, feature: BOOKS }));
+		break;
+	
+	
+	
 	case `${BOOKS} ${API_SUCCESS}`:
-		next(setBooks({ books: action.payload }));
+		//next(setBooks({ books: action.payload }));
 		//next(setNotification({ message: "", feature: BOOKS }));
 		//next(setLoader({ state: false, feature: BOOKS }));
 		break;
 
 	case `${BOOKS} ${API_ERROR}`:
-		next(setBooks({ books: action.payload }));
+		//next(setBooks({ books: action.payload }));
 		// next(setNotification({ 
 		// 	message: action.payload.message, 
 		// 	// status: action.payload.status, 

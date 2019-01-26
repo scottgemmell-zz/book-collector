@@ -1,5 +1,5 @@
 import { 
-	// ADD_BOOK, 
+	ADD_BOOK, 
 	SET_BOOKS,
 	// DELETE_BOOK, 
 	// EDIT_BOOK,
@@ -8,7 +8,6 @@ import {
 const initState = [];
 
 export const booksReducer = (books = initState, action) => {
-	console.log({ books, action});
 	switch(action.type) {
 	
 		// case DELETE_BOOK:
@@ -17,11 +16,15 @@ export const booksReducer = (books = initState, action) => {
 		// 	);
 		case SET_BOOKS:
 			return action.payload;
-		// case ADD_BOOK:
-		// 	return [
-		// 		...state,
-		// 		...action.payload,
-		// 	];
+		case ADD_BOOK:
+			return [
+				...books,
+				{
+					id: action.payload.id,
+					title: action.payload.title,
+					author: action.payload.author,
+				}
+			];
 		// case EDIT_BOOK:
 		// 	return state.map(book => book.id === action.id 
 		// 		? { ...book, author: action.author, title: action.title }

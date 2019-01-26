@@ -39,8 +39,8 @@ class BookList extends Component {
 				<ul className="list">
 					{books.map((book) => {
 						return (
-							book !== null
-							? 
+							// book !== null
+							// ? 
 							<li className="list__item c-book" key={book.id}>
 								<div>
 									<h3>
@@ -53,8 +53,8 @@ class BookList extends Component {
 									</p>
 								</div>
 							</li>
-							:
-								<div></div>
+							// :
+							// 	<div></div>
 						);
 					})}
 				</ul>

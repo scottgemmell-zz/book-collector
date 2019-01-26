@@ -1,16 +1,16 @@
 import { 
 	//BOOKS, 
-	//ADD_BOOK, 
+	ADD_BOOK, 
 	FETCH_BOOKS,
 	SET_BOOKS,
 	// EDIT_BOOK, 
 	// DELETE_BOOK, 
 } from "../constants";
 
-// export const addBook = book => ({
-// 	type: ADD_BOOK,
-// 	payload: book,
-// });
+export const addBook = book => ({
+	type: ADD_BOOK,
+	payload: book,
+});
 
 // export const editBook = ({ id, author, title }) => ({
 // 	type: EDIT_BOOK,
@@ -32,17 +32,4 @@ export const setBooks = ({ books }) => ({
 // export const deleteBook = id => ({
 // 	type: DELETE_BOOK,
 // 	deleteId: id,
-// });
-
-// export const fetchForecasts = ({ city, country }) => ({
-// 	type: FETCH_FORECASTS,
-// 	payload: {
-// 		city,
-// 		country
-// 	}
-// });
-
-// export const setForecasts = ({ forecasts }) => ({
-// 	type: SET_FORECASTS,
-// 	payload: forecasts
 // });
