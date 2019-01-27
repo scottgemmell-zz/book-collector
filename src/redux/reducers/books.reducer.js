@@ -1,7 +1,7 @@
 import { 
 	ADD_BOOK, 
 	SET_BOOKS,
-	// DELETE_BOOK, 
+	DELETE_BOOK, 
 	// EDIT_BOOK,
 } from "../constants";
 
@@ -10,10 +10,10 @@ const initState = [];
 export const booksReducer = (books = initState, action) => {
 	switch(action.type) {
 	
-		// case DELETE_BOOK:
-		// 	return state.filter(book => 
-		// 		book.id !== action.deleteId
-		// 	);
+		case DELETE_BOOK:
+			return books.filter(book => 
+				+book.id !== +action.payload
+			);
 		case SET_BOOKS:
 			return action.payload;
 		case ADD_BOOK:

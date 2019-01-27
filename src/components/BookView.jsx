@@ -1,23 +1,23 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-//import { startDeletingBook } from "../redux/actions/books.actions";
+import { deleteBook } from "../redux/actions/books.actions";
 import { Button } from "react-bootstrap";
 import * as R from "ramda";
 
 class BookView extends Component {
 	
-	// constructor(props){
-	// 	super(props);
-	// 	this.handleDelete = this.handleDelete.bind(this);
-	// }
+	constructor(props){
+		super(props);
+		this.handleDelete = this.handleDelete.bind(this);
+	}
 
-	// handleDelete(id){
-	// 	// e.preventDefault();
-	// 	// console.log("handleDelete", e.target.value);
-	// 	const { startDeletingBook } = this.props;
-	// 	startDeletingBook(id);
-	// }
+	handleDelete(id){
+		// e.preventDefault();
+		// console.log("handleDelete", e.target.value);
+		const { deleteBook } = this.props;
+		deleteBook(id);
+	}
 
 	render(){
 
@@ -36,7 +36,7 @@ class BookView extends Component {
 			return <div></div>;
 		}
 
-		const book = books.find(book => book.id === +id);
+		const book = books.find(book => book && +book.id === +id);
 
 		return (
 			<>
@@ -85,5 +85,5 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps, { 
-	//startDeletingBook 
+	deleteBook 
 })(BookView);

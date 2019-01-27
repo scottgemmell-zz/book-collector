@@ -4,30 +4,22 @@ import {
 	FETCH_BOOKS,
 	SET_BOOKS,
 	// EDIT_BOOK, 
-	// DELETE_BOOK, 
+	DELETE_BOOK, 
 } from "../constants";
 
 export const addBook = book => {
-	console.log("addBook", { book });
+	//console.log("addBook", { book });
 	return {
 		type: ADD_BOOK,
 		payload: {
-			book
+			[book.id]:{
+				id: book.id,
+				author: book.author,
+				title: book.title,
+			}
 		},
 	};
 };
-
-// [book.id]: { 
-// 	id: book.id,
-// 	author: book.author, 
-// 	title: book.title 
-// }
-// export const editBook = ({ id, author, title }) => ({
-// 	type: EDIT_BOOK,
-// 	id,
-// 	author,
-// 	title,
-// });
 
 export const fetchBooks = () => ({
 	type: FETCH_BOOKS,
@@ -39,7 +31,22 @@ export const setBooks = ({ books }) => ({
 	payload: books
 });
 
-// export const deleteBook = id => ({
-// 	type: DELETE_BOOK,
-// 	deleteId: id,
+// [book.id]: { 
+// 	id: book.id,
+// 	author: book.author, 
+// 	title: book.title 
+// }
+
+// export const editBook = ({ id, author, title }) => ({
+// 	type: EDIT_BOOK,
+// 	id,
+// 	author,
+// 	title,
 // });
+
+
+
+export const deleteBook = id => ({
+	type: DELETE_BOOK,
+	payload: id,
+});

@@ -18,6 +18,8 @@ class BookList extends Component {
 	render(){
 		const { books } = this.props;
 
+		//const filterBooks = R.reject(R.isNil, books);
+
 		if (!books || R.isEmpty(books)) {
 			return <div></div>;
 		}
@@ -33,28 +35,27 @@ class BookList extends Component {
 				<h2>
 					BookList
 				</h2>
-
-				{console.log(">>>", {books})}
 	
 				<ul className="list">
 					{books.map((book) => {
+						console.log({book});
 						return (
-							// book !== null
-							// ? 
-							<li className="list__item c-book" key={book.id}>
-								<div>
-									<h3>
-										<Link className="list__title" to={`/book/view/${book.id}`}>
-											{book.title}
-										</Link>
-									</h3>
-									<p className="h4">
-										{book.author}
-									</p>
-								</div>
-							</li>
-							// :
-							// 	<div></div>
+							book !== null
+								? 
+								<li className="list__item c-book" key={book.id}>
+									<div>
+										<h3>
+											<Link className="list__title" to={`/book/view/${book.id}`}>
+												{book.title}
+											</Link>
+										</h3>
+										<p className="h4">
+											{book.author}
+										</p>
+									</div>
+								</li>
+								:
+								<div></div>
 						);
 					})}
 				</ul>

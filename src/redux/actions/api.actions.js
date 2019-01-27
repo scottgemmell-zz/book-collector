@@ -19,7 +19,7 @@ export const apiSuccess = (response, feature) => {
 	};
 };
 
-export const apiError = ({ error, feature }) => {
+export const apiError = (error, feature) => {
 	console.log("apiError error", error);
 	return {
 		type: `${feature} ${API_ERROR}`,

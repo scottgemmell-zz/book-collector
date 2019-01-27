@@ -1,9 +1,10 @@
-import { BOOKS, ADD_BOOK, FETCH_BOOKS } from "../constants";
+import { BOOKS, ADD_BOOK, DELETE_BOOK, FETCH_BOOKS } from "../constants";
 import { 
 	// addBook, 
 	// editBook, 
 	// deleteBook, 
-	setBooks 
+	setBooks,
+	fetchBooks, 
 } from "../actions/books.actions.js";
 import { API_ERROR, apiRequest, API_SUCCESS } from "../actions/api.actions";
 //import { setLoader } from "../actions/ui.actions";
@@ -43,6 +44,9 @@ import { API_ERROR, apiRequest, API_SUCCESS } from "../actions/api.actions";
 // 		});
 // };
 
+function getBookDeleteUrl(id){
+	return `https://books-collector.firebaseio.com/books/${id}.json`;
+}
 function getBookListUrl(){
 	return "https://books-collector.firebaseio.com/books.json"; 
 }
@@ -66,6 +70,20 @@ export const booksMiddleware = () => next => action => {
 		//next(setLoader({ state: true, feature: BOOKS }));
 		break;
 	
+	case DELETE_BOOK:
+		// console.log(">>>>>>", action.payload);
+
+		next(
+			apiRequest({ 
+				body: null,
+				method: "DELETE", 
+				url: getBookDeleteUrl(action.payload), 
+				feature: BOOKS, 
+			})
+		);
+		//next(setLoader({ state: true, feature: BOOKS }));
+		break;
+	
 	case FETCH_BOOKS:
 		next(
 			apiRequest({ 
@@ -80,13 +98,15 @@ export const booksMiddleware = () => next => action => {
 	
 	case `${BOOKS} ${API_SUCCESS}`:
 	//console.log("ap:", action.payload)
-		next(setBooks({ books: action.payload }));
+		//next(setBooks());
+	next(setBooks({ books: action.payload }));
 		//next(setNotification({ message: "", feature: BOOKS }));
 		//next(setLoader({ state: false, feature: BOOKS }));
 		break;
 
 	case `${BOOKS} ${API_ERROR}`:
-		next(setBooks({ books: action.payload }));
+		//next(setBooks());
+	next(setBooks({ books: action.payload }));
 		// next(setNotification({ 
 		// 	message: action.payload.message, 
 		// 	// status: action.payload.status, 
