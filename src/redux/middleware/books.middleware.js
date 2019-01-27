@@ -47,7 +47,7 @@ function getBookListUrl(){
 	return "https://books-collector.firebaseio.com/books.json"; 
 }
 
-export const booksMiddleware = () => next => (action) => {
+export const booksMiddleware = () => next => action => {
 	next(action);
 	
 	switch(action.type) {

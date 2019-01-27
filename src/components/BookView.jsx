@@ -5,12 +5,12 @@ import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import * as R from "ramda";
 
-class Book extends Component {
+class BookView extends Component {
 	
-	constructor(props){
-		super(props);
-		//this.handleDelete = this.handleDelete.bind(this);
-	}
+	// constructor(props){
+	// 	super(props);
+	// 	this.handleDelete = this.handleDelete.bind(this);
+	// }
 
 	// handleDelete(id){
 	// 	// e.preventDefault();
@@ -86,4 +86,4 @@ const mapStateToProps = state => ({
 
 export default connect(mapStateToProps, { 
 	//startDeletingBook 
-})(Book);
+})(BookView);

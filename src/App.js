@@ -4,7 +4,7 @@ import logo from "./logo.svg";
 import { Route, Link } from "react-router-dom";
 import BookAdd from "./components/BookAdd.jsx";
 import BookList from "./components/BookList.jsx";
-import Book from "./components/Book.jsx";
+import BookView from "./components/BookView.jsx";
 // import BookEdit from "./components/BookEdit.jsx";
 
 class App extends Component {
@@ -27,7 +27,7 @@ class App extends Component {
 					<Grid>
 						<Route path="/" exact component={BookList} />
 						<Route path="/add/" component={BookAdd} />
-						<Route path={"/book/view/:id"} component={Book} />
+						<Route path={"/book/view/:id"} component={BookView} />
 						{/* <Route path={"/book/edit/:id"} component={BookEdit} /> */}
 					</Grid>
 				</main>
