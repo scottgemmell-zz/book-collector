@@ -5,7 +5,7 @@ import { Route, Link } from "react-router-dom";
 import BookAdd from "./components/BookAdd.jsx";
 import BookList from "./components/BookList.jsx";
 import BookView from "./components/BookView.jsx";
-// import BookEdit from "./components/BookEdit.jsx";
+import BookEdit from "./components/BookEdit.jsx";
 
 class App extends Component {
 	render() {
@@ -28,7 +28,7 @@ class App extends Component {
 						<Route path="/" exact component={BookList} />
 						<Route path="/add/" component={BookAdd} />
 						<Route path={"/book/view/:id"} component={BookView} />
-						{/* <Route path={"/book/edit/:id"} component={BookEdit} /> */}
+						<Route path={"/book/edit/:id"} component={BookEdit} />
 					</Grid>
 				</main>
 			</div>

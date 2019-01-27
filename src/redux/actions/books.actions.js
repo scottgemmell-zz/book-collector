@@ -3,19 +3,19 @@ import {
 	ADD_BOOK, 
 	FETCH_BOOKS,
 	SET_BOOKS,
-	// EDIT_BOOK, 
+	EDIT_BOOK, 
 	DELETE_BOOK, 
 } from "../constants";
 
-export const addBook = book => {
+export const addBook = ({ id, author, title }) => {
 	//console.log("addBook", { book });
 	return {
 		type: ADD_BOOK,
 		payload: {
-			[book.id]:{
-				id: book.id,
-				author: book.author,
-				title: book.title,
+			[id]:{
+				id,
+				author,
+				title,
 			}
 		},
 	};
@@ -37,12 +37,16 @@ export const setBooks = ({ books }) => ({
 // 	title: book.title 
 // }
 
-// export const editBook = ({ id, author, title }) => ({
-// 	type: EDIT_BOOK,
-// 	id,
-// 	author,
-// 	title,
-// });
+export const editBook = ({ id, author, title }) => ({
+	type: EDIT_BOOK,
+	payload: {
+		[id]:{
+			id,
+			author,
+			title
+		}
+	}
+});
 
 
 

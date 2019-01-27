@@ -1,4 +1,4 @@
-import { BOOKS, ADD_BOOK, DELETE_BOOK, FETCH_BOOKS } from "../constants";
+import { BOOKS, ADD_BOOK, DELETE_BOOK, FETCH_BOOKS, EDIT_BOOK } from "../constants";
 import { 
 	// addBook, 
 	// editBook, 
@@ -44,7 +44,7 @@ import { API_ERROR, apiRequest, API_SUCCESS } from "../actions/api.actions";
 // 		});
 // };
 
-function getBookDeleteUrl(id){
+function getBookUrlById(id){
 	return `https://books-collector.firebaseio.com/books/${id}.json`;
 }
 function getBookListUrl(){
@@ -53,12 +53,9 @@ function getBookListUrl(){
 
 export const booksMiddleware = () => next => action => {
 	next(action);
-	
 	switch(action.type) {
-
-		case ADD_BOOK:
-		// console.log(">>>>>>", action.payload);
-
+		
+	case ADD_BOOK:
 		next(
 			apiRequest({ 
 				body: JSON.stringify(action.payload),
@@ -67,21 +64,28 @@ export const booksMiddleware = () => next => action => {
 				feature: BOOKS, 
 			})
 		);
-		//next(setLoader({ state: true, feature: BOOKS }));
+		break;
+
+	case EDIT_BOOK:
+		next(
+			apiRequest({ 
+				body: JSON.stringify(action.payload),
+				method: "PATCH", 
+				url: getBookListUrl(), 
+				feature: BOOKS, 
+			})
+		);
 		break;
 	
 	case DELETE_BOOK:
-		// console.log(">>>>>>", action.payload);
-
 		next(
 			apiRequest({ 
 				body: null,
 				method: "DELETE", 
-				url: getBookDeleteUrl(action.payload), 
+				url: getBookUrlById(action.payload), 
 				feature: BOOKS, 
 			})
 		);
-		//next(setLoader({ state: true, feature: BOOKS }));
 		break;
 	
 	case FETCH_BOOKS:
