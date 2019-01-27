@@ -18,7 +18,7 @@ class BookList extends Component {
 	render(){
 		const { books } = this.props;
 
-		//const filterBooks = R.reject(R.isNil, books);
+		const filterBooks = R.reject(R.isNil, books);
 
 		if (!books || R.isEmpty(books)) {
 			return <div></div>;
@@ -37,8 +37,8 @@ class BookList extends Component {
 				</h2>
 	
 				<ul className="list">
-					{books.map((book) => {
-						console.log({book});
+					{filterBooks.map((book) => {
+						// console.log({book});
 						return (
 							book !== null
 								? 

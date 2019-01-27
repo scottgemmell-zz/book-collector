@@ -12,7 +12,7 @@ export const addBook = ({ id, author, title }) => {
 	return {
 		type: ADD_BOOK,
 		payload: {
-			[id]:{
+			[+id]:{
 				id,
 				author,
 				title,
@@ -40,7 +40,7 @@ export const setBooks = ({ books }) => ({
 export const editBook = ({ id, author, title }) => ({
 	type: EDIT_BOOK,
 	payload: {
-		[id]:{
+		[+id]:{
 			id,
 			author,
 			title

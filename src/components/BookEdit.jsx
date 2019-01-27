@@ -29,7 +29,9 @@ class BookAdd extends Component {
 	render(){
 
 		const { match: { params: { id } }, books } = this.props;
+		console.log("books", books);
 		const book = books.find(book => book.id === id);
+		
 
 		return (
 			<div>
