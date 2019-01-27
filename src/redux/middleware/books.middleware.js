@@ -58,7 +58,7 @@ export const booksMiddleware = () => next => (action) => {
 		next(
 			apiRequest({ 
 				body: JSON.stringify(action.payload),
-				method: "PUT", 
+				method: "PATCH", 
 				url: getBookListUrl(), 
 				feature: BOOKS, 
 			})

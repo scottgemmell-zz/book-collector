@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { 
 	fetchBooks, 
 	//startDeletingBook 
@@ -44,9 +44,9 @@ class BookList extends Component {
 							<li className="list__item c-book" key={book.id}>
 								<div>
 									<h3>
-										{/* <Link className="list__title" to={`/book/view/${book.id}`}> */}
-										{book.title}
-										{/* </Link> */}
+										<Link className="list__title" to={`/book/view/${book.id}`}>
+											{book.title}
+										</Link>
 									</h3>
 									<p className="h4">
 										{book.author}
