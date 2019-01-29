@@ -26,10 +26,37 @@ export const fetchBooks = () => ({
 	//payload: books,
 });
 
-export const setBooks = ({ books }) => ({
-	type: SET_BOOKS,
-	payload: books
-});
+export const setBooks = ({ books }) => {
+	if ( typeof books === "undefined") {
+		return {
+			type: "DO_NOTHING"
+		};
+	}
+	return {
+		type: SET_BOOKS,
+		books
+	};
+};
+
+// export const setBooks = ({ books }) => ({
+// 	type: SET_BOOKS,
+// 	books
+// });
+
+// type: SET_BOOKS,
+// 	payload: books
+
+// export const setBooks = ({ books }) => dispatch => { 
+    // if (!books) {
+    //     return dispatch({
+    //         type: "DO_NOTHING"
+    //     })
+    // }
+    // return dispatch({
+    //     type: SET_BOOKS,
+    //     payload: books
+    // })
+// };
 
 // [book.id]: { 
 // 	id: book.id,
@@ -50,7 +77,10 @@ export const editBook = ({ id, author, title }) => ({
 
 
 
-export const deleteBook = id => ({
-	type: DELETE_BOOK,
-	payload: id,
-});
+export const deleteBook = id => {
+	console.log("id", id)
+	return {
+		type: DELETE_BOOK,
+		payload: id,
+	}
+};

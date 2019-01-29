@@ -5,7 +5,7 @@ import { Form, Button } from "react-bootstrap";
 import FieldInput from "./FieldInput.jsx";
 import { editBook } from "../redux/actions/books.actions";
 
-class BookAdd extends Component {
+class BookEdit extends Component {
 	constructor(props){
 		super(props);
 
@@ -29,7 +29,7 @@ class BookAdd extends Component {
 	render(){
 
 		const { match: { params: { id } }, books } = this.props;
-		console.log("books", books);
+		console.log("BookEdit render() books", books);
 		const book = books.find(book => book.id === id);
 		
 
@@ -87,7 +87,7 @@ class BookAdd extends Component {
 	}
 }
 
-BookAdd.propTypes = {
+BookEdit.propTypes = {
 	handleSubmit: PropTypes.func,
 	editBook: PropTypes.func,
 };
@@ -96,4 +96,4 @@ const mapStateToProps = state => ({
 	books: state.books,
 });
 
-export default connect(mapStateToProps, { editBook })(BookAdd);
+export default connect(mapStateToProps, { editBook })(BookEdit);

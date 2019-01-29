@@ -15,8 +15,9 @@ class BookView extends Component {
 	handleDelete(id){
 		// e.preventDefault();
 		// console.log("handleDelete", e.target.value);
-		const { deleteBook } = this.props;
+		const { history, deleteBook } = this.props;
 		deleteBook(id);
+		history.push("/");
 	}
 
 	render(){

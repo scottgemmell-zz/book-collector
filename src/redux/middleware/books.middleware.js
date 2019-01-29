@@ -61,9 +61,11 @@ export const booksMiddleware = () => next => action => {
 		break;
 	
 	case `${BOOKS} ${API_SUCCESS}`:
-		//console.log("ap:", action.payload)
 		//next(setBooks());
-		next(setBooks({ books: action.payload }));
+		console.log({books: action.payload});
+		if (Array.isArray(action.payload)) {
+			next(setBooks({ books: action.payload }));
+		}
 		//next(setLoader({ state: false, feature: BOOKS }));
 		break;
 
