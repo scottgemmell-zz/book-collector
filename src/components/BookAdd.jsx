@@ -15,13 +15,13 @@ class BookAdd extends Component {
 	handleSubmit(e){
 		e.preventDefault();
 
-		const { addBook, history } = this.props;
+		const { books, addBook, history } = this.props;
 
 		addBook({ 
 			id: this.idInput.value, 
 			title: this.titleInput.value, 
-			author: this.authorInput.value, 
-		});
+			author: this.authorInput.value,
+		}, books);
 		history.push("/");
 	}
 
@@ -87,4 +87,10 @@ BookAdd.propTypes = {
 	addBook: PropTypes.func,
 };
 
-export default connect(null, { addBook })(BookAdd);
+const mapStateToProps = (state) => {
+	return { 
+		books: state.books
+	};
+};
+
+export default connect(mapStateToProps, { addBook })(BookAdd);

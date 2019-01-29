@@ -1,3 +1,5 @@
+import * as R from "ramda";
+
 import { 
 	//BOOKS, 
 	ADD_BOOK, 
@@ -7,7 +9,7 @@ import {
 	DELETE_BOOK, 
 } from "../constants";
 
-export const addBook = ({ id, author, title }) => {
+export const addBook = ({ id, author, title }, books ) => {
 	//console.log("addBook", { book });
 	return {
 		type: ADD_BOOK,
@@ -18,6 +20,7 @@ export const addBook = ({ id, author, title }) => {
 				title,
 			}
 		},
+		books,
 	};
 };
 
@@ -38,33 +41,7 @@ export const setBooks = ({ books }) => {
 	};
 };
 
-// export const setBooks = ({ books }) => ({
-// 	type: SET_BOOKS,
-// 	books
-// });
-
-// type: SET_BOOKS,
-// 	payload: books
-
-// export const setBooks = ({ books }) => dispatch => { 
-    // if (!books) {
-    //     return dispatch({
-    //         type: "DO_NOTHING"
-    //     })
-    // }
-    // return dispatch({
-    //     type: SET_BOOKS,
-    //     payload: books
-    // })
-// };
-
-// [book.id]: { 
-// 	id: book.id,
-// 	author: book.author, 
-// 	title: book.title 
-// }
-
-export const editBook = ({ id, author, title }) => ({
+export const editBook = ({ id, author, title }, books) => ({
 	type: EDIT_BOOK,
 	payload: {
 		[+id]:{
@@ -72,15 +49,31 @@ export const editBook = ({ id, author, title }) => ({
 			author,
 			title
 		}
-	}
+	},
+	books,
 });
 
 
 
-export const deleteBook = id => {
-	console.log("id", id)
+export const deleteBook = ({id, author, title }, books) => {
+	console.log("deleteBook", {id, author, title, books});
+	
+	let filteredPayload = {};
+	let updatedPayload = R.without([{id, author, title}], books);
+	console.log({updatedPayload});
+	updatedPayload.map((book, i) => { 
+		filteredPayload[i] = {
+			id: book.id,
+			author: book.author,
+			title: book.title,
+		};
+		
+	});
+
+	console.log("deleteBook [2]", filteredPayload);
+
 	return {
 		type: DELETE_BOOK,
-		payload: id,
-	}
+		payload: filteredPayload,
+	};
 };

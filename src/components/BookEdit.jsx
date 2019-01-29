@@ -14,17 +14,14 @@ class BookEdit extends Component {
 
 	handleSubmit(e){
 		e.preventDefault();
-
-		console.log("edit");
-
-		const { editBook, history } = this.props;
+		const { editBook, history, books } = this.props;
 
 		editBook({ 
 			id: this.idInput.value, 
 			title: this.titleInput.value, 
 			author: this.authorInput.value, 
-		});
-		history.push("/");
+		}, books);
+		// history.push("/");
 	}
 
 	render(){

@@ -12,12 +12,16 @@ class BookView extends Component {
 		this.handleDelete = this.handleDelete.bind(this);
 	}
 
-	handleDelete(id){
+	handleDelete(id, title, author){
 		// e.preventDefault();
 		// console.log("handleDelete", e.target.value);
-		const { history, deleteBook } = this.props;
-		deleteBook(id);
-		history.push("/");
+		const { history, deleteBook, books } = this.props;
+		deleteBook({ 
+			id,
+			title, 
+			author,
+		}, books);
+		// history.push("/");
 	}
 
 	render(){
@@ -72,7 +76,7 @@ class BookView extends Component {
 						<Button 
 							bsStyle="danger"
 							bsSize="xsmall"
-							onClick={() => this.handleDelete(id)}
+							onClick={() => this.handleDelete(id, book.title, book.author)}
 						>Delete</Button>
 					</div>
 				</div>

@@ -16,6 +16,7 @@ export const booksMiddleware = () => next => action => {
 		
 	case ADD_BOOK:
 		next(setLoader({ state: true, feature: BOOKS }));
+		console.log({action});
 		next(
 			apiRequest({ 
 				body: JSON.stringify(action.payload),
@@ -43,9 +44,9 @@ export const booksMiddleware = () => next => action => {
 		next(setLoader({ state: true, feature: BOOKS }));
 		next(
 			apiRequest({ 
-				body: null,
-				method: "DELETE", 
-				url: getBookUrlById(action.payload), 
+				body: JSON.stringify(action.payload),
+				method: "PUT", 
+				url: getBookListUrl(), 
 				feature: BOOKS, 
 			})
 		);
