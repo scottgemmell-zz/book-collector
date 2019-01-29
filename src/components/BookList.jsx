@@ -6,7 +6,7 @@ import {
 	//startDeletingBook 
 } from "../redux/actions/books.actions";
 import * as R from "ramda";
-// import spinner from "../assets/svg/spinner.svg";
+import spinner from "../assets/svg/spinner.svg";
 
 class BookList extends Component {
 
@@ -16,7 +16,7 @@ class BookList extends Component {
 	}
 
 	render(){
-		const { books } = this.props;
+		const { books, loading } = this.props;
 
 		const filterBooks = R.reject(R.isNil, books);
 
@@ -24,11 +24,11 @@ class BookList extends Component {
 			return <div></div>;
 		}
 
-		// if (loading === true) {
-		// 	return <div className="u-spinner">
-		// 		<img src={spinner} alt="Loading..." />
-		// 	</div>;
-		// }
+		if (loading === true) {
+			return <div className="u-spinner">
+				<img src={spinner} alt="Loading..." />
+			</div>;
+		}
 
 		return (
 			<div>
@@ -65,10 +65,12 @@ class BookList extends Component {
 }
 
 const mapStateToProps = (state) => {
-	return { books: state.books };
+	return { 
+		books: state.books, 
+		loading: state.ui.loading,
+	};
 }
 
 export default connect(mapStateToProps, { 
 	fetchBooks, 
-	// startDeletingBook 
 })(BookList);

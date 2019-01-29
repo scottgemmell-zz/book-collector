@@ -1,7 +1,7 @@
 import { BOOKS, ADD_BOOK, DELETE_BOOK, FETCH_BOOKS, EDIT_BOOK } from "../constants";
 import { setBooks } from "../actions/books.actions.js";
 import { API_ERROR, apiRequest, API_SUCCESS } from "../actions/api.actions";
-//import { setLoader } from "../actions/ui.actions";
+import { setLoader } from "../actions/ui.actions";
 
 function getBookUrlById(id){
 	return `https://books-collector.firebaseio.com/books/${id}.json`;
@@ -15,6 +15,7 @@ export const booksMiddleware = () => next => action => {
 	switch(action.type) {
 		
 	case ADD_BOOK:
+		next(setLoader({ state: true, feature: BOOKS }));
 		next(
 			apiRequest({ 
 				body: JSON.stringify(action.payload),
@@ -27,6 +28,7 @@ export const booksMiddleware = () => next => action => {
 		break;
 
 	case EDIT_BOOK:
+		next(setLoader({ state: true, feature: BOOKS }));
 		next(
 			apiRequest({ 
 				body: JSON.stringify(action.payload),
@@ -38,6 +40,7 @@ export const booksMiddleware = () => next => action => {
 		break;
 	
 	case DELETE_BOOK:
+		next(setLoader({ state: true, feature: BOOKS }));
 		next(
 			apiRequest({ 
 				body: null,
@@ -49,6 +52,7 @@ export const booksMiddleware = () => next => action => {
 		break;
 	
 	case FETCH_BOOKS:
+		next(setLoader({ state: true, feature: BOOKS }));
 		next(
 			apiRequest({ 
 				body: null, 
@@ -57,7 +61,6 @@ export const booksMiddleware = () => next => action => {
 				feature: BOOKS,
 			})
 		);
-		//next(setLoader({ state: true, feature: BOOKS }));
 		break;
 	
 	case `${BOOKS} ${API_SUCCESS}`:
@@ -66,11 +69,11 @@ export const booksMiddleware = () => next => action => {
 		if (Array.isArray(action.payload)) {
 			next(setBooks({ books: action.payload }));
 		}
-		//next(setLoader({ state: false, feature: BOOKS }));
+		next(setLoader({ state: false, feature: BOOKS }));
 		break;
 
 	case `${BOOKS} ${API_ERROR}`:
-		//next(setLoader({ state: false, feature: BOOKS }));
+		next(setLoader({ state: false, feature: BOOKS }));
 		break;
 
 	default:

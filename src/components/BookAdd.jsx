@@ -15,13 +15,14 @@ class BookAdd extends Component {
 	handleSubmit(e){
 		e.preventDefault();
 
-		const { addBook } = this.props;
+		const { addBook, history } = this.props;
 
 		addBook({ 
 			id: this.idInput.value, 
 			title: this.titleInput.value, 
 			author: this.authorInput.value, 
 		});
+		history.push("/");
 	}
 
 	render(){

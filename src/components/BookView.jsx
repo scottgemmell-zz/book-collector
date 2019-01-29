@@ -37,7 +37,7 @@ class BookView extends Component {
 			return <div></div>;
 		}
 
-		const book = books.find(book => book && +book.id === +id);
+		const book = books.find(book => book !== null && +book.id === +id);
 
 		return (
 			<>

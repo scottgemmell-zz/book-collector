@@ -8,12 +8,13 @@ import {
 const initState = [];
 
 export const booksReducer = (books = initState, action) => {
+	console.log({ books, action });
 	
 	switch(action.type) {
 	
 	case DELETE_BOOK:
 		return books.filter(book => 
-			+book.id !== +action.books
+			book && +book.id !== +action.books
 		);
 	case SET_BOOKS:
 		return action.books;
