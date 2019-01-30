@@ -18,10 +18,17 @@ class BookList extends Component {
 	render(){
 		const { books, loading } = this.props;
 
-		const filterBooks = R.reject(R.isNil, books);
+		console.log(">>", {books});
 
-		if (!books || R.isEmpty(books)) {
-			return <div></div>;
+		if (books === null || R.isEmpty(books)) {
+			return <div>
+				<h2>
+					BookList
+				</h2>
+				<p>
+					No books :(
+				</p>
+			</div>;
 		}
 
 		if (loading === true) {
@@ -37,7 +44,7 @@ class BookList extends Component {
 				</h2>
 	
 				<ul className="list">
-					{filterBooks.map((book) => {
+					{books.map((book) => {
 						// console.log({book});
 						return (
 							book !== null

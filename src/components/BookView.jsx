@@ -21,7 +21,7 @@ class BookView extends Component {
 			title, 
 			author,
 		}, books);
-		// history.push("/");
+		history.push("/");
 	}
 
 	render(){

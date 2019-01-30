@@ -76,11 +76,14 @@ code {
 		justify-content: flex-start;
 		align-items: center;
 
+		> a {
+			margin-left: auto;
+			margin-right: 30px;
+		}
+
 		.btn {
 			background-color: #5adafd;
 			color: black;
-			margin-left: auto;
-			margin-right: 30px;
 		}
 		
 		

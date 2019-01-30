@@ -21,7 +21,7 @@ class BookEdit extends Component {
 			title: this.titleInput.value, 
 			author: this.authorInput.value, 
 		}, books);
-		// history.push("/");
+		history.push("/");
 	}
 
 	render(){

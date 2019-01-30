@@ -18,10 +18,11 @@ class App extends Component {
 							Books
 						</Link>
 					</h1>
-					
-					<Button bsStyle="primary" href="/add/">
-						+ Add Book
-					</Button>
+					<Link to="/add/">
+						<Button bsStyle="primary">
+							+ Add Book
+						</Button>
+					</Link>
 				</header>
 				<main>
 					<Grid>

@@ -16,11 +16,11 @@ export const booksMiddleware = () => next => action => {
 		
 	case ADD_BOOK:
 		next(setLoader({ state: true, feature: BOOKS }));
-		console.log({action});
+		console.log("ADD_BOOK", {action});
 		next(
 			apiRequest({ 
 				body: JSON.stringify(action.payload),
-				method: "PATCH",
+				method: "PUT",
 				//method: "POST", 
 				url: getBookListUrl(), 
 				feature: BOOKS, 
@@ -42,6 +42,7 @@ export const booksMiddleware = () => next => action => {
 	
 	case DELETE_BOOK:
 		next(setLoader({ state: true, feature: BOOKS }));
+		console.log("DELETE_BOOK", {action});
 		next(
 			apiRequest({ 
 				body: JSON.stringify(action.payload),
@@ -66,8 +67,8 @@ export const booksMiddleware = () => next => action => {
 	
 	case `${BOOKS} ${API_SUCCESS}`:
 		//next(setBooks());
-		console.log({books: action.payload});
-		if (Array.isArray(action.payload)) {
+		//console.log({books: action.payload});
+		if (Array.isArray(action.payload) || action.payload === null) {
 			next(setBooks({ books: action.payload }));
 		}
 		next(setLoader({ state: false, feature: BOOKS }));

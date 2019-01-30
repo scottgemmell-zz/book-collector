@@ -16,7 +16,7 @@ class BookAdd extends Component {
 		e.preventDefault();
 
 		const { books, addBook, history } = this.props;
-
+		console.log("BookAdd ", {books});
 		addBook({ 
 			id: this.idInput.value, 
 			title: this.titleInput.value, 
