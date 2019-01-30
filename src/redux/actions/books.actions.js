@@ -1,7 +1,6 @@
 import * as R from "ramda";
 
 import { 
-	//BOOKS, 
 	ADD_BOOK, 
 	FETCH_BOOKS,
 	SET_BOOKS,
@@ -10,7 +9,6 @@ import {
 } from "../constants";
 
 export const addBook = ({ id, author, title }, books ) => {
-	console.log("addBook", { books, id, author, title });
 	return {
 		type: ADD_BOOK,
 		payload: [
@@ -56,10 +54,8 @@ export const editBook = ({ id, author, title }, books) => ({
 
 
 export const deleteBook = ({id, author, title }, books) => {
-	console.log("deleteBook", {id, author, title, books});
 	let filteredPayload = {};
 	let updatedPayload = R.without([{id, author, title}], books);
-	console.log({updatedPayload});
 	updatedPayload.map((book, i) => { 
 		return filteredPayload[i] = {
 			id: `${i}`,
@@ -68,7 +64,6 @@ export const deleteBook = ({id, author, title }, books) => {
 		};
 		
 	});
-	console.log("deleteBook [2]", filteredPayload);
 	return {
 		type: DELETE_BOOK,
 		payload: filteredPayload,

@@ -27,7 +27,6 @@ class BookEdit extends Component {
 	render(){
 
 		const { match: { params: { id } }, books } = this.props;
-		console.log("BookEdit render() books", books);
 		const book = books.find(book => book.id === id);
 		
 

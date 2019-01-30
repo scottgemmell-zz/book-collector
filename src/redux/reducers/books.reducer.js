@@ -8,7 +8,6 @@ import {
 const initState = [];
 
 export const booksReducer = (books = initState, action) => {
-	console.log({ books, action });
 	
 	switch(action.type) {
 	

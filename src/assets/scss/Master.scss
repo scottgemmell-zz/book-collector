@@ -15,12 +15,6 @@ code {
 	  monospace;
 }
 
-.c-book {
-	background-color: #f0f0f0;
-	padding: 20px;
-	border-radius: 10px;
-}
-
 .field--disabled {
 	.control-label {
 		color: #aaa;
@@ -33,9 +27,8 @@ code {
 	.list__item {
 		display: flex;
 		justify-content: flex-start;
-
 		
-		margin-bottom: 20px;
+		
 
 		h3 {
 			margin-top: 0;
@@ -55,7 +48,14 @@ code {
 		margin-right: 20px;
 	}
 }
-  
+
+.c-book {
+	background-color: #f0f0f0;
+	margin-bottom: 20px;
+	padding: 20px;
+	border-radius: 10px;
+}
+
 .App {
 
 	h2,
@@ -111,6 +111,6 @@ code {
 }
 
 .u-spinner img {
-	width: 80px;
-	height: 80px;
+	width: 55px;
+	height: 55px;
 }
