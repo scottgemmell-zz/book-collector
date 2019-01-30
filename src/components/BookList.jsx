@@ -20,6 +20,12 @@ class BookList extends Component {
 
 		console.log(">>", {books});
 
+		if (loading === true) {
+			return <div className="u-spinner">
+				<img src={spinner} alt="Loading..." />
+			</div>;
+		}
+
 		if (books === null || R.isEmpty(books)) {
 			return <div>
 				<h2>
@@ -28,12 +34,6 @@ class BookList extends Component {
 				<p>
 					No books :(
 				</p>
-			</div>;
-		}
-
-		if (loading === true) {
-			return <div className="u-spinner">
-				<img src={spinner} alt="Loading..." />
 			</div>;
 		}
 

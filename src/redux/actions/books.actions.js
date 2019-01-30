@@ -44,13 +44,13 @@ export const setBooks = ({ books }) => {
 export const editBook = ({ id, author, title }, books) => ({
 	type: EDIT_BOOK,
 	payload: {
+		...books,
 		[+id]:{
 			id,
 			author,
 			title
 		}
 	},
-	books,
 });
 
 

@@ -26,6 +26,9 @@ class BookAdd extends Component {
 	}
 
 	render(){
+
+		const { books } = this.props;
+
 		return (
 			<div>
 				<h2>
@@ -39,7 +42,7 @@ class BookAdd extends Component {
 							}} 
 							id="fieldId" 
 							name="id"
-							value=""
+							value={books.length}
 							placeholderText="ID" 
 							title="Enter an ID"
 							hideLabel={true} 
