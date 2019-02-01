@@ -43,7 +43,10 @@ FieldInput.propTypes = {
 	id: PropTypes.string.isRequired,
 	title: PropTypes.string.isRequired,
 	name: PropTypes.string.isRequired,
-	value: PropTypes.string,
+	value: PropTypes.oneOfType([
+		PropTypes.string,
+		PropTypes.number
+	]),
 	helpText: PropTypes.string,
 	placeholderText: PropTypes.string,
 };
