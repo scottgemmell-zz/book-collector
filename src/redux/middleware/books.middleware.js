@@ -3,9 +3,6 @@ import { setBooks } from "../actions/books.actions.js";
 import { API_ERROR, apiRequest, API_SUCCESS } from "../actions/api.actions";
 import { setLoader } from "../actions/ui.actions";
 
-function getBookUrlById(id){
-	return `https://books-collector.firebaseio.com/books/${id}.json`;
-}
 function getBookListUrl(){
 	return "https://books-collector.firebaseio.com/books.json"; 
 }
@@ -16,7 +13,6 @@ export const booksMiddleware = () => next => action => {
 		
 	case ADD_BOOK:
 		next(setLoader({ state: true, feature: BOOKS }));
-		console.log("ADD_BOOK", {action});
 		next(
 			apiRequest({ 
 				body: JSON.stringify(action.payload),
@@ -42,7 +38,6 @@ export const booksMiddleware = () => next => action => {
 	
 	case DELETE_BOOK:
 		next(setLoader({ state: true, feature: BOOKS }));
-		console.log("DELETE_BOOK", {action});
 		next(
 			apiRequest({ 
 				body: JSON.stringify(action.payload),
@@ -66,8 +61,6 @@ export const booksMiddleware = () => next => action => {
 		break;
 	
 	case `${BOOKS} ${API_SUCCESS}`:
-		//next(setBooks());
-		//console.log({books: action.payload});
 		if (Array.isArray(action.payload) || action.payload === null) {
 			next(setBooks({ books: action.payload }));
 		}

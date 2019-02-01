@@ -8,7 +8,6 @@ import {
 const initState = [];
 
 export const booksReducer = (books = initState, action) => {
-	console.log({ books, action });
 	
 	switch(action.type) {
 	
@@ -28,16 +27,16 @@ export const booksReducer = (books = initState, action) => {
 				author: action.payload.author,
 			}
 		};
-		case EDIT_BOOK:
-			return books.map(book => +book.id === +action.id 
-				? { 
-					// ...book, 
-					id: action.id,
-					author: action.author, 
-					title: action.title 
-				}
-				: book
-			);
+	case EDIT_BOOK:
+		return books.map(book => +book.id === +action.id 
+			? { 
+				// ...book, 
+				id: action.id,
+				author: action.author, 
+				title: action.title 
+			}
+			: book
+		);
 	default:
 		return books;
 	}

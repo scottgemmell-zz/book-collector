@@ -11,7 +11,6 @@ export function apiRequest({ body, method, url, feature }) {
 }
 
 export const apiSuccess = (response, feature) => {
-	console.log("apiSuccess response", { response });
 	return {
 		type: `${feature} ${API_SUCCESS}`,
 		payload: response,
@@ -20,7 +19,6 @@ export const apiSuccess = (response, feature) => {
 };
 
 export const apiError = (error, feature) => {
-	console.log("apiError error", { error });
 	return {
 		type: `${feature} ${API_ERROR}`,
 		payload: error,

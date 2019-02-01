@@ -18,8 +18,6 @@ class BookList extends Component {
 	render(){
 		const { books, loading } = this.props;
 
-		console.log(">>", {books});
-
 		if (loading === true) {
 			return <div className="u-spinner">
 				<img src={spinner} alt="Loading..." />
@@ -45,7 +43,6 @@ class BookList extends Component {
 	
 				<ul className="list">
 					{books.map((book) => {
-						// console.log({book});
 						return (
 							book !== null
 								? 

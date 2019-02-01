@@ -13,8 +13,6 @@ class BookView extends Component {
 	}
 
 	handleDelete(id, title, author){
-		// e.preventDefault();
-		// console.log("handleDelete", e.target.value);
 		const { history, deleteBook, books } = this.props;
 		deleteBook({ 
 			id,
@@ -27,8 +25,6 @@ class BookView extends Component {
 	render(){
 
 		const { match: { params: { id } }, books } = this.props;
-
-		console.log({books});
 
 		// N/A
 		// if (loading === true) {
