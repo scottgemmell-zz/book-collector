@@ -16,9 +16,13 @@ class BookList extends Component {
 		const { books, loading } = this.props;
 
 		if (loading === true) {
-			return <div className="u-spinner">
-				<img src={spinner} alt="Loading..." />
-			</div>;
+			return (
+				<div className="c-book">
+					<div className="u-spinner">
+						<img src={spinner} alt="Loading..." />
+					</div>
+				</div>
+			);
 		}
 
 		if (books === null || R.isEmpty(books)) {
