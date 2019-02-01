@@ -65,9 +65,6 @@ class BookView extends Component {
 						<Link className="list__title" to={`/book/edit/${book.id}`}>
 							Edit	
 						</Link>
-						{/* <Button 
-							bsSize="xsmall" 
-						>Edit</Button> */}
 						{" "}
 						<Button 
 							bsStyle="danger"

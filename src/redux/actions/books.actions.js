@@ -1,7 +1,6 @@
 import * as R from "ramda";
 
 import { 
-	//BOOKS, 
 	ADD_BOOK, 
 	FETCH_BOOKS,
 	SET_BOOKS,
