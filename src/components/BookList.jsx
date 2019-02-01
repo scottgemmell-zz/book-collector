@@ -17,9 +17,14 @@ class BookList extends Component {
 
 		if (loading === true) {
 			return (
-				<div className="c-book">
-					<div className="u-spinner">
-						<img src={spinner} alt="Loading..." />
+				<div>
+					<h2>
+						BookList
+					</h2>
+					<div className="c-book">
+						<div className="u-spinner">
+							<img src={spinner} alt="Loading..." />
+						</div>
 					</div>
 				</div>
 			);
