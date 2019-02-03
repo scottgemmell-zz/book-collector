@@ -18,7 +18,7 @@ export const apiMiddleware = ({ dispatch }) => next => action => {
 				if (response.status >= 200 && response.status < 300) {
 					return response;
 				} else {
-					// @TODO: Not found / Failed to fetch
+					// @TODO: Redirect / Not found / Failed to fetch
 					throw Error(response.statusText);
 				}
 			})
@@ -26,6 +26,7 @@ export const apiMiddleware = ({ dispatch }) => next => action => {
 			.then(data => dispatch(apiSuccess(data, feature)))
 			.catch( error => { 
 				return (
+					// @TODO: Redirect / Message
 					dispatch(apiError(error, feature))
 				);
 			});
