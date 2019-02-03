@@ -5,10 +5,10 @@ class Page404 extends Component {
 		return (
 			<div>
 				<h2>
-					404 / Error
+					Something's gone wrong
 				</h2>
 				<p>
-					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident eum doloribus ex dolores cum blanditiis ipsa et error nulla fugit molestias quo quae earum, sit, labore id sint. Laudantium, deleniti.
+					<strong>404 / Error</strong>. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident eum doloribus ex dolores cum blanditiis ipsa et error nulla fugit molestias quo quae earum, sit, labore id sint. Laudantium, deleniti.
 				</p>
 			</div>
 		);

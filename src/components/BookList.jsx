@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Alert } from "react-bootstrap";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { fetchBooks } from "../redux/actions/books.actions";
@@ -13,7 +14,7 @@ class BookList extends Component {
 	}
 
 	render(){
-		const { books, loading } = this.props;
+		const { books, notification, loading } = this.props;
 
 		if (loading === true) {
 			return (
@@ -28,6 +29,19 @@ class BookList extends Component {
 					</div>
 				</div>
 			);
+		}
+
+		
+
+		if (notification) {
+
+			const note = R.values(notification);
+
+			return <Alert style={{marginTop: 20}}>
+				<p>
+					<strong>Notification</strong>: {note[0]+" "+note[1]}
+				</p>
+			</Alert>;
 		}
 
 		if (books === null || R.isEmpty(books)) {
@@ -73,6 +87,7 @@ class BookList extends Component {
 const mapStateToProps = (state) => {
 	return { 
 		books: state.books, 
+		notification: state.notification[0], 
 		loading: state.ui.loading,
 	};
 }

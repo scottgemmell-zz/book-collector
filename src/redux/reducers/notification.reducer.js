@@ -1,19 +1,18 @@
-import { SET_NOTIFICATION } from "../actions/notifications.actions.js";
+import { REMOVE_NOTIFICATION, SET_NOTIFICATION } from "../actions/notifications.actions.js";
 
-const initState = {
-	message: "",
-};
+const initState = [];
 
-export const notificationReducer = (state = initState, action) => {
+export const notificationReducer = (notifications = initState, action) => {
 	switch(true) {
 	
 	case action.type.includes(SET_NOTIFICATION):
-		return { 
-			...state, 
-			message: action.payload,
-			// status: 400,
-		};
+		return [ 
+			...notifications, 
+			action.payload,
+		];
+	case action.type.includes(REMOVE_NOTIFICATION):
+		return notifications.filter(notification => notification.id !== action.payload);
 	default:
-		return state;
+		return notifications;
 	}
 };

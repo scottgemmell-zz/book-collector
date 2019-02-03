@@ -2,6 +2,7 @@ import { BOOKS, ADD_BOOK, DELETE_BOOK, FETCH_BOOKS, EDIT_BOOK } from "../constan
 import { setBooks } from "../actions/books.actions.js";
 import { API_ERROR, apiRequest, API_SUCCESS } from "../actions/api.actions";
 import { setLoader } from "../actions/ui.actions";
+import { setNotification } from "../actions/notifications.actions";
 
 function getBookListUrl(){
 	return "https://books-collector.firebaseio.com/books.json"; 
@@ -67,6 +68,7 @@ export const booksMiddleware = () => next => action => {
 		break;
 
 	case `${BOOKS} ${API_ERROR}`:
+		next(setNotification({ message: action.payload.message, feature: BOOKS }));
 		next(setLoader({ state: false, feature: BOOKS }));
 		break;
 

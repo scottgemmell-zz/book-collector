@@ -15,6 +15,7 @@ export const apiMiddleware = ({ dispatch }) => next => action => {
 				// },
 			})
 			.then((response) => {
+				// console.log({response});
 				if (response.status >= 200 && response.status < 300) {
 					return response;
 				} else {
@@ -25,6 +26,7 @@ export const apiMiddleware = ({ dispatch }) => next => action => {
 			.then(response => response.json())
 			.then(data => dispatch(apiSuccess(data, feature)))
 			.catch( error => { 
+				// console.log({ error })
 				return (
 					// @TODO: Redirect / Message
 					dispatch(apiError(error, feature))
