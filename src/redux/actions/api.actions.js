@@ -23,5 +23,5 @@ export const apiError = (error, feature) => {
 		type: `${feature} ${API_ERROR}`,
 		payload: error,
 		meta: { feature }
-	}
+	};
 };

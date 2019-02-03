@@ -8,7 +8,6 @@ import rootReducer from "./redux/reducers";
 import App from "./App";
 import thunk from "redux-thunk";
 // import { database } from "./database/config.js";
-import { BrowserRouter as Router } from "react-router-dom";
 import "./assets/scss/Master.scss";
 import { booksMiddleware } from "./redux/middleware/books.middleware";
 import { apiMiddleware } from "./redux/middleware/api.middleware";
@@ -47,8 +46,8 @@ const store = createStore(
 );
 
 ReactDOM.render(
-	<Router><Provider store={store}>
+	<Provider store={store}>
 		<App />
-	</Provider></Router>, 
+	</Provider>, 
 	document.getElementById("root")
 );
