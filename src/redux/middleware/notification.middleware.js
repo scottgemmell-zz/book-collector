@@ -14,9 +14,17 @@ export const notificationMiddleware = ({dispatch, getState}) => next => action =
 
 		next(setNotification({ message: notification, feature: meta.feature }));
 
-		setTimeout(() => {
-			next(removeNotification({ notificationId: +id, feature: meta.feature }));
-		}, 4000);
+		const timeout = (ms) => {
+			return new Promise(resolve => setTimeout(resolve, ms));
+		};
+
+		const removeNotificationRedirect = async () => {
+			await timeout(3000);
+			// TODO: Redirect console.log("Redirect");
+			return next(removeNotification({ notificationId: +id, feature: meta.feature }));
+		};
+
+		removeNotificationRedirect();
 
 	} else {
 		next(action);

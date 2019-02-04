@@ -5,7 +5,7 @@ import { setLoader } from "../actions/ui.actions";
 import { setNotification } from "../actions/notifications.actions";
 
 function getBookListUrl(){
-	return "https://books-collector.firebaseio.com/books.json"; 
+	return "https://books-collector.irebaseio.com/books.json"; 
 }
 
 export const booksMiddleware = () => next => action => {
