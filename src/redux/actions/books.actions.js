@@ -22,8 +22,11 @@ export const addBook = ({ id, author, title }, books ) => {
 	};
 };
 
-export const fetchBooks = () => ({
+export const fetchBooks = ({ history }) => ({
 	type: FETCH_BOOKS,
+	meta: {
+		history
+	}
 });
 
 export const setBooks = ({ books }) => {

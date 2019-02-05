@@ -5,7 +5,7 @@ import { setLoader } from "../actions/ui.actions";
 import { setNotification } from "../actions/notifications.actions";
 
 function getBookListUrl(){
-	return "https://books-collector.irebaseio.com/books.json"; 
+	return "https://books-collector.firebaseio.com/books.json"; 
 }
 
 export const booksMiddleware = () => next => action => {
@@ -56,6 +56,7 @@ export const booksMiddleware = () => next => action => {
 				method: "GET", 
 				url: getBookListUrl(), 
 				feature: BOOKS,
+				history: action.meta.history,
 			})
 		);
 		break;
@@ -68,7 +69,7 @@ export const booksMiddleware = () => next => action => {
 		break;
 
 	case `${BOOKS} ${API_ERROR}`:
-		next(setNotification({ message: action.payload.message, feature: BOOKS }));
+		next(setNotification({ message: action.payload.message, feature: BOOKS, history: action.meta.history }));
 		next(setLoader({ state: false, feature: BOOKS }));
 		break;
 
