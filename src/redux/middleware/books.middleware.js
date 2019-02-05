@@ -56,7 +56,6 @@ export const booksMiddleware = () => next => action => {
 				method: "GET", 
 				url: getBookListUrl(), 
 				feature: BOOKS,
-				history: action.meta.history,
 			})
 		);
 		break;
@@ -69,7 +68,7 @@ export const booksMiddleware = () => next => action => {
 		break;
 
 	case `${BOOKS} ${API_ERROR}`:
-		next(setNotification({ message: action.payload.message, feature: BOOKS, history: action.meta.history }));
+		next(setNotification({ message: action.payload.message, feature: BOOKS }));
 		next(setLoader({ state: false, feature: BOOKS }));
 		break;
 

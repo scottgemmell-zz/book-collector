@@ -4,7 +4,7 @@ export const apiMiddleware = ({ dispatch }) => next => action => {
 	next(action); 
 
 	if(action.type.includes(API_REQUEST)) {
-		const { meta: { url, method, feature, history }, payload:body } = action;
+		const { meta: { url, method, feature }, payload:body } = action;
 		fetch(
 			url, { 
 				method, 
@@ -26,11 +26,10 @@ export const apiMiddleware = ({ dispatch }) => next => action => {
 			.then(response => response.json())
 			.then(data => dispatch(apiSuccess(data, feature)))
 			.catch( error => { 
-				// console.log({ error, feature, history });
-				
+				// console.log({ error, feature });
 				return (
 					// @TODO: Redirect / Message
-					dispatch(apiError(error, feature, history))
+					dispatch(apiError(error, feature))
 				);
 			});
 	} 

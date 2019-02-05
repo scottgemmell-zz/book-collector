@@ -1,12 +1,11 @@
 export const SET_NOTIFICATION = "SET_NOTIFICATION";
 export const REMOVE_NOTIFICATION = "REMOVE_NOTIFICATION";
 
-export const setNotification = ({ message, feature, history }) => ({
+export const setNotification = ({ message, feature }) => ({
 	type: `${feature} ${SET_NOTIFICATION}`,
 	payload: message,
 	meta: { 
-		feature, 
-		history 
+		feature
 	}
 });
 

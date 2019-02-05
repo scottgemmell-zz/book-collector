@@ -9,8 +9,8 @@ import spinner from "../assets/svg/spinner.svg";
 class BookList extends Component {
 
 	componentDidMount() {
-		const { fetchBooks, history } = this.props;
-		fetchBooks({ history });
+		const { fetchBooks } = this.props;
+		fetchBooks();
 	}
 
 	render(){

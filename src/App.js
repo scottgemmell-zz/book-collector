@@ -1,7 +1,13 @@
 import React, { Component } from "react";
 import { Button, Grid } from "react-bootstrap";
+import history from "./history";
 import logo from "./logo.svg";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { 
+	Router, 
+	Route, 
+	Link, 
+	Switch 
+} from "react-router-dom";
 import BookAdd from "./components/BookAdd.jsx";
 import BookList from "./components/BookList.jsx";
 import BookView from "./components/BookView.jsx";
@@ -9,10 +15,12 @@ import BookEdit from "./components/BookEdit.jsx";
 import Page404 from "./components/Page404.jsx";
 
 class App extends Component {
+
 	render() {
+
 		return (
 			<div className="App">
-				<Router>
+				<Router history={history}>
 					<div>
 						<header className="App-header">
 							<img src={logo} className="App-logo" alt="logo" />
