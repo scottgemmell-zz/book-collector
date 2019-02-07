@@ -8,6 +8,10 @@ function getBookListUrl(){
 	return "http://localhost:3001/books/"; 
 }
 
+function getBookByIdUrl(id){
+	return `http://localhost:3001/books/${id}`; 
+}
+
 export const booksMiddleware = () => next => action => {
 	next(action);
 	switch(action.type) {
@@ -40,9 +44,9 @@ export const booksMiddleware = () => next => action => {
 		next(setLoader({ state: true, feature: BOOKS }));
 		next(
 			apiRequest({ 
-				body: JSON.stringify(action.payload),
-				method: "PUT", 
-				url: getBookListUrl(), 
+				body: null,
+				method: "DELETE", 
+				url: getBookByIdUrl(action.payload), 
 				feature: BOOKS, 
 			})
 		);

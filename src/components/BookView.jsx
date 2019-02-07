@@ -12,13 +12,9 @@ class BookView extends Component {
 		this.handleDelete = this.handleDelete.bind(this);
 	}
 
-	handleDelete(id, title, author){
-		const { history, deleteBook, books } = this.props;
-		deleteBook({ 
-			id,
-			title, 
-			author,
-		}, books);
+	handleDelete(id){
+		const { history, deleteBook } = this.props;
+		deleteBook(id);
 		history.push("/");
 	}
 
@@ -69,7 +65,7 @@ class BookView extends Component {
 						<Button 
 							bsStyle="danger"
 							bsSize="xsmall"
-							onClick={() => this.handleDelete(id, book.title, book.author)}
+							onClick={() => this.handleDelete(id)}
 						>Delete</Button>
 					</div>
 				</div>

@@ -1,5 +1,3 @@
-import * as R from "ramda";
-
 import { 
 	ADD_BOOK, 
 	FETCH_BOOKS,
@@ -45,19 +43,9 @@ export const editBook = ({ id, author, title }, books) => ({
 
 
 
-export const deleteBook = ({id, author, title }, books) => {
-	let filteredPayload = {};
-	let updatedPayload = R.without([{id, author, title}], books);
-	updatedPayload.map((book, i) => { 
-		return filteredPayload[i] = {
-			id: `${i}`,
-			author: book.author,
-			title: book.title,
-		};
-		
-	});
+export const deleteBook = id => {
 	return {
 		type: DELETE_BOOK,
-		payload: filteredPayload,
+		payload: +id,
 	};
 };
