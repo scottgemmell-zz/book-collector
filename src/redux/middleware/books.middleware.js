@@ -5,7 +5,7 @@ import { setLoader } from "../actions/ui.actions";
 import { setNotification } from "../actions/notifications.actions";
 
 function getBookListUrl(){
-	return "https://books-collector.firebaseio.com/books.json"; 
+	return "http://localhost:3001/books/"; 
 }
 
 export const booksMiddleware = () => next => action => {
@@ -17,7 +17,7 @@ export const booksMiddleware = () => next => action => {
 		next(
 			apiRequest({ 
 				body: JSON.stringify(action.payload),
-				method: "PUT",
+				method: "POST",
 				url: getBookListUrl(), 
 				feature: BOOKS, 
 			})

@@ -5,17 +5,18 @@ export const apiMiddleware = ({ dispatch }) => next => action => {
 
 	if(action.type.includes(API_REQUEST)) {
 		const { meta: { url, method, feature }, payload:body } = action;
+		console.log({ url, method, feature, body });
 		fetch(
 			url, { 
 				method, 
 				body,
-				// headers: {
-				// 	"Accept": "application/json",
-				// 	"Content-Type": "application/json"
-				// },
+				headers: {
+					"Accept": "application/json",
+					"Content-Type": "application/json"
+				},
 			})
 			.then((response) => {
-				// console.log({response});
+				console.log({response});
 				if (response.status >= 200 && response.status < 300) {
 					return response;
 				} else {
@@ -26,7 +27,7 @@ export const apiMiddleware = ({ dispatch }) => next => action => {
 			.then(response => response.json())
 			.then(data => dispatch(apiSuccess(data, feature)))
 			.catch( error => { 
-				// console.log({ error, feature });
+				console.log({ error, feature });
 				return (
 					// @TODO: Redirect / Message
 					dispatch(apiError(error, feature))

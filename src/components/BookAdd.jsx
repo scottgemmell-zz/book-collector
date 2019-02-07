@@ -15,12 +15,12 @@ class BookAdd extends Component {
 	handleSubmit(e){
 		e.preventDefault();
 
-		const { books, addBook, history } = this.props;
+		const { addBook, history } = this.props;
 		addBook({ 
 			id: this.idInput.value, 
 			title: this.titleInput.value, 
 			author: this.authorInput.value,
-		}, books);
+		});
 		history.push("/");
 	}
 
@@ -41,7 +41,7 @@ class BookAdd extends Component {
 							}} 
 							id="fieldId" 
 							name="id"
-							value={books.length}
+							value={books.length + 1}
 							placeholderText="ID" 
 							title="Enter an ID"
 							hideLabel={true} 

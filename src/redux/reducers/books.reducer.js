@@ -19,14 +19,14 @@ export const booksReducer = (books = initState, action) => {
 	case SET_BOOKS:
 		return action.books;
 	case ADD_BOOK:
-		return {
+		return [
 			...books,
-			[+action.payload.id]:{
+			{
 				id: action.payload.id,
 				title: action.payload.title,
 				author: action.payload.author,
 			}
-		};
+		];
 	case EDIT_BOOK:
 		return books.map(book => +book.id === +action.id 
 			? { 

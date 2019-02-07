@@ -8,17 +8,15 @@ import {
 	DELETE_BOOK, 
 } from "../constants";
 
-export const addBook = ({ id, author, title }, books ) => {
+export const addBook = ({ id, author, title } ) => {
+	console.log({ id, author, title });
 	return {
 		type: ADD_BOOK,
-		payload: [
-			...books,
-			{
-				id,
-				author,
-				title,
-			}
-		],
+		payload: {
+			id,
+			author,
+			title,
+		},
 	};
 };
 
