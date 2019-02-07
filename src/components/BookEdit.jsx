@@ -14,21 +14,20 @@ class BookEdit extends Component {
 
 	handleSubmit(e){
 		e.preventDefault();
-		const { editBook, history, books } = this.props;
+		const { editBook, history } = this.props;
 
 		editBook({ 
 			id: this.idInput.value, 
 			title: this.titleInput.value, 
 			author: this.authorInput.value, 
-		}, books);
+		});
 		history.push("/");
 	}
 
 	render(){
 
 		const { match: { params: { id } }, books } = this.props;
-		const book = books.find(book => book.id === id);
-		
+		const book = books.find(book => book.id === +id);
 
 		return (
 			<div>

@@ -29,15 +29,12 @@ export const setBooks = ({ books }) => {
 	};
 };
 
-export const editBook = ({ id, author, title }, books) => ({
+export const editBook = ({ id, author, title }) => ({
 	type: EDIT_BOOK,
 	payload: {
-		...books,
-		[+id]:{
-			id,
-			author,
-			title
-		}
+		id,
+		author,
+		title,
 	},
 });
 

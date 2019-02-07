@@ -34,7 +34,7 @@ export const booksMiddleware = () => next => action => {
 			apiRequest({ 
 				body: JSON.stringify(action.payload),
 				method: "PUT", 
-				url: getBookListUrl(), 
+				url: getBookByIdUrl(action.payload.id), 
 				feature: BOOKS, 
 			})
 		);
