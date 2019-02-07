@@ -7,7 +7,7 @@ import {
 } from "../constants";
 
 export const addBook = ({ id, author, title } ) => {
-	console.log({ id, author, title });
+	//console.log({ id, author, title });
 	return {
 		type: ADD_BOOK,
 		payload: {
