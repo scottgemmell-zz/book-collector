@@ -1,32 +1,31 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { Form, Button } from "react-bootstrap";
-import FieldInput from "./FieldInput.jsx";
+import FormAdd from "./FormAdd";
 import { addBook } from "../redux/actions/books.actions";
 
 class BookAdd extends Component {
 	constructor(props){
 		super(props);
 
-		this.handleSubmit = this.handleSubmit.bind(this);
+		this.submit = this.submit.bind(this);
 	}
 
-	handleSubmit(e){
+	submit(e){
 		e.preventDefault();
 
 		const { addBook, history } = this.props;
-		addBook({ 
-			id: this.idInput.value, 
-			title: this.titleInput.value, 
-			author: this.authorInput.value,
-		});
-		history.push("/");
+		// addBook({ 
+		// 	id: this.idInput.value, 
+		// 	title: this.titleInput.value, 
+		// 	author: this.authorInput.value,
+		// });
+		// history.push("/");
 	}
 
 	render(){
 
-		const { books } = this.props;
+		const { books, addBook } = this.props;
 
 		return (
 			<div>
@@ -34,50 +33,7 @@ class BookAdd extends Component {
 					Add
 				</h2>
 				<div className="c-book">
-					<Form onSubmit={this.handleSubmit}>
-						<FieldInput 
-							inputRef={(input) => {
-								this.idInput = input;
-							}} 
-							id="fieldId" 
-							name="id"
-							value={books.length + 1}
-							placeholderText="ID" 
-							title="Enter an ID"
-							hideLabel={true} 
-							modifier="c-controls__input c-controls__input--id"
-						/>
-
-						<FieldInput 
-							inputRef={(input) => {
-								this.titleInput = input;
-							}} 
-							id="fieldTitle" 
-							name="title"
-							value="Child 44"
-							placeholderText="Title" 
-							title="Enter a Title"
-							hideLabel={true} 
-							modifier="c-controls__input c-controls__input--title"
-						/>
-
-						<FieldInput 
-							inputRef={(input) => {
-								this.authorInput = input;
-							}} 
-							id="fieldAuthor" 
-							name="author"
-							value="Tom Rob Smith"
-							placeholderText="Author" 
-							title="Enter a Author"
-							hideLabel={true} 
-							modifier="c-controls__input c-controls__input--author"
-						/>
-						
-						<Button bsStyle="primary" type="submit">
-							Add Book
-						</Button>
-					</Form>
+					<FormAdd books={books} addBook={addBook} />
 				</div>
 			</div>
 		);
@@ -85,7 +41,7 @@ class BookAdd extends Component {
 }
 
 BookAdd.propTypes = {
-	handleSubmit: PropTypes.func,
+	submit: PropTypes.func,
 	addBook: PropTypes.func,
 };
 
