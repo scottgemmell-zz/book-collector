@@ -44,6 +44,12 @@ class BookView extends Component {
 					<div>
 						<dl>
 							<dt>
+								ID
+							</dt>
+							<dd>
+								{book.id}
+							</dd>
+							<dt>
 								Title
 							</dt>
 							<dd>
