@@ -8,11 +8,7 @@ import {
 	Link, 
 	Switch 
 } from "react-router-dom";
-import BookAdd from "./components/BookAdd.jsx";
-import BookList from "./components/BookList.jsx";
-import BookView from "./components/BookView.jsx";
-import BookEdit from "./components/BookEdit.jsx";
-import Page404 from "./components/Page404.jsx";
+import { BookAdd, BookList, BookView, BookEdit, Page404 } from "./components";
 
 class App extends Component {
 
