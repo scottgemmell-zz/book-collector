@@ -1,4 +1,5 @@
-import React from "react"
+import React from "react";
+import { connect } from "react-redux";
 // import PropTypes from "prop-types";
 import { reduxForm, Field } from "redux-form";
 import {
@@ -36,7 +37,6 @@ const renderInput = ({
 	label, 
 	name, 
 	placeholder, 
-	value,
 	type,
 	meta: { touched, error, warning } 
 }) => (
@@ -46,13 +46,12 @@ const renderInput = ({
 		<Form.Label>
 			{label}
 		</Form.Label>
-		<Form.Control
+		<Form.Control  
 			// inputRef={inputRef}
 			className={touched && (error || warning) ? "is-invalid" : ""}
 			type={type} 
 			// required={touched && (error || warning)}
 			// disabled={disabled} 
-			value={value}
 			placeholder={placeholder}
 			{...input} 
 		/>
@@ -61,24 +60,21 @@ const renderInput = ({
 			(error && <span className="text-danger">{error}</span>) ||
 			(warning && <span className="text-warning">{warning}</span>)
 		)}
-
-		
-
 	</Form.Group>
 );
 
 
-let BookForm = ({ handleSubmit, submitting, reset, addBook, books }) => {
+let BookForm = ({ handleSubmit, submitting, reset, fn, book }) => {
+
 	return (
 		<div>
-			<Form onSubmit={handleSubmit(addBook)}>
+			<Form onSubmit={handleSubmit(fn)}>
 	
 				<Field 
 					name="id" 
 					label="ID" 
 					type="text"
 					// placeholder="ID..." 
-					value={books.length}
 					component={renderInput} 
 					validate={[required, number]}
 				/>
@@ -120,5 +116,17 @@ BookForm = reduxForm({
 // BookForm.propTypes = {
 
 // };
+
+const mapStateToProps = (state, ownProps) => {
+	console.log({ ownProps });
+	return { 
+		initialValues: state.books[ownProps.book.id],
+		enableReinitialize: true,
+	};
+};
+
+BookForm = connect(
+	mapStateToProps
+)(BookForm);
 
 export default BookForm;

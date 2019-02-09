@@ -33,7 +33,7 @@ class BookAdd extends Component {
 					Add
 				</h2>
 				<div className="c-book">
-					<BookForm books={books} addBook={addBook} />
+					<BookForm fn={addBook} />
 				</div>
 			</div>
 		);

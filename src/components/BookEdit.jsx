@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { Form, Button } from "react-bootstrap";
-import FieldInput from "./FieldInput.jsx";
+import BookForm from "./BookForm";
 import { editBook } from "../redux/actions/books.actions";
 
 class BookEdit extends Component {
@@ -26,7 +25,7 @@ class BookEdit extends Component {
 
 	render(){
 
-		const { match: { params: { id } }, books } = this.props;
+		const { match: { params: { id } }, books, editBook } = this.props;
 		const book = books.find(book => book.id === +id);
 
 		return (
@@ -34,50 +33,7 @@ class BookEdit extends Component {
 				<h2>
 					Edit
 				</h2>
-				<div className="c-book">
-					<Form onSubmit={this.handleSubmit}>
-						<FieldInput 
-							inputRef={(input) => {
-								this.idInput = input;
-							}} 
-							id="fieldId" 
-							disabled 
-							name="id"
-							value={book.id}
-							title="Enter an ID"
-							hideLabel={true} 
-							modifier="c-controls__input c-controls__input--id"
-						/>
-
-						<FieldInput 
-							inputRef={(input) => {
-								this.titleInput = input;
-							}} 
-							id="fieldTitle" 
-							name="title"
-							value={book.title}
-							title="Enter a Title"
-							hideLabel={true} 
-							modifier="c-controls__input c-controls__input--title"
-						/>
-
-						<FieldInput 
-							inputRef={(input) => {
-								this.authorInput = input;
-							}} 
-							id="fieldAuthor" 
-							name="author"
-							value={book.author}
-							title="Enter a Author"
-							hideLabel={true} 
-							modifier="c-controls__input c-controls__input--author"
-						/>
-						
-						<Button type="submit">
-							Edit Book
-						</Button>
-					</Form>
-				</div>
+				<BookForm book={book} fn={editBook} />
 			</div>
 		);
 	}
