@@ -25,15 +25,15 @@ class BookEdit extends Component {
 
 	render(){
 
-		const { match: { params: { id } }, books, editBook } = this.props;
-		const book = books.find(book => book.id === +id);
+		const { match: { params: { id } }, books, editBook, initialValues } = this.props;
+		// const book = books.find(book => book.id === +id);
 
 		return (
 			<div>
 				<h2>
 					Edit
 				</h2>
-				<BookForm book={book} fn={editBook} />
+				<BookForm fn={editBook} initialValues={initialValues} />
 			</div>
 		);
 	}
@@ -44,8 +44,12 @@ BookEdit.propTypes = {
 	editBook: PropTypes.func,
 };
 
-const mapStateToProps = state => ({
-	books: state.books,
-});
+const mapStateToProps = (state, ownProps) => {
+	//console.log("mapStateToProps", { ownProps });
+	return {
+		books: state.books,
+		initialValues: state.books[ownProps.match.params.id],
+	};
+};
 
 export default connect(mapStateToProps, { editBook })(BookEdit);

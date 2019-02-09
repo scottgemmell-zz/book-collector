@@ -25,7 +25,7 @@ class BookAdd extends Component {
 
 	render(){
 
-		const { books, addBook } = this.props;
+		const { addBook } = this.props;
 
 		return (
 			<div>
@@ -45,9 +45,11 @@ BookAdd.propTypes = {
 	addBook: PropTypes.func,
 };
 
-const mapStateToProps = (state) => {
-	return { 
-		books: state.books
+const mapStateToProps = (state, ownProps) => {
+	//console.log("mapStateToProps", { ownProps });
+	return {
+		//books: state.books,
+		initialValues: {},
 	};
 };
 

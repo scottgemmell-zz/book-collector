@@ -26,25 +26,8 @@
     },
     {
       "id": 2,
-      "title": "Agent 6",
       "author": "Tom Rob Smith",
-      "isbn10": 9780321200686,
-      "isbn13": "978-0321200686",
-      "publisher": "Penguin",
-      "publicationDate": "01-01-1970",
-      "lang": "en",
-      "noOfPages": 726,
-      "image": ""
-    },
-    {
-      "id": 3,
-      "author": "CCC",
-      "title": "C"
-    },
-    {
-      "id": 4,
-      "author": "ZZZ",
-      "title": "Z"
+      "title": "Agent 6"
     }
   ]
 }

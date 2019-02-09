@@ -64,7 +64,9 @@ const renderInput = ({
 );
 
 
-let BookForm = ({ handleSubmit, submitting, reset, fn, book }) => {
+let BookForm = ({ handleSubmit, submitting, reset, fn, initialValues }) => {
+	
+	console.log({initialValues});
 
 	return (
 		<div>
@@ -111,22 +113,11 @@ let BookForm = ({ handleSubmit, submitting, reset, fn, book }) => {
 BookForm = reduxForm({
 	form: "add",
 	destroyOnUnmount: false,
+	enableReinitialize: true,
 })(BookForm);
 
 // BookForm.propTypes = {
 
 // };
-
-const mapStateToProps = (state, ownProps) => {
-	console.log({ ownProps });
-	return { 
-		initialValues: state.books[ownProps.book.id],
-		enableReinitialize: true,
-	};
-};
-
-BookForm = connect(
-	mapStateToProps
-)(BookForm);
 
 export default BookForm;
