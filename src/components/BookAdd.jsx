@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import FormAdd from "./FormAdd";
+import BookForm from "./BookForm";
 import { addBook } from "../redux/actions/books.actions";
 
 class BookAdd extends Component {
@@ -33,7 +33,7 @@ class BookAdd extends Component {
 					Add
 				</h2>
 				<div className="c-book">
-					<FormAdd books={books} addBook={addBook} />
+					<BookForm books={books} addBook={addBook} />
 				</div>
 			</div>
 		);

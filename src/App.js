@@ -26,7 +26,7 @@ class App extends Component {
 								</Link>
 							</h1>
 							<Link to="/add/">
-								<Button bsStyle="primary">
+								<Button>
 									+ Add Book
 								</Button>
 							</Link>
