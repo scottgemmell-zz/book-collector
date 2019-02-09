@@ -69,8 +69,8 @@ class BookView extends Component {
 						</Link>
 						{" "}
 						<Button 
-							bsStyle="danger"
-							bsSize="xsmall"
+							// bsStyle="danger"
+							// bsSize="xsmall"
 							onClick={() => this.handleDelete(id)}
 						>Delete</Button>
 					</div>

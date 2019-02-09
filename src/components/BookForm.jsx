@@ -104,7 +104,7 @@ let BookForm = ({ handleSubmit, submitting, reset, addBook, books }) => {
 						Reset
 					</Button>
 					<Button variant="primary" type="submit" disabled={submitting}>
-						Add Book
+						Submit
 					</Button>
 				</ButtonToolbar>
 			</Form>

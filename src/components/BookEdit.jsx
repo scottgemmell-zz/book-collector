@@ -73,7 +73,7 @@ class BookEdit extends Component {
 							modifier="c-controls__input c-controls__input--author"
 						/>
 						
-						<Button bsStyle="primary" type="submit">
+						<Button type="submit">
 							Edit Book
 						</Button>
 					</Form>
