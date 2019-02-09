@@ -75,6 +75,7 @@ code {
 		flex-flow: row nowrap;
 		justify-content: flex-start;
 		align-items: center;
+		margin-bottom: 20px;
 
 		> a {
 			margin-left: auto;
@@ -113,4 +114,15 @@ code {
 .u-spinner img {
 	width: 55px;
 	height: 55px;
+}
+
+
+// TODO: Remove importants and use own classes
+.was-validated .form-control {
+	background: #fff !important;
+}
+.was-validated .form-control:valid:focus,
+.was-validated .form-control:valid {
+	border: none !important;
+	box-shadow: none !important;
 }

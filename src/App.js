@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Grid } from "react-bootstrap";
+import { Container, Button } from "react-bootstrap";
 import history from "./history";
 import logo from "./logo.svg";
 import { 
@@ -32,7 +32,7 @@ class App extends Component {
 							</Link>
 						</header>
 						<main>
-							<Grid>
+							<Container>
 								<Switch>
 									<Route exact path="/" component={BookList} />
 									<Route path="/add/" component={BookAdd} />
@@ -40,7 +40,7 @@ class App extends Component {
 									<Route path={"/book/edit/:id"} component={BookEdit} />
 									<Route component={Page404} />
 								</Switch>
-							</Grid>
+							</Container>
 						</main>
 					</div>
 				</Router>

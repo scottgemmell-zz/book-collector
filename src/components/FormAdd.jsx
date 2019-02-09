@@ -1,11 +1,10 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { reduxForm, Field } from "redux-form";
-import { Form, Button } from "react-bootstrap";
-import FieldInput from "./FieldInput.jsx";
 import {
-	FormGroup, FormControl, ControlLabel, HelpBlock,
+	Form, Button, ButtonToolbar,
 } from "react-bootstrap";
+import FieldInput from "./FieldInput.jsx";
 
 const validate = values => {
 	const errors = {};
@@ -23,44 +22,49 @@ const validate = values => {
 	return errors;
 };
 
-const renderInput = ({ input, meta, label}) => 
-	<FormGroup
+const renderInput = ({ input, meta, label}) => (
+	<Form.Group
 		//controlId={id}
 	>
-		<ControlLabel>
+		<Form.Label>
 			{label}
-		</ControlLabel>
-		<FormControl
+		</Form.Label>
+		<Form.Control
 			// inputRef={inputRef}
 			type="text" 
+			required={meta.error && meta.touched}
 			// disabled={disabled} 
 			// defaultValue={value}
 			// placeholder={placeholderText}
 			// bsClass={`form-control ${modifier}`}
 			{...input} 
 		/>
-		<FormControl.Feedback />
-		{meta.error && meta.touched && <HelpBlock>{meta.error}</HelpBlock>}
-	</FormGroup>;
+		<Form.Control.Feedback type="invalid">
+			{meta.error}
+		</Form.Control.Feedback>
+
+	</Form.Group>
+);
 
 
 let FormAdd = ({ handleSubmit, submitting, reset, addBook }) => {
 	return (
 		<div>
-			<form onSubmit={handleSubmit(addBook)}>
+			<Form onSubmit={handleSubmit(addBook)} className="was-validated">
 	
 				<Field name="id" label="ID" component={renderInput} />
 				<Field name="title" label="Title" component={renderInput} />
 				<Field name="author" label="Author" component={renderInput} />
 				
-				<button className="btn" type="button" onClick={reset}>
-					Reset
-				</button>
-				{" "}
-				<button className="btn btn-primary" type="submit" disabled={submitting}>
-					Add Book
-				</button>
-			</form>
+				<ButtonToolbar>
+					<Button variant="link" type="button" onClick={reset}>
+						Reset
+					</Button>
+					<Button variant="primary" type="submit" disabled={submitting}>
+						Add Book
+					</Button>
+				</ButtonToolbar>
+			</Form>
 		</div>
 	);
 };
