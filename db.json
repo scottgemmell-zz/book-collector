@@ -14,15 +14,8 @@
     },
     {
       "id": 1,
-      "title": "The Secret Speech",
       "author": "Tom Rob Smith",
-      "isbn10": 9780321200686,
-      "isbn13": "978-0321200686",
-      "publisher": "Penguin",
-      "publicationDate": "01-01-1970",
-      "lang": "en",
-      "noOfPages": 726,
-      "image": ""
+      "title": "The Secret Speech"
     },
     {
       "id": 2,

@@ -64,12 +64,10 @@ const renderInput = ({
 );
 
 
-let BookForm = ({ handleSubmit, submitting, reset, fn, initialValues }) => {
-	
-	console.log({initialValues});
+let BookForm = ({ handleSubmit, pristine, submitting, reset, fn }) => {
 
 	return (
-		<div>
+		<div className="c-book">
 			<Form onSubmit={handleSubmit(fn)}>
 	
 				<Field 
@@ -98,10 +96,19 @@ let BookForm = ({ handleSubmit, submitting, reset, fn, initialValues }) => {
 				/>
 				
 				<ButtonToolbar>
-					<Button variant="link" type="button" onClick={reset}>
+					<Button 
+						onClick={reset} 
+						// disabled={pristine || submitting} 
+						variant="link" 
+						type="button"
+					>
 						Reset
 					</Button>
-					<Button variant="primary" type="submit" disabled={submitting}>
+					<Button 
+						disabled={submitting} 
+						variant="primary" 
+						type="submit"
+					>
 						Submit
 					</Button>
 				</ButtonToolbar>
@@ -111,13 +118,20 @@ let BookForm = ({ handleSubmit, submitting, reset, fn, initialValues }) => {
 };
 
 BookForm = reduxForm({
-	form: "add",
-	destroyOnUnmount: false,
-	enableReinitialize: true,
+	form: "booksForm",
+	// destroyOnUnmount: false,
+	// enableReinitialize: true,
 })(BookForm);
 
 // BookForm.propTypes = {
 
 // };
 
-export default BookForm;
+const mapStateToProps = (state, ownProps) => {
+	//console.log("mapStateToProps", { ownProps });
+	return {
+		initialValues: ownProps.book ? state.books[ownProps.book.id] : null,
+	};
+};
+
+export default connect(mapStateToProps)(BookForm);

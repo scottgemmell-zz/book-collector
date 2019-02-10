@@ -32,9 +32,7 @@ class BookAdd extends Component {
 				<h2>
 					Add
 				</h2>
-				<div className="c-book">
-					<BookForm fn={addBook} />
-				</div>
+				<BookForm fn={addBook} />
 			</div>
 		);
 	}
@@ -45,12 +43,4 @@ BookAdd.propTypes = {
 	addBook: PropTypes.func,
 };
 
-const mapStateToProps = (state, ownProps) => {
-	//console.log("mapStateToProps", { ownProps });
-	return {
-		//books: state.books,
-		initialValues: {},
-	};
-};
-
-export default connect(mapStateToProps, { addBook })(BookAdd);
+export default connect(null, { addBook })(BookAdd);
