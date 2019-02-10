@@ -31,7 +31,7 @@ export const booksReducer = (books = initState, action) => {
 				lang: action.payload.lang, 
 				isbn10: action.payload.isbn10,
 				isbn13: action.payload.isbn13, 
-				publicationDate: action.payload.publicationDate 
+				publicationDate: action.payload.publicationDate
 			}
 		];
 	case EDIT_BOOK:
@@ -47,7 +47,7 @@ export const booksReducer = (books = initState, action) => {
 				lang: action.lang, 
 				isbn10: action.isbn10,
 				isbn13: action.isbn13, 
-				publicationDate: action.publicationDate  
+				publicationDate: action.publicationDate
 			}
 			: book
 		);

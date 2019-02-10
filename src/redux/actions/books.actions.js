@@ -16,7 +16,7 @@ export const addBook = ({
 	lang, 
 	isbn10,
 	isbn13, 
-	publicationDate 
+	publicationDate
 }) => {
 	//console.log({ id, author, title });
 	return {
@@ -31,7 +31,7 @@ export const addBook = ({
 			lang,
 			isbn10: +isbn10,
 			isbn13,
-			publicationDate
+			publicationDate,
 		},
 	};
 };
@@ -57,7 +57,7 @@ export const editBook = ({
 	lang, 
 	isbn10,
 	isbn13, 
-	publicationDate 
+	publicationDate
 }) => ({
 	type: EDIT_BOOK,
 	payload: {

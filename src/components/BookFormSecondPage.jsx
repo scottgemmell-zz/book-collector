@@ -1,19 +1,19 @@
 import React from "react";
 import { connect } from "react-redux";
 // import PropTypes from "prop-types";
-import { reduxForm, Field } from "redux-form";
+import { reduxForm, Field, formValueSelector } from "redux-form";
 import {
-	Form, Button, ButtonToolbar,
+	Form, Button, ButtonToolbar
 } from "react-bootstrap";
 import { 
 	required, 
 	number, 
 	alphaNumeric,  
 } from "../helpers/validation.js";
-import { RenderInput } from "./Renderer";
+import { RenderInput, RenderConditional } from "./Renderer";
 
 
-let BookFormSecondPage = ({ title, handleSubmit, handlePrev, submitting, reset }) => {
+let BookFormSecondPage = ({ hasISBN, title, handleSubmit, handlePrev, submitting, reset }) => {
 
 	return (
 		<div>
@@ -32,6 +32,7 @@ let BookFormSecondPage = ({ title, handleSubmit, handlePrev, submitting, reset }
 						component={RenderInput} 
 						validate={[required, number]}
 					/>
+
 					<Field 
 						id="publisher" 
 						name="publisher" 
@@ -41,24 +42,7 @@ let BookFormSecondPage = ({ title, handleSubmit, handlePrev, submitting, reset }
 						component={RenderInput} 
 						validate={[required, alphaNumeric]}
 					/>
-					<Field 
-						id="isbn10" 
-						name="isbn10" 
-						label="ISBN 10" 
-						type="text"
-						placeholder="ISBN 10..." 
-						component={RenderInput} 
-						validate={[required, number]}
-					/>
-					<Field 
-						id="isbn13" 
-						name="isbn13" 
-						label="ISBN 13" 
-						type="text" 
-						placeholder="ISBN 13..." 
-						component={RenderInput} 
-						validate={[required]}
-					/>
+
 					<Field 
 						id="publicationDate" 
 						name="publicationDate" 
@@ -68,6 +52,40 @@ let BookFormSecondPage = ({ title, handleSubmit, handlePrev, submitting, reset }
 						component={RenderInput} 
 						validate={[required]}
 					/>
+
+					<hr />
+
+					<Field 
+						id="hasISBN" 
+						name="hasISBN" 
+						label="Do you have ISBN numbers?" 
+						component={RenderConditional} 
+						type="radio"
+						radios={[{label: "Yes", value: "yes"}]}
+					/>
+					{(hasISBN) && 
+						<div>
+							<Field 
+								id="isbn10" 
+								name="isbn10" 
+								label="ISBN 10" 
+								type="text"
+								placeholder="ISBN 10..." 
+								component={RenderInput} 
+								validate={[required, number]}
+							/>
+							<Field 
+								id="isbn13" 
+								name="isbn13" 
+								label="ISBN 13" 
+								type="text" 
+								placeholder="ISBN 13..." 
+								component={RenderInput} 
+								validate={[required]}
+							/>
+						</div>}
+					
+					
 					
 					<ButtonToolbar>
 						<Button 
@@ -113,9 +131,15 @@ BookFormSecondPage = reduxForm({
 
 // };
 
+const selector = formValueSelector("booksForm");
+
 const mapStateToProps = (state, ownProps) => {
+
+	const hasISBN = selector(state, "hasISBN");
+
 	//console.log("mapStateToProps", { ownProps });
 	return {
+		hasISBN,
 		initialValues: ownProps.book === undefined ? null : state.books[ownProps.book.id],
 	};
 };
