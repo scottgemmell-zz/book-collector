@@ -10,7 +10,7 @@ class BookForm extends Component {
 	constructor(props){
 		super(props);
 		this.nextPage = this.nextPage.bind(this);
-		this.previousPage = this.previousPage.bind(this);
+		this.prevPage = this.prevPage.bind(this);
 		this.state = {
 			page: 1
 		};
@@ -22,7 +22,7 @@ class BookForm extends Component {
 		this.setState({ page: this.state.page + 1 });
 	}
 	
-	previousPage() {
+	prevPage() {
 		this.setState({ page: this.state.page - 1 });
 	}
 
@@ -38,21 +38,21 @@ class BookForm extends Component {
 				{page === 1 && <BookFormFirstPage 
 					book={book} 
 					title={id ? "Edit" : "Add"} 
-					handleNext={this.nextPage}
+					onSubmit={this.nextPage}
 				/>}
 
 				{page === 2 && <BookFormSecondPage 
 					book={book} 
 					title={id ? "Edit" : "Add"} 
-					handleNext={this.nextPage} 
-					handlePrev={this.previousPage}
+					onSubmit={this.nextPage} 
+					handlePrev={this.prevPage}
 				/>}
 
 				{page === 3 && <BookFormThirdPage 
 					book={book} 
 					title={id ? "Edit" : "Add"} 
-					fn={id ? editBook : addBook} 
-					handlePrev={this.previousPage}
+					onSubmit={id ? editBook : addBook} 
+					handlePrev={this.prevPage}
 				/>}
 			</div>
 		);

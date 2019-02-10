@@ -46,6 +46,17 @@
       "isbn10": 1234567890,
       "isbn13": "123-4567890",
       "publicationDate": "01-01-1970"
+    },
+    {
+      "id": 4,
+      "author": "AAA",
+      "title": "A",
+      "noOfPages": 1,
+      "publisher": "A",
+      "lang": "AA",
+      "isbn10": 123,
+      "isbn13": "456",
+      "publicationDate": "01-01-1970"
     }
   ]
 }

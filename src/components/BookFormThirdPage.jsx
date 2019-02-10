@@ -23,7 +23,7 @@ let BookFormThirdPage = ({ title, handleSubmit, handlePrev, submitting, reset, f
 				Third
 			</h2>
 			<div className="c-book">
-				<Form onSubmit={handleSubmit(fn)}>
+				<Form onSubmit={handleSubmit}>
 		
 					<Field 
 						id="isbn10" 

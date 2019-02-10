@@ -15,7 +15,7 @@ import {
 import RenderInput from "./RenderInput";
 
 
-let BookFormSecondPage = ({ title, handleNext, handlePrev, submitting, reset }) => {
+let BookFormSecondPage = ({ title, handleSubmit, handlePrev, submitting, reset }) => {
 
 	return (
 		<div>
@@ -23,7 +23,7 @@ let BookFormSecondPage = ({ title, handleNext, handlePrev, submitting, reset }) 
 				Second
 			</h2>
 			<div className="c-book">
-				<Form onSubmit={handleNext}>
+				<Form onSubmit={handleSubmit}>
 		
 					<Field 
 						id="noOfPages" 
