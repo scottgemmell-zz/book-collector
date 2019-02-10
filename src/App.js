@@ -9,7 +9,6 @@ import {
 	Switch 
 } from "react-router-dom";
 import { BookList, BookView, BookForm, Page404 } from "./components";
-import { LinkContainer } from "react-router-bootstrap";
 
 class App extends Component {
 

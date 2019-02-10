@@ -12,7 +12,7 @@ import {
 	alpha, 
 	minLength3 
 } from "../helpers/validation.js";
-import RenderInput from "./RenderInput";
+import { RenderInput, RenderSelect } from "./Renderer";
 
 
 let BookFormFirstPage = ({ title, handleSubmit, submitting, reset }) => {
@@ -23,13 +23,11 @@ let BookFormFirstPage = ({ title, handleSubmit, submitting, reset }) => {
 				First
 			</h2>
 			<div className="c-book">
-				<Form onSubmit={handleSubmit}>
-		
+				<Form onSubmit={handleSubmit}>	
 					<Field 
 						id="id" 
 						name="id" 
 						label="ID" 
-						type="text"
 						placeholder="ID..." 
 						component={RenderInput} 
 						validate={[required, number]}
@@ -38,8 +36,18 @@ let BookFormFirstPage = ({ title, handleSubmit, submitting, reset }) => {
 						id="title" 
 						name="title" 
 						label="Title" 
-						type="text" 
-						placeholder="Title..." 
+						component={RenderSelect} 
+						//validate={[required]}
+					>
+						<option value="Mr">Mr</option>
+						<option value="Mrs">Mrs</option>
+						<option value="Miss">Miss</option>
+					</Field>
+					<Field 
+						id="bookTitle" 
+						name="bookTitle" 
+						label="Book Title" 
+						placeholder="Book Title..." 
 						component={RenderInput} 
 						validate={[required, alphaNumeric]}
 					/>
@@ -47,7 +55,6 @@ let BookFormFirstPage = ({ title, handleSubmit, submitting, reset }) => {
 						id="author" 
 						name="author" 
 						label="Author" 
-						type="text" 
 						placeholder="Author..." 
 						component={RenderInput} 
 						validate={[required, alpha, minLength3]}

@@ -8,10 +8,9 @@ import {
 import { 
 	required, 
 	number, 
-	alphaNumeric, 
-	alpha, 
+	alphaNumeric,  
 } from "../helpers/validation.js";
-import RenderInput from "./RenderInput";
+import { RenderInput } from "./Renderer";
 
 
 let BookFormSecondPage = ({ title, handleSubmit, handlePrev, submitting, reset }) => {
@@ -43,13 +42,31 @@ let BookFormSecondPage = ({ title, handleSubmit, handlePrev, submitting, reset }
 						validate={[required, alphaNumeric]}
 					/>
 					<Field 
-						id="lang" 
-						name="lang" 
-						label="Lang" 
-						type="text" 
-						placeholder="Lang..." 
+						id="isbn10" 
+						name="isbn10" 
+						label="ISBN 10" 
+						type="text"
+						placeholder="ISBN 10..." 
 						component={RenderInput} 
-						validate={[required, alpha]}
+						validate={[required, number]}
+					/>
+					<Field 
+						id="isbn13" 
+						name="isbn13" 
+						label="ISBN 13" 
+						type="text" 
+						placeholder="ISBN 13..." 
+						component={RenderInput} 
+						validate={[required]}
+					/>
+					<Field 
+						id="publicationDate" 
+						name="publicationDate" 
+						label="Publication Date" 
+						type="text" 
+						placeholder="Publication Date..." 
+						component={RenderInput} 
+						validate={[required]}
 					/>
 					
 					<ButtonToolbar>

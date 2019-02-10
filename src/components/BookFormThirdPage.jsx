@@ -7,9 +7,9 @@ import {
 } from "react-bootstrap";
 import { 
 	required, 
-	number,
+	alpha,
 } from "../helpers/validation.js";
-import RenderInput from "./RenderInput";
+import { RenderInput } from "./Renderer";
 
 
 let BookFormThirdPage = ({ title, handleSubmit, handlePrev, submitting, reset }) => {
@@ -22,32 +22,14 @@ let BookFormThirdPage = ({ title, handleSubmit, handlePrev, submitting, reset })
 			<div className="c-book">
 				<Form onSubmit={handleSubmit}>
 		
-					<Field 
-						id="isbn10" 
-						name="isbn10" 
-						label="ISBN 10" 
-						type="text"
-						placeholder="ISBN 10..." 
-						component={RenderInput} 
-						validate={[required, number]}
-					/>
-					<Field 
-						id="isbn13" 
-						name="isbn13" 
-						label="ISBN 13" 
+				<Field 
+						id="lang" 
+						name="lang" 
+						label="Lang" 
 						type="text" 
-						placeholder="ISBN 13..." 
+						placeholder="Lang..." 
 						component={RenderInput} 
-						validate={[required]}
-					/>
-					<Field 
-						id="publicationDate" 
-						name="publicationDate" 
-						label="Publication Date" 
-						type="text" 
-						placeholder="Publication Date..." 
-						component={RenderInput} 
-						validate={[required]}
+						validate={[required, alpha]}
 					/>
 					
 					<ButtonToolbar>

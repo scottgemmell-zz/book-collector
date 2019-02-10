@@ -80,7 +80,7 @@ class BookList extends Component {
 							<ListGroup.Item className="" key={book.id} as="li">
 								<h3>
 									<Link className="list__title" to={`/book/view/${book.id}`}>
-										{book.title}
+										{book.bookTitle}
 									</Link>
 								</h3>
 								<p className="h4">

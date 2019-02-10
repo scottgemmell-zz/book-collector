@@ -24,6 +24,7 @@ export const booksReducer = (books = initState, action) => {
 			{
 				id: action.payload.id,
 				title: action.payload.title,
+				bookTitle: action.payload.bookTitle,
 				author: action.payload.author,
 				noOfPages: action.payload.noOfPages,
 				publisher: action.payload.publisher, 
@@ -40,6 +41,7 @@ export const booksReducer = (books = initState, action) => {
 				id: action.id,
 				author: action.author, 
 				title: action.title,
+				bookTitle: action.bookTitle,
 				noOfPages: action.noOfPages,
 				publisher: action.publisher, 
 				lang: action.lang, 
