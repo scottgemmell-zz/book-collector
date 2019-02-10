@@ -35,6 +35,17 @@
       "lang": "en",
       "noOfPages": 726,
       "image": ""
+    },
+    {
+      "id": 3,
+      "author": "Lee Child",
+      "title": "Make Me",
+      "noOfPages": 600,
+      "publisher": "Penguin",
+      "lang": "en",
+      "isbn10": 1234567890,
+      "isbn13": "123-4567890",
+      "publicationDate": "01-01-1970"
     }
   ]
 }

@@ -6,7 +6,17 @@ import {
 	DELETE_BOOK, 
 } from "../constants";
 
-export const addBook = ({ id, author, title } ) => {
+export const addBook = ({ 
+	id, 
+	author, 
+	title, 
+	noOfPages,
+	publisher, 
+	lang, 
+	isbn10,
+	isbn13, 
+	publicationDate 
+}) => {
 	//console.log({ id, author, title });
 	return {
 		type: ADD_BOOK,
@@ -14,6 +24,12 @@ export const addBook = ({ id, author, title } ) => {
 			id: +id,
 			author,
 			title,
+			noOfPages: +noOfPages,
+			publisher,
+			lang,
+			isbn10: +isbn10,
+			isbn13,
+			publicationDate
 		},
 	};
 };
@@ -29,12 +45,28 @@ export const setBooks = ({ books }) => {
 	};
 };
 
-export const editBook = ({ id, author, title }) => ({
+export const editBook = ({ 
+	id, 
+	author, 
+	title, 
+	noOfPages,
+	publisher, 
+	lang, 
+	isbn10,
+	isbn13, 
+	publicationDate 
+}) => ({
 	type: EDIT_BOOK,
 	payload: {
 		id: +id,
 		author,
 		title,
+		noOfPages: +noOfPages,
+		publisher,
+		lang,
+		isbn10: +isbn10,
+		isbn13,
+		publicationDate
 	},
 });
 

@@ -27,7 +27,7 @@ class BookForm extends Component {
 	}
 
 	render(){
-
+		const { page } = this.state;
 		const { match: { params: { id } }, books, addBook, editBook } = this.props;
 		const book = books.find(book => book.id === +id);
 		
@@ -35,20 +35,20 @@ class BookForm extends Component {
 
 		return (
 			<div>
-				{this.state.page === 1 && <BookFormFirstPage 
+				{page === 1 && <BookFormFirstPage 
 					book={book} 
 					title={id ? "Edit" : "Add"} 
 					handleNext={this.nextPage}
 				/>}
 
-{this.state.page === 2 && <BookFormSecondPage 
+				{page === 2 && <BookFormSecondPage 
 					book={book} 
 					title={id ? "Edit" : "Add"} 
 					handleNext={this.nextPage} 
 					handlePrev={this.previousPage}
 				/>}
 
-{this.state.page === 3 && <BookFormThirdPage 
+				{page === 3 && <BookFormThirdPage 
 					book={book} 
 					title={id ? "Edit" : "Add"} 
 					fn={id ? editBook : addBook} 

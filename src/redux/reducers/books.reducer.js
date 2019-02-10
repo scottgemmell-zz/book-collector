@@ -25,6 +25,12 @@ export const booksReducer = (books = initState, action) => {
 				id: action.payload.id,
 				title: action.payload.title,
 				author: action.payload.author,
+				noOfPages: action.payload.noOfPages,
+				publisher: action.payload.publisher, 
+				lang: action.payload.lang, 
+				isbn10: action.payload.isbn10,
+				isbn13: action.payload.isbn13, 
+				publicationDate: action.payload.publicationDate 
 			}
 		];
 	case EDIT_BOOK:
@@ -33,7 +39,13 @@ export const booksReducer = (books = initState, action) => {
 				// ...book, 
 				id: action.id,
 				author: action.author, 
-				title: action.title 
+				title: action.title,
+				noOfPages: action.noOfPages,
+				publisher: action.publisher, 
+				lang: action.lang, 
+				isbn10: action.isbn10,
+				isbn13: action.isbn13, 
+				publicationDate: action.publicationDate  
 			}
 			: book
 		);
