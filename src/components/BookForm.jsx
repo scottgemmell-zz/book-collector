@@ -37,6 +37,7 @@ class BookForm extends Component {
 			<div>
 				{page === 1 && <BookFormFirstPage 
 					book={book} 
+					len={books.length}
 					title={id ? "Edit" : "Add"} 
 					onSubmit={this.nextPage}
 				/>}

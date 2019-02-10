@@ -6,6 +6,7 @@ const Renderer = render => ({
 	id,
 	input, 
 	label,
+	disabled, 
 	placeholder, 
 	meta: { touched, error },
 	...rest, 
@@ -16,7 +17,7 @@ const Renderer = render => ({
 		<Form.Label>
 			{label}
 		</Form.Label>
-		{render(input, touched, error, placeholder, rest)}
+		{render(input, touched, error, disabled, placeholder, rest)}
 		{/* <Form.Control.Feedback type="invalid">{error}</Form.Control.Feedback> */}
 		{touched && (
 			error && <span className="text-danger">{error}</span>
@@ -24,15 +25,16 @@ const Renderer = render => ({
 	</Form.Group>;
 /*eslint-enable */
 
-export const RenderInput = Renderer((input, touched, error, placeholder) => 
+export const RenderInput = Renderer((input, touched, error, disabled, placeholder) => 
 	<Form.Control 
-		{...input}
+		{...input} 
+		disabled={disabled}
 		className={touched && (error) ? "is-invalid" : ""}
 		placeholder={placeholder}
 	/>
 );
 
-export const RenderSelect = Renderer((input, touched, error, placeholder, {children}) => {
+export const RenderSelect = Renderer((input, touched, error, disabled, placeholder, {children}) => {
 	console.log("chi", children);
 	return <Form.Control 
 		{...input}

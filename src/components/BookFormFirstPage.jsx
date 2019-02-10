@@ -27,8 +27,8 @@ let BookFormFirstPage = ({ title, handleSubmit, submitting, reset }) => {
 					<Field 
 						id="id" 
 						name="id" 
-						label="ID" 
-						placeholder="ID..." 
+						label="ID"
+						disabled={true}
 						component={RenderInput} 
 						validate={[required, number]}
 					/>
@@ -98,9 +98,11 @@ BookFormFirstPage = reduxForm({
 // };
 
 const mapStateToProps = (state, ownProps) => {
-	//console.log("mapStateToProps", { ownProps });
+	console.log("mapStateToProps", { ownProps });
 	return {
-		initialValues: ownProps.book === undefined ? null : state.books[ownProps.book.id],
+		initialValues: ownProps.book === undefined 
+			? { id: ownProps.len }
+			: state.books[ownProps.book.id],
 	};
 };
 
