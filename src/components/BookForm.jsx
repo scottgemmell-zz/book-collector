@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import BookFormFirstPage from "./BookFormFirstPage";
+import BookFormSecondPage from "./BookFormSecondPage";
+import BookFormThirdPage from "./BookFormThirdPage";
 import { addBook, editBook } from "../redux/actions/books.actions";
 
 class BookForm extends Component {
@@ -36,7 +38,21 @@ class BookForm extends Component {
 				{this.state.page === 1 && <BookFormFirstPage 
 					book={book} 
 					title={id ? "Edit" : "Add"} 
+					handleNext={this.nextPage}
+				/>}
+
+{this.state.page === 2 && <BookFormSecondPage 
+					book={book} 
+					title={id ? "Edit" : "Add"} 
+					handleNext={this.nextPage} 
+					handlePrev={this.previousPage}
+				/>}
+
+{this.state.page === 3 && <BookFormThirdPage 
+					book={book} 
+					title={id ? "Edit" : "Add"} 
 					fn={id ? editBook : addBook} 
+					handlePrev={this.previousPage}
 				/>}
 			</div>
 		);

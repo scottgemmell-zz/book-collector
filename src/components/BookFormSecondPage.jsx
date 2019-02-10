@@ -15,12 +15,12 @@ import {
 import RenderInput from "./RenderInput";
 
 
-let BookFormFirstPage = ({ title, handleNext, submitting, reset, fn }) => {
+let BookFormSecondPage = ({ title, handleNext, handlePrev, submitting, reset, fn }) => {
 
 	return (
 		<div>
 			<h2>
-				First
+				Second
 			</h2>
 			<div className="c-book">
 				<Form onSubmit={handleNext}>
@@ -63,6 +63,14 @@ let BookFormFirstPage = ({ title, handleNext, submitting, reset, fn }) => {
 							Reset
 						</Button>
 						{" "}
+						<Button
+							onClick={handlePrev}
+							variant="link"
+							type="button"
+						>
+							Previous
+						</Button>
+						{" "}
 						<Button 
 							disabled={submitting} 
 							variant="primary" 
@@ -77,13 +85,13 @@ let BookFormFirstPage = ({ title, handleNext, submitting, reset, fn }) => {
 	);
 };
 
-BookFormFirstPage = reduxForm({
+BookFormSecondPage = reduxForm({
 	form: "booksForm",
 	destroyOnUnmount: false,
 	enableReinitialize: true,
-})(BookFormFirstPage);
+})(BookFormSecondPage);
 
-// BookFormFirstPage.propTypes = {
+// BookFormSecondPage.propTypes = {
 
 // };
 
@@ -94,4 +102,4 @@ const mapStateToProps = (state, ownProps) => {
 	};
 };
 
-export default connect(mapStateToProps)(BookFormFirstPage);
+export default connect(mapStateToProps)(BookFormSecondPage);
