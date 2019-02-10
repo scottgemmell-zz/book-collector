@@ -15,7 +15,7 @@ import {
 import RenderInput from "./RenderInput";
 
 
-let BookFormFirstPage = ({ title, handleNext, submitting, reset, fn }) => {
+let BookFormFirstPage = ({ title, handleNext, submitting, reset }) => {
 
 	return (
 		<div>
@@ -81,6 +81,7 @@ BookFormFirstPage = reduxForm({
 	form: "booksForm",
 	destroyOnUnmount: false,
 	enableReinitialize: true,
+	forceUnregisterOnUnmount: true,
 })(BookFormFirstPage);
 
 // BookFormFirstPage.propTypes = {

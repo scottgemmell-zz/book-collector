@@ -62,6 +62,45 @@ class BookView extends Component {
 							<dd className="col-sm-9">
 								{book.author}
 							</dd>
+
+							<dt className="col-sm-3">
+								Number of Pages
+							</dt>
+							<dd className="col-sm-9">
+								{book.noOfPages}
+							</dd>
+							<dt className="col-sm-3">
+								Publisher
+							</dt>
+							<dd className="col-sm-9">
+								{book.publisher}
+							</dd>
+							<dt className="col-sm-3">
+								Lang
+							</dt>
+
+							<dd className="col-sm-9">
+								{book.lang}
+							</dd>
+							<dt className="col-sm-3">
+								ISBN 10
+							</dt>
+							<dd className="col-sm-9">
+								{book.isbn10}
+							</dd>
+							<dt className="col-sm-3">
+								ISBN 13
+							</dt>
+							<dd className="col-sm-9">
+								{book.isbn13}
+							</dd>
+							
+							<dt className="col-sm-3">
+								Publication Date
+							</dt>
+							<dd className="col-sm-9">
+								{book.publicationDate}
+							</dd>
 						</dl>		
 					</div>
 					<ButtonToolbar>

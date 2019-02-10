@@ -89,6 +89,7 @@ BookFormThirdPage = reduxForm({
 	form: "booksForm",
 	destroyOnUnmount: false,
 	enableReinitialize: true,
+	forceUnregisterOnUnmount: true,
 })(BookFormThirdPage);
 
 // BookFormThirdPage.propTypes = {
