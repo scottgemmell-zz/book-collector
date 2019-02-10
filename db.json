@@ -2,15 +2,8 @@
   "books": [
     {
       "id": 0,
-      "title": "Child 44",
       "author": "Tom Rob Smith",
-      "isbn10": 9780321200686,
-      "isbn13": "978-0321200686",
-      "publisher": "Penguin",
-      "publicationDate": "01-01-1970",
-      "lang": "en",
-      "noOfPages": 726,
-      "image": ""
+      "title": "Child 44"
     },
     {
       "id": 1,

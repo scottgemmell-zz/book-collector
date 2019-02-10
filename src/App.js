@@ -8,7 +8,7 @@ import {
 	Link, 
 	Switch 
 } from "react-router-dom";
-import { BookAdd, BookList, BookView, BookEdit, Page404 } from "./components";
+import { BookList, BookView, BookAddEdit, Page404 } from "./components";
 
 class App extends Component {
 
@@ -25,7 +25,7 @@ class App extends Component {
 									Books
 								</Link>
 							</h1>
-							<Link to="/add/">
+							<Link to="/book/add/">
 								<Button>
 									+ Add Book
 								</Button>
@@ -35,9 +35,9 @@ class App extends Component {
 							<Container>
 								<Switch>
 									<Route exact path="/" component={BookList} />
-									<Route path="/add/" component={BookAdd} />
+									<Route path="/book/add/" component={BookAddEdit} />
+									<Route path={"/book/edit/:id"} component={BookAddEdit} />
 									<Route path={"/book/view/:id"} component={BookView} />
-									<Route path={"/book/edit/:id"} component={BookEdit} />
 									<Route component={Page404} />
 								</Switch>
 							</Container>

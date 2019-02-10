@@ -5,32 +5,13 @@ import { reduxForm, Field } from "redux-form";
 import {
 	Form, Button, ButtonToolbar,
 } from "react-bootstrap";
-
-const required = value => 
-	(value || typeof value === "number" 
-		? undefined 
-		: "Required"
-	);
-
-const number = value => 
-	value && isNaN(Number(value)) 
-		? "Must be a number" 
-		: undefined;
-
-const alphaNumeric = value =>
-	value && /[^a-zA-Z0-9 ]/i.test(value)
-		? "Only alphanumeric characters"
-		: undefined;
-	
-const alpha = value =>
-	value && /[^a-zA-Z ]/i.test(value)
-		? "Only alpha characters"
-		: undefined;
-
-export const minLength = min => value =>
-	value && value.length < min ? `Must be ${min} characters or more` : undefined
-
-export const minLength3 = minLength(3);
+import { 
+	required, 
+	number, 
+	alphaNumeric, 
+	alpha, 
+	minLength3 
+} from "../helpers/validation.js";
 
 const renderInput = ({ 
 	input, 
@@ -46,11 +27,9 @@ const renderInput = ({
 		<Form.Label>
 			{label}
 		</Form.Label>
-		<Form.Control  
-			// inputRef={inputRef}
+		<Form.Control 
 			className={touched && (error || warning) ? "is-invalid" : ""}
 			type={type} 
-			// required={touched && (error || warning)}
 			// disabled={disabled} 
 			placeholder={placeholder}
 			{...input} 
@@ -64,63 +43,68 @@ const renderInput = ({
 );
 
 
-let BookForm = ({ handleSubmit, pristine, submitting, reset, fn }) => {
+let BookForm = ({ title, handleSubmit, pristine, submitting, reset, fn }) => {
 
 	return (
-		<div className="c-book">
-			<Form onSubmit={handleSubmit(fn)}>
-	
-				<Field 
-					name="id" 
-					label="ID" 
-					type="text"
-					// placeholder="ID..." 
-					component={renderInput} 
-					validate={[required, number]}
-				/>
-				<Field 
-					name="title" 
-					label="Title" 
-					type="text" 
-					placeholder="Title..." 
-					component={renderInput} 
-					validate={[required, alphaNumeric]}
-				/>
-				<Field 
-					name="author" 
-					label="Author" 
-					type="text" 
-					placeholder="Author..." 
-					component={renderInput} 
-					validate={[required, alpha, minLength3]}
-				/>
-				
-				<ButtonToolbar>
-					<Button 
-						onClick={reset} 
-						// disabled={pristine || submitting} 
-						variant="link" 
-						type="button"
-					>
-						Reset
-					</Button>
-					<Button 
-						disabled={submitting} 
-						variant="primary" 
-						type="submit"
-					>
-						Submit
-					</Button>
-				</ButtonToolbar>
-			</Form>
+		<div>
+			<h2>
+				{title}
+			</h2>
+			<div className="c-book">
+				<Form onSubmit={handleSubmit(fn)}>
+		
+					<Field 
+						name="id" 
+						label="ID" 
+						type="text"
+						// placeholder="ID..." 
+						component={renderInput} 
+						validate={[required, number]}
+					/>
+					<Field 
+						name="title" 
+						label="Title" 
+						type="text" 
+						placeholder="Title..." 
+						component={renderInput} 
+						validate={[required, alphaNumeric]}
+					/>
+					<Field 
+						name="author" 
+						label="Author" 
+						type="text" 
+						placeholder="Author..." 
+						component={renderInput} 
+						validate={[required, alpha, minLength3]}
+					/>
+					
+					<ButtonToolbar>
+						<Button 
+							onClick={reset} 
+							// disabled={pristine || submitting} 
+							variant="link" 
+							type="button"
+						>
+							Reset
+						</Button>
+						<Button 
+							disabled={submitting} 
+							variant="primary" 
+							type="submit"
+						>
+							Submit
+						</Button>
+					</ButtonToolbar>
+				</Form>
+			</div>
 		</div>
 	);
 };
 
 BookForm = reduxForm({
 	form: "booksForm",
-	// destroyOnUnmount: false,
-	// enableReinitialize: true,
+	destroyOnUnmount: false,
+	enableReinitialize: true,
 })(BookForm);
 
 // BookForm.propTypes = {
@@ -130,7 +114,7 @@ BookForm = reduxForm({
 const mapStateToProps = (state, ownProps) => {
 	//console.log("mapStateToProps", { ownProps });
 	return {
-		initialValues: ownProps.book ? state.books[ownProps.book.id] : null,
+		initialValues: ownProps.book === undefined ? null : state.books[ownProps.book.id],
 	};
 };
 
