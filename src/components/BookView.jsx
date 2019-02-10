@@ -43,23 +43,23 @@ class BookView extends Component {
 				</h2>
 				<div className="c-book">
 					<div>
-						<dl>
-							<dt>
+						<dl className="row">
+							<dt className="col-sm-3">
 								ID
 							</dt>
-							<dd>
+							<dd className="col-sm-9">
 								{book.id}
 							</dd>
-							<dt>
+							<dt className="col-sm-3">
 								Title
 							</dt>
-							<dd>
+							<dd className="col-sm-9">
 								{book.title}
 							</dd>
-							<dt>
+							<dt className="col-sm-3">
 								Author
 							</dt>
-							<dd>
+							<dd className="col-sm-9">
 								{book.author}
 							</dd>
 						</dl>		
