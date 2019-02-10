@@ -1,19 +1,40 @@
 {
-  "books": [
-    {
-      "id": 0,
-      "author": "Tom Rob Smith",
-      "title": "Child 44"
-    },
-    {
-      "id": 1,
-      "author": "Tom Rob Smith",
-      "title": "The Secret Speech"
-    },
-    {
-      "id": 2,
-      "author": "Tom Rob Smith",
-      "title": "Agent 6"
-    }
-  ]
+	"books": [
+		{
+			"id": 1,
+			"title": "Child 44",
+			"author": "Tom Rob Smith",
+			"isbn10": 9780321200686,
+			"isbn13": "978-0321200686",
+			"publisher": "Penguin",
+			"publicationDate": "01-01-1970",
+			"lang": "en",
+			"noOfPages": 726,
+			"image": ""
+		},
+		{
+			"id": 2,
+			"title": "The Secret Speech",
+			"author": "Tom Rob Smith",
+			"isbn10": 9780321200686,
+			"isbn13": "978-0321200686",
+			"publisher": "Penguin",
+			"publicationDate": "01-01-1970",
+			"lang": "en",
+			"noOfPages": 726,
+			"image": ""
+		},
+		{
+			"id": 3,
+			"title": "Agent 6",
+			"author": "Tom Rob Smith",
+			"isbn10": 9780321200686,
+			"isbn13": "978-0321200686",
+			"publisher": "Penguin",
+			"publicationDate": "01-01-1970",
+			"lang": "en",
+			"noOfPages": 726,
+			"image": ""
+		}
+	]
 }
