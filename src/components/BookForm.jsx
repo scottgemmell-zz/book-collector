@@ -19,7 +19,7 @@ const renderInput = ({
 	label,
 	placeholder, 
 	type,
-	meta: { touched, error, warning } 
+	meta: { touched, error } 
 }) => (
 	<Form.Group
 		controlId={id} 
@@ -28,7 +28,7 @@ const renderInput = ({
 			{label}
 		</Form.Label>
 		<Form.Control 
-			className={touched && (error || warning) ? "is-invalid" : ""}
+			className={touched && (error) ? "is-invalid" : ""}
 			type={type} 
 			// disabled={disabled} 
 			placeholder={placeholder}
@@ -36,8 +36,7 @@ const renderInput = ({
 		/>
 		{/* <Form.Control.Feedback type="invalid">{error}</Form.Control.Feedback> */}
 		{touched && (
-			(error && <span className="text-danger">{error}</span>) ||
-			(warning && <span className="text-warning">{warning}</span>)
+			error && <span className="text-danger">{error}</span>
 		)}
 	</Form.Group>
 );
