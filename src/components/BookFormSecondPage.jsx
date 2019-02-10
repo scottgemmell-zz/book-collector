@@ -26,31 +26,31 @@ let BookFormSecondPage = ({ title, handleNext, handlePrev, submitting, reset, fn
 				<Form onSubmit={handleNext}>
 		
 					<Field 
-						id="id" 
-						name="id" 
-						label="ID" 
+						id="noOfPages" 
+						name="noOfPages" 
+						label="Number of Pages" 
 						type="text"
-						// placeholder="ID..." 
+						placeholder="Number of Pages..." 
 						component={RenderInput} 
 						validate={[required, number]}
 					/>
 					<Field 
-						id="title" 
-						name="title" 
-						label="Title" 
+						id="publisher" 
+						name="publisher" 
+						label="Publisher" 
 						type="text" 
-						placeholder="Title..." 
+						placeholder="Publisher..." 
 						component={RenderInput} 
 						validate={[required, alphaNumeric]}
 					/>
 					<Field 
-						id="author" 
-						name="author" 
-						label="Author" 
+						id="lang" 
+						name="lang" 
+						label="Lang" 
 						type="text" 
-						placeholder="Author..." 
+						placeholder="Lang..." 
 						component={RenderInput} 
-						validate={[required, alpha, minLength3]}
+						validate={[required, alpha]}
 					/>
 					
 					<ButtonToolbar>

@@ -26,31 +26,31 @@ let BookFormThirdPage = ({ title, handleSubmit, handlePrev, submitting, reset, f
 				<Form onSubmit={handleSubmit(fn)}>
 		
 					<Field 
-						id="id" 
-						name="id" 
-						label="ID" 
+						id="isbn10" 
+						name="isbn10" 
+						label="ISBN 10" 
 						type="text"
-						// placeholder="ID..." 
+						placeholder="ISBN 10..." 
 						component={RenderInput} 
 						validate={[required, number]}
 					/>
 					<Field 
-						id="title" 
-						name="title" 
-						label="Title" 
+						id="isbn13" 
+						name="isbn13" 
+						label="ISBN 13" 
 						type="text" 
-						placeholder="Title..." 
+						placeholder="ISBN 13..." 
 						component={RenderInput} 
-						validate={[required, alphaNumeric]}
+						validate={[required]}
 					/>
 					<Field 
-						id="author" 
-						name="author" 
-						label="Author" 
+						id="publicationDate" 
+						name="publicationDate" 
+						label="Publication Date" 
 						type="text" 
-						placeholder="Author..." 
+						placeholder="Publication Date..." 
 						component={RenderInput} 
-						validate={[required, alpha, minLength3]}
+						validate={[required]}
 					/>
 					
 					<ButtonToolbar>

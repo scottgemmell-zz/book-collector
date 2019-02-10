@@ -30,7 +30,7 @@ let BookFormFirstPage = ({ title, handleNext, submitting, reset, fn }) => {
 						name="id" 
 						label="ID" 
 						type="text"
-						// placeholder="ID..." 
+						placeholder="ID..." 
 						component={RenderInput} 
 						validate={[required, number]}
 					/>
