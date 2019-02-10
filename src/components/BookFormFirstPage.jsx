@@ -80,8 +80,9 @@ let BookFormFirstPage = ({ title, handleSubmit, submitting, reset }) => {
 BookFormFirstPage = reduxForm({
 	form: "booksForm",
 	destroyOnUnmount: false,
-	enableReinitialize: true,
 	forceUnregisterOnUnmount: true,
+	// Refreshes data {book} || ""
+	enableReinitialize: true,
 })(BookFormFirstPage);
 
 // BookFormFirstPage.propTypes = {

@@ -36,7 +36,7 @@ export const booksReducer = (books = initState, action) => {
 	case EDIT_BOOK:
 		return books.map(book => +book.id === +action.id 
 			? { 
-				// ...book, 
+				...book, 
 				id: action.id,
 				author: action.author, 
 				title: action.title,

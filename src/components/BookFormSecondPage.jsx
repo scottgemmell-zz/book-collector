@@ -88,8 +88,8 @@ let BookFormSecondPage = ({ title, handleSubmit, handlePrev, submitting, reset }
 BookFormSecondPage = reduxForm({
 	form: "booksForm",
 	destroyOnUnmount: false,
-	enableReinitialize: true,
 	forceUnregisterOnUnmount: true,
+	enableReinitialize: true,
 })(BookFormSecondPage);
 
 // BookFormSecondPage.propTypes = {

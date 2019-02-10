@@ -15,7 +15,7 @@ import {
 import RenderInput from "./RenderInput";
 
 
-let BookFormThirdPage = ({ title, handleSubmit, handlePrev, submitting, reset, fn }) => {
+let BookFormThirdPage = ({ title, handleSubmit, handlePrev, submitting, reset }) => {
 
 	return (
 		<div>
@@ -88,8 +88,8 @@ let BookFormThirdPage = ({ title, handleSubmit, handlePrev, submitting, reset, f
 BookFormThirdPage = reduxForm({
 	form: "booksForm",
 	destroyOnUnmount: false,
-	enableReinitialize: true,
 	forceUnregisterOnUnmount: true,
+	enableReinitialize: true,
 })(BookFormThirdPage);
 
 // BookFormThirdPage.propTypes = {
