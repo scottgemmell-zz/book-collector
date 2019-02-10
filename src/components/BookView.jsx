@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { deleteBook } from "../redux/actions/books.actions";
-import { Button } from "react-bootstrap";
+import { Button, ButtonToolbar } from "react-bootstrap";
+import { LinkContainer } from 'react-router-bootstrap';
 import * as R from "ramda";
 
 class BookView extends Component {
@@ -63,17 +64,19 @@ class BookView extends Component {
 							</dd>
 						</dl>		
 					</div>
-					<div className="list__action">
-						<Link className="list__title" to={`/book/edit/${book.id}`}>
-							Edit	
-						</Link>
+					<ButtonToolbar>
+						<LinkContainer to={`/book/edit/${book.id}`}>
+							<Button variant="link" >
+								Edit	
+							</Button>
+						</LinkContainer>
 						{" "}
 						<Button 
 							// bsStyle="danger"
 							// bsSize="xsmall"
 							onClick={() => this.handleDelete(id)}
 						>Delete</Button>
-					</div>
+					</ButtonToolbar>
 				</div>
 			</>
 		);	
