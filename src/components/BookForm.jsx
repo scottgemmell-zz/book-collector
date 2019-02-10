@@ -14,15 +14,15 @@ import {
 } from "../helpers/validation.js";
 
 const renderInput = ({ 
+	id,
 	input, 
-	label, 
-	name, 
+	label,
 	placeholder, 
 	type,
 	meta: { touched, error, warning } 
 }) => (
 	<Form.Group
-		controlId={name} 
+		controlId={id} 
 	>
 		<Form.Label>
 			{label}
@@ -54,6 +54,7 @@ let BookForm = ({ title, handleSubmit, pristine, submitting, reset, fn }) => {
 				<Form onSubmit={handleSubmit(fn)}>
 		
 					<Field 
+						id="id" 
 						name="id" 
 						label="ID" 
 						type="text"
@@ -62,6 +63,7 @@ let BookForm = ({ title, handleSubmit, pristine, submitting, reset, fn }) => {
 						validate={[required, number]}
 					/>
 					<Field 
+						id="title" 
 						name="title" 
 						label="Title" 
 						type="text" 
@@ -70,6 +72,7 @@ let BookForm = ({ title, handleSubmit, pristine, submitting, reset, fn }) => {
 						validate={[required, alphaNumeric]}
 					/>
 					<Field 
+						id="author" 
 						name="author" 
 						label="Author" 
 						type="text" 
