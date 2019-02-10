@@ -12,9 +12,10 @@ import {
 } from "../helpers/validation.js";
 import { RenderInput, RenderConditional } from "./Renderer";
 
+let BookFormSecondPage = ({ hasISBN, hasISBN10, hasISBN13, title, handleSubmit, handlePrev, submitting, reset }) => {
 
-let BookFormSecondPage = ({ hasISBN, title, handleSubmit, handlePrev, submitting, reset }) => {
-
+	console.log({ hasISBN,hasISBN10, hasISBN13 });
+	
 	return (
 		<div>
 			<h2>
@@ -55,14 +56,18 @@ let BookFormSecondPage = ({ hasISBN, title, handleSubmit, handlePrev, submitting
 
 					<hr />
 
-					<Field 
+					{title === "Add" && <Field 
 						id="hasISBN" 
 						name="hasISBN" 
 						label="Do you have ISBN numbers?" 
 						component={RenderConditional} 
 						type="radio"
-						radios={[{label: "Yes", value: "yes"}]}
-					/>
+						radios={[{
+							label: "Yes",
+							//checked: `${hasISBN10 === undefined || hasISBN13 === undefined}`
+						}]}
+					/>}
+
 					{(hasISBN) && 
 						<div>
 							<Field 
@@ -72,7 +77,7 @@ let BookFormSecondPage = ({ hasISBN, title, handleSubmit, handlePrev, submitting
 								type="text"
 								placeholder="ISBN 10..." 
 								component={RenderInput} 
-								validate={[required, number]}
+								//validate={[required, number]}
 							/>
 							<Field 
 								id="isbn13" 
@@ -81,7 +86,7 @@ let BookFormSecondPage = ({ hasISBN, title, handleSubmit, handlePrev, submitting
 								type="text" 
 								placeholder="ISBN 13..." 
 								component={RenderInput} 
-								validate={[required]}
+								//validate={[required]}
 							/>
 						</div>}
 					
@@ -136,10 +141,14 @@ const selector = formValueSelector("booksForm");
 const mapStateToProps = (state, ownProps) => {
 
 	const hasISBN = selector(state, "hasISBN");
+	const hasISBN10 = selector(state, "isbn10");
+	const hasISBN13 = selector(state, "isbn13");
 
 	//console.log("mapStateToProps", { ownProps });
 	return {
 		hasISBN,
+		hasISBN10,
+		hasISBN13,
 		initialValues: ownProps.book === undefined ? null : state.books[ownProps.book.id],
 	};
 };
