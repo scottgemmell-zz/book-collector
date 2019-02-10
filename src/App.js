@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Button } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import history from "./history";
 import logo from "./logo.svg";
 import { 
@@ -9,6 +9,7 @@ import {
 	Switch 
 } from "react-router-dom";
 import { BookList, BookView, BookForm, Page404 } from "./components";
+import { LinkContainer } from "react-router-bootstrap";
 
 class App extends Component {
 
@@ -25,11 +26,7 @@ class App extends Component {
 									Books
 								</Link>
 							</h1>
-							<Link to="/book/add/">
-								<Button>
-									+ Add Book
-								</Button>
-							</Link>
+							
 						</header>
 						<main>
 							<Container>

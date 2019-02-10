@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { fetchBooks } from "../redux/actions/books.actions";
 import * as R from "ramda";
 import spinner from "../assets/svg/spinner.svg";
+import { Button, Row, Col, ListGroup } from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
 
 class BookList extends Component {
 
@@ -57,28 +59,37 @@ class BookList extends Component {
 
 		return (
 			<div>
-				<h2>
-					BookList
-				</h2>
+				<Row>
+					<Col>
+						<h2>
+							BookList
+						</h2>
+					</Col>
+					<Col className="text-right">
+						<LinkContainer to="/book/add/">
+							<Button variant="outline-primary">
+								+ Add Book
+							</Button>
+						</LinkContainer>
+					</Col>
+				</Row>
 	
-				<ul className="list">
+				<ListGroup as="ul">
 					{books.map((book) => {
 						return (
-							<li className="list__item c-book" key={book.id}>
-								<div>
-									<h3>
-										<Link className="list__title" to={`/book/view/${book.id}`}>
-											{book.title}
-										</Link>
-									</h3>
-									<p className="h4">
-										{book.author}
-									</p>
-								</div>
-							</li>
+							<ListGroup.Item className="" key={book.id} as="li">
+								<h3>
+									<Link className="list__title" to={`/book/view/${book.id}`}>
+										{book.title}
+									</Link>
+								</h3>
+								<p className="h4">
+									{book.author}
+								</p>
+							</ListGroup.Item>
 						);
 					})}
-				</ul>
+				</ListGroup>
 			</div>
 		);
 	}

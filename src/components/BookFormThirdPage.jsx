@@ -7,10 +7,7 @@ import {
 } from "react-bootstrap";
 import { 
 	required, 
-	number, 
-	alphaNumeric, 
-	alpha, 
-	minLength3 
+	number,
 } from "../helpers/validation.js";
 import RenderInput from "./RenderInput";
 
@@ -90,6 +87,7 @@ BookFormThirdPage = reduxForm({
 	destroyOnUnmount: false,
 	forceUnregisterOnUnmount: true,
 	enableReinitialize: true,
+	keepDirtyOnReinitialize: true,
 })(BookFormThirdPage);
 
 // BookFormThirdPage.propTypes = {

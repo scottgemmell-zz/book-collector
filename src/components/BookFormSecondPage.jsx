@@ -10,7 +10,6 @@ import {
 	number, 
 	alphaNumeric, 
 	alpha, 
-	minLength3 
 } from "../helpers/validation.js";
 import RenderInput from "./RenderInput";
 
@@ -90,6 +89,7 @@ BookFormSecondPage = reduxForm({
 	destroyOnUnmount: false,
 	forceUnregisterOnUnmount: true,
 	enableReinitialize: true,
+	keepDirtyOnReinitialize: true,
 })(BookFormSecondPage);
 
 // BookFormSecondPage.propTypes = {

@@ -81,8 +81,9 @@ BookFormFirstPage = reduxForm({
 	form: "booksForm",
 	destroyOnUnmount: false,
 	forceUnregisterOnUnmount: true,
-	// Refreshes data {book} || ""
+	// Refreshes data {book} || "". Reinitializes everytime.
 	enableReinitialize: true,
+	keepDirtyOnReinitialize: true,
 })(BookFormFirstPage);
 
 // BookFormFirstPage.propTypes = {

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
 import { deleteBook } from "../redux/actions/books.actions";
 import { Button, ButtonToolbar } from "react-bootstrap";
 import { LinkContainer } from 'react-router-bootstrap';

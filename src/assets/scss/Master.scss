@@ -51,9 +51,10 @@ code {
 
 .c-book {
 	background-color: #f0f0f0;
+	border: 1px solid rgba(0,0,0,.125);
 	margin-bottom: 20px;
 	padding: 20px;
-	border-radius: 10px;
+	border-radius: .25rem;
 }
 
 .App {
@@ -120,4 +121,7 @@ code {
 // TODO: Remove importants and use own classes
 .form-label {
 	font-weight: bold;
+}
+.list-group .list-group-item {
+	background-color: #f0f0f0;
 }
