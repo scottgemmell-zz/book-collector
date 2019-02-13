@@ -28,4 +28,5 @@ yarn.lock
 # sg
 
 .env
-*.test.js.snap
+**/__snapshots__
+*.snap
