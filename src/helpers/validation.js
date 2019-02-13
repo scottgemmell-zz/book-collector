@@ -9,14 +9,14 @@ export const number = value =>
 		? "Must be a number" 
 		: undefined;
 
-export const alphaNumeric = value =>
-	value && /[^a-zA-Z0-9 ]/i.test(value)
-		? "Only alphanumeric characters"
-		: undefined;
-	
 export const alpha = value =>
 	value && /[^a-zA-Z ]/i.test(value)
 		? "Only alpha characters"
+		: undefined;
+
+export const alphaNumeric = value =>
+	value && /[^a-zA-Z0-9 ]/i.test(value)
+		? "Only alphanumeric characters"
 		: undefined;
 
 export const minLength = min => value =>
