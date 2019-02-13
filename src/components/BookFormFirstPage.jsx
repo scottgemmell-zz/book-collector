@@ -1,7 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 // import PropTypes from "prop-types";
-import { reduxForm, Field, formValueSelector } from "redux-form";
+import { reduxForm, Field } from "redux-form";
 import {
 	Form, Button, ButtonToolbar,
 } from "react-bootstrap";
@@ -15,9 +16,7 @@ import {
 import { RenderInput, RenderSelect } from "./Renderer";
 
 
-let BookFormFirstPage = ({ title, hasISBN, hasBookTitle, values, handleSubmit, submitting, reset }) => {
-	
-	console.log({hasISBN, hasBookTitle});
+let BookFormFirstPage = ({ handleSubmit, submitting, reset }) => {
 	
 	return (
 		<div>
@@ -88,9 +87,11 @@ let BookFormFirstPage = ({ title, hasISBN, hasBookTitle, values, handleSubmit, s
 	);
 };
 
-// BookFormFirstPage.propTypes = {
-
-// };
+BookFormFirstPage.propTypes = {
+	handleSubmit: PropTypes.func.isRequired,
+	submitting: PropTypes.bool.isRequired,
+	reset: PropTypes.func.isRequired,
+};
 
 BookFormFirstPage = reduxForm({
 	form: "booksForm",
@@ -101,16 +102,9 @@ BookFormFirstPage = reduxForm({
 	keepDirtyOnReinitialize: true,
 })(BookFormFirstPage);
 
-const selector = formValueSelector("booksForm");
-
 BookFormFirstPage = connect((state, ownProps) => {
-	
-	const hasISBN = selector(state, "hasISBN");
-	const hasBookTitle = selector(state, "bookTitle");
-	console.log("mapStateToProps", { ownProps, selector, hasISBN, hasBookTitle });
 
 	return {
-		hasISBN,
 		initialValues: ownProps.book === undefined 
 			? { id: ownProps.len }
 			: state.books[ownProps.book.id],
