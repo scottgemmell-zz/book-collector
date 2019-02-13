@@ -27,16 +27,15 @@
     },
     {
       "id": 2,
+      "author": "Tom Rob Smith",
       "title": "Mr",
       "bookTitle": "Agent 6",
-      "author": "Tom Rob Smith",
+      "noOfPages": 1002,
+      "publisher": "Penguin",
+      "lang": "en",
       "isbn10": 9780000002,
       "isbn13": "222-2222222222",
-      "publisher": "Penguin",
-      "publicationDate": "02-02-1972",
-      "lang": "en",
-      "noOfPages": 1002,
-      "image": ""
+      "publicationDate": "02-02-1972"
     },
     {
       "id": 3,
