@@ -6,7 +6,7 @@ import BookFormSecondPage from "./BookFormSecondPage";
 import BookFormThirdPage from "./BookFormThirdPage";
 import { addBook, editBook } from "../redux/actions/books.actions";
 
-class BookForm extends Component {
+export class BookForm extends Component {
 	constructor(props){
 		super(props);
 		this.nextPage = this.nextPage.bind(this);
@@ -30,11 +30,9 @@ class BookForm extends Component {
 		const { page } = this.state;
 		const { match: { params: { id } }, books, addBook, editBook } = this.props;
 		const book = books.find(book => book.id === +id);
-		
-		// console.log({ params });
 
 		return (
-			<div>
+			<div data-test="book-form">
 				{page === 1 && <BookFormFirstPage 
 					book={book} 
 					len={books.length}
@@ -85,12 +83,17 @@ class BookForm extends Component {
 }
 
 BookForm.propTypes = {
-	addBook: PropTypes.func,
-	editBook: PropTypes.func,
+	match: {
+		params: {
+			id: PropTypes.string.isRequired,
+		}
+	},
+	books: PropTypes.object.isRequired,
+	addBook: PropTypes.func.isRequired,
+	editBook: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = (state, ownProps) => {
-	//console.log("mapStateToProps", { ownProps });
+const mapStateToProps = state => {
 	return {
 		books: state.books,
 	};

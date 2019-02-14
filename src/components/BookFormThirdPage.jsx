@@ -8,11 +8,11 @@ import {
 import { 
 	required, 
 	alpha,
-} from "../helpers/validation.js";
+} from "../helpers/validation.utils.js";
 import { RenderInput } from "./Renderer";
 
 
-let BookFormThirdPage = ({ title, handleSubmit, handlePrev, submitting, reset }) => {
+let BookFormThirdPage = ({ handleSubmit, handlePrev, submitting, reset }) => {
 
 	return (
 		<div>

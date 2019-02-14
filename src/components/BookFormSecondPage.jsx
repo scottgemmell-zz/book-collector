@@ -9,12 +9,10 @@ import {
 	required, 
 	number, 
 	alphaNumeric,  
-} from "../helpers/validation.js";
+} from "../helpers/validation.utils.js";
 import { RenderInput, RenderConditional } from "./Renderer";
 
 let BookFormSecondPage = ({ hasISBN, hasISBN10, hasISBN13, title, handleSubmit, handlePrev, submitting, reset }) => {
-
-	console.log({ hasISBN,hasISBN10, hasISBN13 });
 	
 	return (
 		<div>

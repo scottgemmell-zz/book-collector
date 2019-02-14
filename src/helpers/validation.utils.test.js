@@ -1,4 +1,4 @@
-import { required, number, alpha, alphaNumeric, minLength3 } from "./validation.js";
+import { required, number, alpha, alphaNumeric, minLength3 } from "./validation.utils.js";
 
 describe("Validation", () => {
 	it("required", () => {

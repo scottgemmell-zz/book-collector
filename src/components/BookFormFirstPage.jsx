@@ -12,11 +12,11 @@ import {
 	alphaNumeric, 
 	alpha, 
 	minLength3 
-} from "../helpers/validation.js";
+} from "../helpers/validation.utils.js";
 import { RenderInput, RenderSelect } from "./Renderer";
 
 
-let BookFormFirstPage = ({ handleSubmit, submitting, reset }) => {
+export let BookFormFirstPage = ({ handleSubmit, submitting, reset }) => {
 	
 	return (
 		<div>
