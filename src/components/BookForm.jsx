@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import { connect } from "react-redux";
-// import history from "../history";
 import BookFormFirstPage from "./BookFormFirstPage";
 import BookFormSecondPage from "./BookFormSecondPage";
 import BookFormThirdPage from "./BookFormThirdPage";
@@ -15,8 +14,6 @@ export class BookForm extends Component {
 		this.state = {
 			page: 1
 		};
-		// this.handleEdit = this.handleEdit.bind(this);
-		// this.handleAdd = this.handleAdd.bind(this);
 	}
 
 	nextPage() {
@@ -57,42 +54,18 @@ export class BookForm extends Component {
 			</div>
 		);
 	}
-
-	// handleAdd(e){
-	// 	e.preventDefault();
-
-	// 	const { addBook, history } = this.props;
-	// 	addBook({ 
-	// 		id: this.idInput.value, 
-	// 		title: this.titleInput.value, 
-	// 		author: this.authorInput.value,
-	// 	});
-	// 	history.push("/");
-	// }
-
-	// handleEdit(e){
-	// 	e.preventDefault();
-	// 	const { editBook, history } = this.props;
-
-	// 	editBook({ 
-	// 		id: this.idInput.value, 
-	// 		title: this.titleInput.value, 
-	// 		author: this.authorInput.value, 
-	// 	});
-	// 	history.push("/");
-	// }
 }
 
-BookForm.propTypes = {
-	match: {
-		params: {
-			id: PropTypes.string.isRequired,
-		}
-	},
-	books: PropTypes.object.isRequired,
-	addBook: PropTypes.func.isRequired,
-	editBook: PropTypes.func.isRequired,
-};
+// BookForm.propTypes = {
+// 	match: {
+// 		params: {
+// 			id: PropTypes.string.isRequired,
+// 		}
+// 	},
+// 	books: PropTypes.object.isRequired,
+// 	addBook: PropTypes.func.isRequired,
+// 	editBook: PropTypes.func.isRequired,
+// };
 
 const mapStateToProps = state => {
 	return {
