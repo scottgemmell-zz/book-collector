@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import BookFormFirstPage from "./BookFormFirstPage";
 import BookFormSecondPage from "./BookFormSecondPage";
@@ -56,16 +56,12 @@ export class BookForm extends Component {
 	}
 }
 
-// BookForm.propTypes = {
-// 	match: {
-// 		params: {
-// 			id: PropTypes.string.isRequired,
-// 		}
-// 	},
-// 	books: PropTypes.object.isRequired,
-// 	addBook: PropTypes.func.isRequired,
-// 	editBook: PropTypes.func.isRequired,
-// };
+BookForm.propTypes = {
+	match: PropTypes.object.isRequired,
+	books: PropTypes.object.isRequired,
+	addBook: PropTypes.func.isRequired,
+	editBook: PropTypes.func.isRequired,
+};
 
 const mapStateToProps = state => {
 	return {
