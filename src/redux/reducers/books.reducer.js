@@ -11,13 +11,15 @@ export const booksReducer = (books = initState, action) => {
 	
 	switch(action.type) {
 	
+	case SET_BOOKS:
+		return action.books;
+
 	case DELETE_BOOK:
 		
 		return books.filter(book => 
-			+book.id !== +action.books
+			+book.id !== +action.payload
 		);
-	case SET_BOOKS:
-		return action.books;
+	
 	case ADD_BOOK:
 		return [
 			...books,

@@ -16,8 +16,8 @@ describe("uiReducer", () => {
 		expect(newState).toEqual({ loading: true });
 	});
 
-	it("", () => {
-		const newState = uiReducer(undefined, { type: "MADE_UP", payload: true });
+	it("Use default when non-matching type ", () => {
+		const newState = uiReducer(undefined, { type: "", payload: true });
 		expect(newState).toEqual({ loading: false });
 	});
 });
