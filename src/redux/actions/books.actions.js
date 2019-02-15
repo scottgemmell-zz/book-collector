@@ -6,6 +6,17 @@ import {
 	DELETE_BOOK, 
 } from "../constants";
 
+export const fetchBooks = () => ({
+	type: FETCH_BOOKS,
+});
+
+export const setBooks = ({ books }) => {
+	return {
+		type: SET_BOOKS,
+		books
+	};
+};
+
 export const addBook = ({ 
 	id, 
 	author, 
@@ -33,17 +44,6 @@ export const addBook = ({
 			isbn13,
 			publicationDate,
 		},
-	};
-};
-
-export const fetchBooks = () => ({
-	type: FETCH_BOOKS,
-});
-
-export const setBooks = ({ books }) => {
-	return {
-		type: SET_BOOKS,
-		books
 	};
 };
 
