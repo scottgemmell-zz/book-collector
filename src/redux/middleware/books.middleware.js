@@ -1,3 +1,4 @@
+import history from "../../history";
 import { BOOKS, ADD_BOOK, DELETE_BOOK, FETCH_BOOKS, EDIT_BOOK } from "../constants";
 import { setBooks } from "../actions/books.actions.js";
 import { API_ERROR, apiRequest, API_SUCCESS } from "../actions/api.actions";
@@ -68,6 +69,7 @@ export const booksMiddleware = () => next => action => {
 		if (Array.isArray(action.payload) || action.payload === null) {
 			next(setBooks({ books: action.payload }));
 		}
+		history.push("/");
 		next(setLoader({ state: false, feature: BOOKS }));
 		break;
 
