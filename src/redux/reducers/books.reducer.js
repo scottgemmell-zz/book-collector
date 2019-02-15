@@ -37,19 +37,19 @@ export const booksReducer = (books = initState, action) => {
 			}
 		];
 	case EDIT_BOOK:
-		return books.map(book => +book.id === +action.id 
+		return books.map(book => +book.id === +action.payload.id 
 			? { 
 				...book, 
-				id: action.id,
-				author: action.author, 
-				title: action.title,
-				bookTitle: action.bookTitle,
-				noOfPages: action.noOfPages,
-				publisher: action.publisher, 
-				lang: action.lang, 
-				isbn10: action.isbn10,
-				isbn13: action.isbn13, 
-				publicationDate: action.publicationDate
+				id: action.payload.id,
+				author: action.payload.author, 
+				title: action.payload.title,
+				bookTitle: action.payload.bookTitle,
+				noOfPages: action.payload.noOfPages,
+				publisher: action.payload.publisher, 
+				lang: action.payload.lang, 
+				isbn10: action.payload.isbn10,
+				isbn13: action.payload.isbn13, 
+				publicationDate: action.payload.publicationDate
 			}
 			: book
 		);
