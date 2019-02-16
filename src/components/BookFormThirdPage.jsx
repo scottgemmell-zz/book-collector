@@ -9,7 +9,7 @@ import {
 	required, 
 	alpha,
 } from "../helpers/validation.utils.js";
-import { RenderInput } from "./Renderer";
+import { Input } from "./common";
 
 
 let BookFormThirdPage = ({ handleSubmit, handlePrev, submitting, reset }) => {
@@ -28,7 +28,7 @@ let BookFormThirdPage = ({ handleSubmit, handlePrev, submitting, reset }) => {
 						label="Lang" 
 						type="text" 
 						placeholder="Lang..." 
-						component={RenderInput} 
+						component={Input} 
 						validate={[required, alpha]}
 					/>
 					

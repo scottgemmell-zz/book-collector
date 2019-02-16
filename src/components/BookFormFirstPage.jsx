@@ -13,7 +13,7 @@ import {
 	alpha, 
 	minLength3 
 } from "../helpers/validation.utils.js";
-import { RenderInput, RenderSelect } from "./Renderer";
+import { Input, Select } from "./common";
 
 
 export let BookFormFirstPage = ({ handleSubmit, submitting, reset }) => {
@@ -31,7 +31,7 @@ export let BookFormFirstPage = ({ handleSubmit, submitting, reset }) => {
 						name="id" 
 						label="ID"
 						disabled={true}
-						component={RenderInput} 
+						component={Input} 
 						validate={[required, number]}
 					/>
 
@@ -39,7 +39,7 @@ export let BookFormFirstPage = ({ handleSubmit, submitting, reset }) => {
 						id="title" 
 						name="title" 
 						label="Title" 
-						component={RenderSelect} 
+						component={Select} 
 						//validate={[required]}
 					>
 						<option value="Mr">Mr</option>
@@ -51,7 +51,7 @@ export let BookFormFirstPage = ({ handleSubmit, submitting, reset }) => {
 						name="bookTitle" 
 						label="Book Title" 
 						placeholder="Book Title..." 
-						component={RenderInput} 
+						component={Input} 
 						validate={[required, alphaNumeric]}
 					/>
 					<Field 
@@ -59,7 +59,7 @@ export let BookFormFirstPage = ({ handleSubmit, submitting, reset }) => {
 						name="author" 
 						label="Author" 
 						placeholder="Author..." 
-						component={RenderInput} 
+						component={Input} 
 						validate={[required, alpha, minLength3]}
 					/>
 					

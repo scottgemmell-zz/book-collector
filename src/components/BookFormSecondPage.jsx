@@ -10,7 +10,7 @@ import {
 	number, 
 	alphaNumeric,  
 } from "../helpers/validation.utils.js";
-import { RenderInput, RenderConditional } from "./Renderer";
+import { Input, Conditional } from "./common";
 
 let BookFormSecondPage = ({ hasISBN, hasISBN10, hasISBN13, title, handleSubmit, handlePrev, submitting, reset }) => {
 	
@@ -28,7 +28,7 @@ let BookFormSecondPage = ({ hasISBN, hasISBN10, hasISBN13, title, handleSubmit, 
 						label="Number of Pages" 
 						type="text"
 						placeholder="Number of Pages..." 
-						component={RenderInput} 
+						component={Input} 
 						validate={[required, number]}
 					/>
 
@@ -38,7 +38,7 @@ let BookFormSecondPage = ({ hasISBN, hasISBN10, hasISBN13, title, handleSubmit, 
 						label="Publisher" 
 						type="text" 
 						placeholder="Publisher..." 
-						component={RenderInput} 
+						component={Input} 
 						validate={[required, alphaNumeric]}
 					/>
 
@@ -48,7 +48,7 @@ let BookFormSecondPage = ({ hasISBN, hasISBN10, hasISBN13, title, handleSubmit, 
 						label="Publication Date" 
 						type="text" 
 						placeholder="Publication Date..." 
-						component={RenderInput} 
+						component={Input} 
 						validate={[required]}
 					/>
 
@@ -58,7 +58,7 @@ let BookFormSecondPage = ({ hasISBN, hasISBN10, hasISBN13, title, handleSubmit, 
 						id="hasISBN" 
 						name="hasISBN" 
 						label="Do you have ISBN numbers?" 
-						component={RenderConditional} 
+						component={Conditional} 
 						type="radio"
 						radios={[{
 							label: "Yes",
@@ -74,7 +74,7 @@ let BookFormSecondPage = ({ hasISBN, hasISBN10, hasISBN13, title, handleSubmit, 
 								label="ISBN 10" 
 								type="text"
 								placeholder="ISBN 10..." 
-								component={RenderInput} 
+								component={Input} 
 								//validate={[required, number]}
 							/>
 							<Field 
@@ -83,7 +83,7 @@ let BookFormSecondPage = ({ hasISBN, hasISBN10, hasISBN13, title, handleSubmit, 
 								label="ISBN 13" 
 								type="text" 
 								placeholder="ISBN 13..." 
-								component={RenderInput} 
+								component={Input} 
 								//validate={[required]}
 							/>
 						</div>}
