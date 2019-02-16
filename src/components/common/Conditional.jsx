@@ -11,6 +11,7 @@ const Conditional = ({
 }) => 
 	<Form.Group
 		controlId={id} 
+		data-test="conditional"
 	>
 		<Form.Label>
 			{label}
