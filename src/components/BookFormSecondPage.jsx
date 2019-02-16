@@ -66,7 +66,7 @@ let BookFormSecondPage = ({ hasISBN, hasISBN10, hasISBN13, title, handleSubmit, 
 						}]}
 					/>}
 
-					{(hasISBN) && 
+					{hasISBN && 
 						<div>
 							<Field 
 								id="isbn10" 
