@@ -117,10 +117,12 @@ code {
 	height: 55px;
 }
 
-
 // TODO: Remove importants and use own classes
 .form-label {
 	font-weight: bold;
+}
+.list-group {
+	margin-bottom: 80px !important;
 }
 .list-group .list-group-item {
 	background-color: #f0f0f0;

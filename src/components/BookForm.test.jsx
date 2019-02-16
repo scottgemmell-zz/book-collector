@@ -1,14 +1,17 @@
 import React from "react";
 import { shallow } from "enzyme";
-import { findByTestAttr } from "../helpers/test.utils";
+import { findByTestAttr, storeFactory } from "../helpers/test.utils";
 import { BookForm } from "./BookForm";
 
 const defaultProps = () => ({
-	match: { params: {id: 3}},
+	page: 1,
+	match: { params: { id: 3 } },
 	books: [{ id: 3, title: "Fantastic Mr. Fox", author: "Roald Dahl" }]
 });
+
 const setup = (overrideProps = {}) => {
 	const props = Object.assign({}, defaultProps(), overrideProps);
+	// const store = storeFactory(props);
 	const wrapper = shallow(<BookForm {...props} />);
 	return { wrapper, props };
 };
@@ -16,7 +19,7 @@ const setup = (overrideProps = {}) => {
 describe("<BookForm />", () => {
 	it("renders", () => {
 		const { wrapper } = setup();
-		// console.log({wrapper});
+		console.log({wrapper});
 		expect(wrapper).toMatchSnapshot();
 	});
 

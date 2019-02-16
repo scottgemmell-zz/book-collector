@@ -58,9 +58,9 @@ export class BookForm extends Component {
 
 BookForm.propTypes = {
 	match: PropTypes.object.isRequired,
-	books: PropTypes.object.isRequired,
-	addBook: PropTypes.func.isRequired,
-	editBook: PropTypes.func.isRequired,
+	books: PropTypes.array.isRequired,
+	addBook: PropTypes.func,
+	editBook: PropTypes.func,
 };
 
 const mapStateToProps = state => {

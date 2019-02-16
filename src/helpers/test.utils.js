@@ -1,3 +1,10 @@
+import configureStore from "redux-mock-store";
+import rootReducer from "../redux/reducers";
+
+export const storeFactory = initialState => {
+	return configureStore(rootReducer, initialState);
+};
+
 /**
  * Return node(s) with given data-test attribute.
  * @param  {ShallowWrapper} wrapper - Enzyme shallow wrapper.
@@ -6,4 +13,4 @@
  */
 export const findByTestAttr = (wrapper, val) => {
 	return wrapper.find(`[data-test="${val}"]`);
-}
+};

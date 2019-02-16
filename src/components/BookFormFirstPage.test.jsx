@@ -1,5 +1,5 @@
 import React from "react";
-import BookFormFirstPage from "./BookFormFirstPage";
+import { BookFormFirstPage } from "./BookFormFirstPage";
 import { shallow } from "enzyme";
 
 const defaultProps = () => ({});
@@ -12,7 +12,8 @@ const setup = (overrideProps = {}) => {
 describe("<BookFormFirstPage />", () => {
 	it("renders", () => {
 		const { wrapper } = setup(); 
-		// console.log({wrapper});
+		//console.log({wrapper});
+		//console.log(wrapper.debug());
 		expect(wrapper).toMatchSnapshot();
 	});
 });
