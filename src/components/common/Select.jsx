@@ -7,6 +7,7 @@ const Select = Renderer((input, touched, error, _disabled, _placeholder, {childr
 		{...input}
 		className={touched && (error) ? "is-invalid" : ""}
 		as="select" 
+		data-test="select" 
 	>
 		{children}
 	</Form.Control>;

@@ -1,12 +1,12 @@
 import React from "react";
 import { shallow } from "enzyme";
 import { findByTestAttr } from "../../helpers/test.utils";
-import { Conditional } from "./";
+import Conditional from "./Conditional.jsx";
 
 const defaultProps = () => ({
 	meta: {
-		touched: true,
-		error: true,
+		touched: false,
+		error: false,
 	},
 	radios: [
 		{ label: "Apples" }, 
@@ -27,9 +27,10 @@ describe("<Conditional />", () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	it("component", () => {
+	it("renders", () => {
 		const { wrapper } = setup();
 		const component = findByTestAttr(wrapper, "conditional");
 		expect(component.length).toBe(1);
 	});
+
 });

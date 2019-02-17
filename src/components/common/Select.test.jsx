@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow } from "enzyme";
 import { findByTestAttr } from "../../helpers/test.utils";
-import Input from "./Input.jsx";
+import Select from "./Select.jsx";
 
 const defaultProps = () => ({
 	meta: {
@@ -12,20 +12,19 @@ const defaultProps = () => ({
 
 const setup = (overrideProps = {}) => {
 	const props = Object.assign({}, defaultProps(), overrideProps);
-	const wrapper = shallow(<Input {...props} />);
+	const wrapper = shallow(<Select {...props} />);
 	return { wrapper, props };
 };
 
-describe("<Input />", () => {
-
-	it("snapshot", () => {
+describe("<Select />", () => {
+	it("snapshot", () => {	
 		const { wrapper } = setup();
 		expect(wrapper).toMatchSnapshot();
 	});
 
 	it("renders", () => {
 		const { wrapper } = setup();
-		const component = findByTestAttr(wrapper, "input");
+		const component = findByTestAttr(wrapper, "select");
 		expect(component.length).toBe(1);
 	});
 
@@ -43,4 +42,5 @@ describe("<Input />", () => {
 		});
 		expect(wrapper.find(".is-invalid").length).toBe(1);
 	});
+
 });
