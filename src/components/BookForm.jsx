@@ -63,7 +63,8 @@ BookForm.propTypes = {
 	editBook: PropTypes.func,
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
+	console.log({ownProps});
 	return {
 		books: state.books,
 	};
