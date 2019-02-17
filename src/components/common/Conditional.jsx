@@ -27,9 +27,12 @@ const Conditional = ({
 				inline 
 			/>)}
 		</div>
+		{/* 
+		@TODO: Make required?
 		{touched && (
 			error && <span className="text-danger">{error}</span>
-		)}
+		)} 
+		*/}
 	</Form.Group>;
 /*eslint-enable */
 
