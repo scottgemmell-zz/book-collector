@@ -5,11 +5,10 @@ import { API_ERROR, apiRequest, API_SUCCESS } from "../actions/api.actions";
 import { setLoader } from "../actions/ui.actions";
 import { setNotification } from "../actions/notifications.actions";
 
-function getBookListUrl(){
-	return "http://localhost:3001/books/"; 
-}
+// @ToDo: View only with Normalization
+// https://www.googleapis.com/books/v1/volumes?q=react
 
-function getBookByIdUrl(id){
+function getBookListUrl(id=""){
 	return `http://localhost:3001/books/${id}`; 
 }
 
@@ -35,7 +34,7 @@ export const booksMiddleware = () => next => action => {
 			apiRequest({ 
 				body: JSON.stringify(action.payload),
 				method: "PUT", 
-				url: getBookByIdUrl(action.payload.id), 
+				url: getBookListUrl(action.payload.id), 
 				feature: BOOKS, 
 			})
 		);
@@ -47,7 +46,7 @@ export const booksMiddleware = () => next => action => {
 			apiRequest({ 
 				body: null,
 				method: "DELETE", 
-				url: getBookByIdUrl(action.payload), 
+				url: getBookListUrl(action.payload), 
 				feature: BOOKS, 
 			})
 		);
