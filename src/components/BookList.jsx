@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { Alert } from "react-bootstrap";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
@@ -8,7 +9,7 @@ import spinner from "../assets/svg/spinner.svg";
 import { Button, Row, Col, ListGroup } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 
-class BookList extends Component {
+export class BookList extends Component {
 
 	componentDidMount() {
 		const { fetchBooks } = this.props;
@@ -20,7 +21,7 @@ class BookList extends Component {
 
 		if (loading === true) {
 			return (
-				<div>
+				<div data-test="book-list">
 					<h2>
 						BookList
 					</h2>
@@ -39,15 +40,15 @@ class BookList extends Component {
 
 			const note = R.values(notification);
 
-			return <Alert style={{marginTop: 20}}>
+			return <div data-test="book-list"><Alert style={{marginTop: 20}}>
 				<p>
 					<strong>Notification</strong>: {note[0]+" "+note[1]}
 				</p>
-			</Alert>;
+			</Alert></div>;
 		}
 
 		if (books === null || R.isEmpty(books)) {
-			return <div>
+			return <div data-test="book-list">
 				<h2>
 					BookList
 				</h2>
@@ -58,7 +59,7 @@ class BookList extends Component {
 		}
 
 		return (
-			<div>
+			<div data-test="book-list">
 				<Row>
 					<Col>
 						<h2>
@@ -95,13 +96,20 @@ class BookList extends Component {
 	}
 }
 
+BookList.propTypes = {
+	fetchBooks: PropTypes.func.isRequired,
+	books: PropTypes.array.isRequired,
+	notification: PropTypes.bool,
+	loading: PropTypes.bool,
+};
+
 const mapStateToProps = (state) => {
 	return { 
 		books: state.books, 
 		notification: state.notification[0], 
 		loading: state.ui.loading,
 	};
-}
+};
 
 export default connect(mapStateToProps, { 
 	fetchBooks, 

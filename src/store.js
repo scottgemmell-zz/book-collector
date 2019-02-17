@@ -8,7 +8,6 @@ import thunk from "redux-thunk";
 import { notificationMiddleware } from "./redux/middleware/notification.middleware";
 
 const logger = createLogger({
-	// ...options
 	collapsed: true,
 	diff: true,
 });
@@ -29,13 +28,13 @@ const coreMiddleware = [
 ];
 //
 
+export const middlewares = [thunk, ...featureMiddleware, ...coreMiddleware, logger];
+
 const store = createStore(
 	rootReducer, /* preloadedState, */ 
 	composeEnhancers(
 		applyMiddleware(
-			thunk, 
-			...featureMiddleware, ...coreMiddleware,
-			logger,
+			...middlewares
 		),
 		// other store enhancers if any
 	)
