@@ -11,7 +11,7 @@ const defaultProps = () => ({
 
 const setup = (overrideProps = {}) => {
 	const props = Object.assign({}, defaultProps(), overrideProps);
-	// const store = storeFactory(props);
+	//const store = storeFactory(props);
 	const wrapper = shallow(<BookForm {...props} />);
 	return { wrapper, props };
 };
@@ -19,7 +19,7 @@ const setup = (overrideProps = {}) => {
 describe("<BookForm />", () => {
 	it("renders", () => {
 		const { wrapper } = setup();
-		console.log({wrapper});
+		// console.log({wrapper});
 		expect(wrapper).toMatchSnapshot();
 	});
 

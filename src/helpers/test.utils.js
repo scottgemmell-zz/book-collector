@@ -1,12 +1,12 @@
-// import configureStore from "redux-mock-store";
-// import {createStore, applyMiddleware} from "redux";
-// import { middlewares } from "../store";
-// import rootReducer from "../redux/reducers";
+import configureStore from "redux-mock-store";
+import {createStore, applyMiddleware} from "redux";
+import { middlewares } from "../store";
+import rootReducer from "../redux/reducers";
 
-// export const storeFactory = initialState => {
-// 	const createStoreWithMiddleware = applyMiddleware(...middlewares)(createStore);
-// 	return createStoreWithMiddleware(rootReducer, initialState);
-// };
+export const storeFactory = initialState => {
+	const createStoreWithMiddleware = applyMiddleware(...middlewares)(createStore);
+	return createStoreWithMiddleware(rootReducer, initialState);
+};
 
 /**
  * Return node(s) with given data-test attribute.
