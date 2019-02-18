@@ -20,7 +20,7 @@ const setup = (overrideProps = {}) => {
 
 describe("<BookForm />", () => {
 	
-	it("renders", () => {
+	it("snapshot", () => {
 		const { wrapper } = setup();
 		// console.log({wrapper});
 		expect(wrapper).toMatchSnapshot();
