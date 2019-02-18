@@ -19,7 +19,7 @@ import { Input, Select } from "./common";
 export let BookFormFirstPage = ({ handleSubmit, submitting, reset }) => {
 	
 	return (
-		<div>
+		<div data-test="book-form-first-page">
 			<h2>
 				First
 			</h2>
@@ -65,6 +65,7 @@ export let BookFormFirstPage = ({ handleSubmit, submitting, reset }) => {
 					
 					<ButtonToolbar>
 						<Button 
+							data-test="reset"
 							onClick={reset} 
 							// disabled={pristine || submitting} 
 							variant="link" 
@@ -74,6 +75,7 @@ export let BookFormFirstPage = ({ handleSubmit, submitting, reset }) => {
 						</Button>
 						{" "}
 						<Button 
+							data-test="submit"
 							disabled={submitting} 
 							variant="primary" 
 							type="submit"

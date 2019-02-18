@@ -16,4 +16,10 @@ describe("<BookFormFirstPage />", () => {
 		//console.log(wrapper.debug());
 		expect(wrapper).toMatchSnapshot();
 	});
+
+	// it("", () => {
+	// 	const { wrapper } = setup();
+	// 	expect(wrapper.exists("[data-test=\"reset\"]")).toEqual(true);
+	// 	expect(wrapper.exists("[data-test=\"submit\"]")).toEqual(true);
+	// });
 });
