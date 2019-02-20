@@ -56,6 +56,10 @@ export class BookForm extends Component {
 	}
 }
 
+BookForm.defaultProps = {
+	match: { params: { id: null } },
+};
+
 BookForm.propTypes = {
 	match: PropTypes.object.isRequired,
 	books: PropTypes.array.isRequired,
@@ -64,7 +68,7 @@ BookForm.propTypes = {
 };
 
 const mapStateToProps = (state, ownProps) => {
-	console.log({ ownProps });
+	//console.log({ ownProps });
 	return {
 		books: state.books,
 	};

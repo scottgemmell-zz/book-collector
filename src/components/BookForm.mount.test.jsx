@@ -7,7 +7,7 @@ import { fetchBooks } from "../redux/actions/books.actions";
 
 const defaultProps = () => ({
 	// page: 1,
-	match: { params: { id: 3 } },
+	// match: { params: { id: 3 } },
 	books: [{ id: 3, title: "Fantastic Mr. Fox", author: "Roald Dahl" }]
 });
 
