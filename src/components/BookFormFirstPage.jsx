@@ -105,7 +105,7 @@ BookFormFirstPage = reduxForm({
 })(BookFormFirstPage);
 
 BookFormFirstPage = connect((state, ownProps) => {
-
+	// console.log({ ownProps });
 	return {
 		initialValues: ownProps.book === undefined 
 			? { id: ownProps.len }
