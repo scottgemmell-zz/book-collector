@@ -1,6 +1,6 @@
 import configureStore from "redux-mock-store";
 import {createStore, applyMiddleware} from "redux";
-import { middlewares } from "../store";
+import { middlewares } from "../middlewares";
 import rootReducer from "../redux/reducers";
 
 export const storeFactory = initialState => {
