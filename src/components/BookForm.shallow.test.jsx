@@ -5,7 +5,7 @@ import { BookForm } from "./BookForm";
 import { fetchBooks } from "../redux/actions/books.actions";
 
 const defaultProps = () => ({
-	// page: 1,
+	page: 2,
 	// match: { params: { id: 3 } },
 	books: [{ id: 3, title: "Fantastic Mr. Fox", author: "Roald Dahl" }]
 });
@@ -19,11 +19,37 @@ const setup = (overrideProps = {}) => {
 };
 
 describe("<BookForm />", () => {
-	
+
+	const mockNextPage = jest.fn();
+	//const mockPrevPage = jest.fn();
+
+	describe("Add", () => {
+		let wrapper; 
+		beforeEach(() => {
+			wrapper = setup({ page: 2, onSubmit: mockNextPage() }).wrapper;
+		});
+		it("Add", () => {
+			//console.log(wrapper.debug());
+			expect(wrapper.find("Connect(ReduxForm)").props()).toHaveProperty("title", "Add");
+			expect(mockNextPage).toHaveBeenCalled();
+			//console.log(wrapper.debug());
+		});
+	});
+	describe("Edit", () => {
+		let wrapper;
+		beforeEach(() => {
+			wrapper = setup({ page: 2, match: { params: { id: 3 } } }).wrapper;
+		});
+		it("Add", () => {
+			//console.log(wrapper.debug());
+			expect(wrapper.find("Connect(ReduxForm)").props()).toHaveProperty("title", "Edit");
+		});
+	});
+
 	it("snapshot", () => {
 		const { wrapper } = setup();
-		// console.log({wrapper});
-		expect(wrapper).toMatchSnapshot();
+		console.log(wrapper.debug());
+		expect(wrapper.find("Connect(ReduxForm)")).toMatchSnapshot();
 	});
 
 	it("renders", () => {
