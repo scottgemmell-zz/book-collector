@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 // import PropTypes from "prop-types";
-import { reduxForm, Field, formValueSelector } from "redux-form";
+import { reduxForm, Field, formValueSelector, Fields } from "redux-form";
 import {
 	Form, Button, ButtonToolbar
 } from "react-bootstrap";
@@ -9,11 +9,16 @@ import {
 	required, 
 	number, 
 	alphaNumeric,  
+	validatorDate, 
 } from "../helpers/validation.utils.js";
-import { Input, Conditional } from "./common";
+import { Input, Conditional, FieldDate } from "./common";
 
-let BookFormSecondPage = ({ hasISBN, hasISBN10, hasISBN13, title, handleSubmit, handlePrev, submitting, reset }) => {
+let BookFormSecondPage = (props) => {
+	console.log('props', props)
+	const { hasISBN, hasISBN10, hasISBN13, title, handleSubmit, handlePrev, submitting, reset } = props;
+
 	
+
 	return (
 		<div>
 			<h2>
@@ -21,7 +26,7 @@ let BookFormSecondPage = ({ hasISBN, hasISBN10, hasISBN13, title, handleSubmit, 
 			</h2>
 			<div className="c-book">
 				<Form onSubmit={handleSubmit}>
-		
+
 					<Field 
 						id="noOfPages" 
 						name="noOfPages" 
@@ -42,7 +47,7 @@ let BookFormSecondPage = ({ hasISBN, hasISBN10, hasISBN13, title, handleSubmit, 
 						validate={[required, alphaNumeric]}
 					/>
 
-					<Field 
+					{/* <Field 
 						id="publicationDate" 
 						name="publicationDate" 
 						label="Publication Date" 
@@ -50,6 +55,16 @@ let BookFormSecondPage = ({ hasISBN, hasISBN10, hasISBN13, title, handleSubmit, 
 						placeholder="Publication Date..." 
 						component={Input} 
 						validate={[required]}
+					/> */}
+					<Fields 
+						id="publicationDate" 
+						names={[
+							"publicationDate.dd", 
+							"publicationDate.mm", 
+							"publicationDate.yyyy"
+						]} 
+						label="Publication Date" 
+						component={FieldDate} 
 					/>
 
 					<hr />
@@ -128,6 +143,7 @@ BookFormSecondPage = reduxForm({
 	forceUnregisterOnUnmount: true,
 	enableReinitialize: true,
 	keepDirtyOnReinitialize: true,
+	validate: validatorDate,
 })(BookFormSecondPage);
 
 // BookFormSecondPage.propTypes = {
@@ -141,7 +157,6 @@ const mapStateToProps = (state, ownProps) => {
 	const hasISBN = selector(state, "hasISBN");
 	const hasISBN10 = selector(state, "isbn10");
 	const hasISBN13 = selector(state, "isbn13");
-
 	//console.log("mapStateToProps", { ownProps });
 	return {
 		hasISBN,

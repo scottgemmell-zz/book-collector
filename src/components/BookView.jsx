@@ -104,7 +104,7 @@ class BookView extends Component {
 								Publication Date
 							</dt>
 							<dd className="col-sm-9">
-								{book.publicationDate}
+								{book.publicationDate.dd}-{book.publicationDate.mm}-{book.publicationDate.yyyy}
 							</dd>
 						</dl>		
 					</div>

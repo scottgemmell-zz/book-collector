@@ -29,7 +29,7 @@ export const addBook = ({
 	isbn13, 
 	publicationDate
 }) => {
-	//console.log({ id, author, title });
+	//console.log({ publicationDate });
 	return {
 		type: ADD_BOOK,
 		payload: {
@@ -42,7 +42,11 @@ export const addBook = ({
 			lang,
 			isbn10: +isbn10,
 			isbn13,
-			publicationDate,
+			publicationDate: {
+				dd: publicationDate.dd,
+				mm: publicationDate.mm,
+				yyyy: publicationDate.yyyy
+			}
 		},
 	};
 };
@@ -57,22 +61,28 @@ export const editBook = ({
 	lang, 
 	isbn10,
 	isbn13, 
-	publicationDate
-}) => ({
-	type: EDIT_BOOK,
-	payload: {
-		id: +id,
-		author,
-		title,
-		bookTitle,
-		noOfPages: +noOfPages,
-		publisher,
-		lang,
-		isbn10: +isbn10,
-		isbn13,
-		publicationDate
-	},
-});
+	publicationDate,
+}) => { 
+	return {
+		type: EDIT_BOOK,
+		payload: {
+			id: +id,
+			author,
+			title,
+			bookTitle,
+			noOfPages: +noOfPages,
+			publisher,
+			lang,
+			isbn10: +isbn10,
+			isbn13,
+			publicationDate: {
+				dd: publicationDate.dd,
+				mm: publicationDate.mm,
+				yyyy: publicationDate.yyyy
+			}
+		},
+	};
+};
 
 
 

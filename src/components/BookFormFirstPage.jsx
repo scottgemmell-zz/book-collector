@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 // import PropTypes from "prop-types";
-import { reduxForm, Field, Fields } from "redux-form";
+import { reduxForm, Field } from "redux-form";
 import {
 	Form, Button, ButtonToolbar,
 } from "react-bootstrap";
@@ -11,10 +11,9 @@ import {
 	number, 
 	alphaNumeric, 
 	alpha, 
-	minLength3, 
-	validatorDate 
+	minLength3,
 } from "../helpers/validation.utils.js";
-import { Input, Select, FieldDate } from "./common";
+import { Input, Select } from "./common";
 
 export let BookFormFirstPage = ({ handleSubmit, submitting, reset }) => {
 	
@@ -64,12 +63,7 @@ export let BookFormFirstPage = ({ handleSubmit, submitting, reset }) => {
 						validate={[required, alpha, minLength3]}
 					/>
 
-					<Fields 
-						id="publicationDate" 
-						names={["dd", "mm", "yyyy"]} 
-						label="Publication Date" 
-						component={FieldDate} 
-					/>
+					
 					
 					<ButtonToolbar>
 						<Button 
@@ -110,7 +104,6 @@ BookFormFirstPage = reduxForm({
 	// Refreshes data {book} || "". Reinitializes everytime.
 	enableReinitialize: true,
 	keepDirtyOnReinitialize: true,
-	validate: validatorDate,
 })(BookFormFirstPage);
 
 BookFormFirstPage = connect((state, ownProps) => {

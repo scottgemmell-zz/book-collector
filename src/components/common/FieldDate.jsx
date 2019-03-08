@@ -19,8 +19,8 @@ const FieldDate = fields =>
 					DD
 				</Form.Label>
 				<Form.Control 
-					{...fields.dd.input} 
-					className={fields.dd.meta.touched && fields.dd.meta.error ? "is-invalid" : ""}
+					{...fields.publicationDate.dd.input} 
+					className={fields.publicationDate.dd.meta.touched && fields.publicationDate.dd.meta.error ? "is-invalid" : ""}
 					type="text" 
 				/>
 			</Form.Group>
@@ -32,8 +32,8 @@ const FieldDate = fields =>
 					MM
 				</Form.Label>
 				<Form.Control 
-					{...fields.mm.input} 
-					className={fields.mm.meta.touched && fields.dd.meta.error ? "is-invalid" : ""}
+					{...fields.publicationDate.mm.input} 
+					className={fields.publicationDate.mm.meta.touched && fields.publicationDate.dd.meta.error ? "is-invalid" : ""}
 					type="text" 
 				/>
 			</Form.Group>
@@ -45,15 +45,15 @@ const FieldDate = fields =>
 					YYYY
 				</Form.Label>
 				<Form.Control 
-					{...fields.yyyy.input} 
-					className={fields.yyyy.meta.touched && fields.dd.meta.error ? "is-invalid" : ""}
+					{...fields.publicationDate.yyyy.input} 
+					className={fields.publicationDate.yyyy.meta.touched && fields.publicationDate.dd.meta.error ? "is-invalid" : ""}
 					type="text" 
 				/>
 			</Form.Group>
-			{((fields.dd.meta.touched || fields.mm.meta.touched || fields.yyyy.meta.touched) 
-				&& fields.dd.meta.error) 
+			{((fields.publicationDate.dd.meta.touched || fields.publicationDate.mm.meta.touched || fields.publicationDate.yyyy.meta.touched) 
+				&& fields.publicationDate.dd.meta.error) 
 				&& <span style={{position: "relative", left: 5}} className="text-danger">
-					{fields.dd.meta.error && <span>{fields.dd.meta.error}</span>}
+					{fields.publicationDate.dd.meta.error && <span>{fields.publicationDate.dd.meta.error}</span>}
 				</span>}
 		</Form.Row>
 	</Form.Group>;

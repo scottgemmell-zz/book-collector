@@ -2,28 +2,35 @@
   "books": [
     {
       "id": 0,
-      "title": "Mr",
       "author": "Tom Rob Smith",
+      "title": "Mr",
       "bookTitle": "Child 44",
       "noOfPages": 1000,
       "publisher": "Penguin",
       "lang": "en",
       "isbn10": 9780000000,
       "isbn13": "978-0000000000",
-      "publicationDate": "00-00-1970"
+      "publicationDate": {
+        "dd": "01",
+        "mm": "01",
+        "yyyy": "1900"
+      }
     },
     {
       "id": 1,
+      "author": "Tom Rob Smith",
       "title": "Mr",
       "bookTitle": "The Secret Speech",
-      "author": "Tom Rob Smith",
-      "isbn10": 9780000001,
-      "isbn13": "111-1111111111",
-      "publisher": "Penguin",
-      "publicationDate": "01-01-1971",
-      "lang": "en",
       "noOfPages": 1001,
-      "image": ""
+      "publisher": "Penguin",
+      "lang": "en",
+      "isbn10": 9780000000,
+      "isbn13": "978-0000000000",
+      "publicationDate": {
+        "dd": "01",
+        "mm": "01",
+        "yyyy": "1911"
+      }
     },
     {
       "id": 2,
@@ -33,9 +40,13 @@
       "noOfPages": 1002,
       "publisher": "Penguin",
       "lang": "en",
-      "isbn10": 9780000002,
-      "isbn13": "222-2222222222",
-      "publicationDate": "02-02-1972"
+      "isbn10": 9780000000,
+      "isbn13": "978-0000000000",
+      "publicationDate": {
+        "dd": "02",
+        "mm": "02",
+        "yyyy": "1922"
+      }
     },
     {
       "id": 3,
@@ -45,9 +56,13 @@
       "noOfPages": 1003,
       "publisher": "Penguin",
       "lang": "en",
-      "isbn10": 9780000003,
-      "isbn13": "333-3333333333",
-      "publicationDate": "03-03-1973"
+      "isbn10": 9780000000,
+      "isbn13": "978-0000000000",
+      "publicationDate": {
+        "dd": "09",
+        "mm": "11",
+        "yyyy": "1999"
+      }
     },
     {
       "id": 4,
@@ -57,9 +72,43 @@
       "noOfPages": 400,
       "publisher": "Penguin",
       "lang": "en",
-      "isbn10": 4444444444,
-      "isbn13": "444-4444444444",
-      "publicationDate": "04-04-1974"
+      "isbn10": 9780000000,
+      "isbn13": "978-0000000000",
+      "publicationDate": {
+        "dd": "04",
+        "mm": "04",
+        "yyyy": "1944"
+      }
+    },
+    {
+      "id": 5,
+      "author": "Roald Dahl",
+      "title": "Mr",
+      "bookTitle": "BFG",
+      "noOfPages": 1000,
+      "publisher": "Penguin",
+      "lang": "en",
+      "isbn10": 9780000000,
+      "isbn13": "978-0000000000",
+      "publicationDate": {
+        "dd": "05",
+        "mm": "05",
+        "yyyy": "1955"
+      }
+    },
+    {
+      "id": 6,
+      "author": "Roald Dahl",
+      "bookTitle": "Fantastic Mr Fox",
+      "noOfPages": 666,
+      "publisher": "Penguin",
+      "lang": "En",
+      "isbn10": 0,
+      "publicationDate": {
+        "dd": "06",
+        "mm": "06",
+        "yyyy": "1966"
+      }
     }
   ]
 }
