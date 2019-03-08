@@ -31,13 +31,6 @@ export let BookFormFirstPage = ({ handleSubmit, submitting, reset }) => {
 			<div className="c-book">
 				<Form onSubmit={handleSubmit}>	
 
-					<Fields 
-						id="date" 
-						names={["dd", "mm", "yyyy"]} 
-						label="Date" 
-						component={FieldDate} 
-					/>
-
 					<Field 
 						id="id" 
 						name="id" 
@@ -73,6 +66,13 @@ export let BookFormFirstPage = ({ handleSubmit, submitting, reset }) => {
 						placeholder="Author..." 
 						component={Input} 
 						validate={[required, alpha, minLength3]}
+					/>
+
+					<Fields 
+						id="publicationDate" 
+						names={["dd", "mm", "yyyy"]} 
+						label="Publication Date" 
+						component={FieldDate} 
 					/>
 					
 					<ButtonToolbar>

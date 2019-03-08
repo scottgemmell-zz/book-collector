@@ -1,3 +1,5 @@
+import moment from "moment";
+
 export const required = value => 
 	(value || typeof value === "number" 
 		? undefined 
@@ -35,32 +37,15 @@ export const exactLength4 = exactLength(4);
 
 export const validatorDate = values => {
 	const errors = {};
-	if (!values.dd) {
-		errors.dd = "Required";
-	}
-	if (values.dd && isNaN(Number(values.dd)) ) {
-		errors.dd = "Must be a number";
-	}
-	if (values.dd && values.dd.length !== 2) {
-		errors.dd = "Must be 2 characters";
-	}
-	if (!values.mm) {
-		errors.mm = "Required";
-	}
-	if (values.mm && isNaN(Number(values.mm)) ) {
-		errors.mm = "Must be a number";
-	}
-	if (values.mm && values.mm.length !== 2) {
-		errors.mm = "Must be 2 characters";
-	}
-	if (!values.yyyy) {
-		errors.yyyy = "Required";
-	}
-	if (values.yyyy && isNaN(Number(values.yyyy)) ) {
-		errors.yyyy = "Must be a number";
-	}
-	if (values.yyyy && values.yyyy.length !== 4) {
-		errors.yyyy = "Must be 4 characters";
+	const { dd, mm, yyyy } = values;
+	const date = moment(`${dd}-${mm}-${yyyy}`, "DD-MM-YYYY");
+	if (
+		!date.isValid() 
+		|| (values.dd && values.dd.length !== 2)
+		|| (values.mm && values.mm.length !== 2)
+		|| (values.yyyy && values.yyyy.length !== 4)
+	) {
+		errors.dd = "Please enter a valid date in the format DD-MM-YYYY";
 	}
 	return errors;
 };
