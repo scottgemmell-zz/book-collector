@@ -14,7 +14,7 @@ import {
 import { Input, Conditional, FieldDate } from "./common";
 
 let BookFormSecondPage = (props) => {
-	console.log('props', props)
+	//console.log('props', props)
 	const { hasISBN, hasISBN10, hasISBN13, title, handleSubmit, handlePrev, submitting, reset } = props;
 
 	
@@ -154,7 +154,7 @@ const selector = formValueSelector("booksForm");
 
 const mapStateToProps = (state, ownProps) => {
 
-	const hasISBN = selector(state, "hasISBN");
+	const hasISBN 	= selector(state, "hasISBN");
 	const hasISBN10 = selector(state, "isbn10");
 	const hasISBN13 = selector(state, "isbn13");
 	//console.log("mapStateToProps", { ownProps });

@@ -72,7 +72,7 @@
       "noOfPages": 400,
       "publisher": "Penguin",
       "lang": "en",
-      "isbn10": 9780000000,
+      "isbn10": 0,
       "isbn13": "978-0000000000",
       "publicationDate": {
         "dd": "04",
@@ -88,7 +88,7 @@
       "noOfPages": 1000,
       "publisher": "Penguin",
       "lang": "en",
-      "isbn10": 9780000000,
+      "isbn10": 0,
       "isbn13": "978-0000000000",
       "publicationDate": {
         "dd": "05",
@@ -103,7 +103,8 @@
       "noOfPages": 666,
       "publisher": "Penguin",
       "lang": "En",
-      "isbn10": 0,
+      "isbn10": 9780000000,
+      "isbn13": "978-0000000000",
       "publicationDate": {
         "dd": "06",
         "mm": "06",
