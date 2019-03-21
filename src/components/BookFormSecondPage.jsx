@@ -41,14 +41,14 @@ let BookFormSecondPage = (props) => {
 						</Form.Label>
 						<div>
 							<Field
-								name="yesno"
+								name="hasPageCount"
 								label="Yes"
 								value="Yes" 
 								type="radio"
 								component={FieldYesNo}
 							/>
 							<Field
-								name="yesno"
+								name="hasPageCount"
 								label="No"
 								value="No" 
 								type="radio"
@@ -59,8 +59,8 @@ let BookFormSecondPage = (props) => {
 
 
 					{hasPageCount === "Yes" && <Field 
-						id="noOfPages" 
-						name="noOfPages" 
+						id="pageCount" 
+						name="pageCount" 
 						label="Number of Pages" 
 						type="text"
 						placeholder="Number of Pages..." 
@@ -188,7 +188,7 @@ const mapStateToProps = (state, ownProps) => {
 	const hasISBN 	= selector(state, "hasISBN");
 	// const hasISBN10 = selector(state, "isbn10");
 	// const hasISBN13 = selector(state, "isbn13");
-	const hasPageCount = selector(state, "yesno");
+	const hasPageCount = selector(state, "hasPageCount");
 	console.log("mapStateToProps", { state, ownProps });
 	return {
 		hasISBN,

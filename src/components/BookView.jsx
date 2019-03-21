@@ -63,10 +63,10 @@ class BookView extends Component {
 							</dd>
 
 							<dt className="col-sm-3">
-								Number of Pages
+								Page Count
 							</dt>
 							<dd className="col-sm-9">
-								{book.noOfPages}
+								{book.pageCount}
 							</dd>
 							<dt className="col-sm-3">
 								Publisher
