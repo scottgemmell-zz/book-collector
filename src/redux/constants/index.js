@@ -1,5 +1,4 @@
 export const RESET = "RESET";
-export const SET_OPEN_DATA = "SET_OPEN_DATA";
 
 export const BOOKS = "[Books]";
 export const FETCH_BOOKS = `${BOOKS} FETCH`;
