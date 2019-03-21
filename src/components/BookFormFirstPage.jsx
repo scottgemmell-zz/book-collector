@@ -12,8 +12,9 @@ import {
 	alphaNumeric, 
 	alpha, 
 	minLength3,
+	validatorYesNo,
 } from "../helpers/validation.utils.js";
-import { Input, Select, FieldYesNo } from "./common";
+import { Input, Select } from "./common";
 
 export let BookFormFirstPage = ({ handleSubmit, submitting, reset }) => {
 	
@@ -40,20 +41,23 @@ export let BookFormFirstPage = ({ handleSubmit, submitting, reset }) => {
 						name="title" 
 						label="Title" 
 						component={Select} 
-						//validate={[required]}
+						validate={[required]}
 					>
+						<option>...</option>
 						<option value="Mr">Mr</option>
 						<option value="Mrs">Mrs</option>
 						<option value="Miss">Miss</option>
 					</Field>
 
-					<Field 
+					{/* <Field 
 						id="bookYesNo" 
 						name="fieldYesNo" 
-						label="Yes / No"  
+						label="Yes / No [1]"  
 						component={FieldYesNo} 
 						// validate={[required]}
-					/>
+					/> */}
+
+					
 
 					<Field 
 						id="bookTitle" 
@@ -113,6 +117,7 @@ BookFormFirstPage = reduxForm({
 	// Refreshes data {book} || "". Reinitializes everytime.
 	enableReinitialize: true,
 	keepDirtyOnReinitialize: true,
+	validate: validatorYesNo,
 })(BookFormFirstPage);
 
 BookFormFirstPage = connect((state, ownProps) => {

@@ -49,3 +49,12 @@ export const validatorDate = values => {
 	}
 	return errors;
 };
+
+export const validatorYesNo = values => {
+	const errors = {};
+	const { yesno } = values;
+	if (!yesno) {
+		errors.yesno = "Do you wish to provide ISBN numbers?";
+	}
+	return errors;
+};

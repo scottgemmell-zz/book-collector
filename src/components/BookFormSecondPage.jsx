@@ -11,13 +11,21 @@ import {
 	alphaNumeric,  
 	validatorDate, 
 } from "../helpers/validation.utils.js";
-import { Input, Conditional, FieldDate } from "./common";
+import { Input, Conditional, FieldDate, FieldYesNo } from "./common";
 
 let BookFormSecondPage = (props) => {
 	//console.log('props', props)
-	const { hasISBN, hasISBN10, hasISBN13, title, handleSubmit, handlePrev, submitting, reset } = props;
-
-	
+	const { 
+		hasISBN, 
+		// hasISBN10, 
+		// hasISBN13, 
+		hasPageCount, 
+		title, 
+		handleSubmit, 
+		handlePrev, 
+		submitting, 
+		reset 
+	} = props;
 
 	return (
 		<div>
@@ -27,7 +35,30 @@ let BookFormSecondPage = (props) => {
 			<div className="c-book">
 				<Form onSubmit={handleSubmit}>
 
-					<Field 
+					<Form.Group>
+						<Form.Label as="legend">
+							Do you have the page count?
+						</Form.Label>
+						<div>
+							<Field
+								name="yesno"
+								label="Yes"
+								value="Yes" 
+								type="radio"
+								component={FieldYesNo}
+							/>
+							<Field
+								name="yesno"
+								label="No"
+								value="No" 
+								type="radio"
+								component={FieldYesNo}
+							/>
+						</div>
+					</Form.Group>
+
+
+					{hasPageCount === "Yes" && <Field 
 						id="noOfPages" 
 						name="noOfPages" 
 						label="Number of Pages" 
@@ -35,7 +66,7 @@ let BookFormSecondPage = (props) => {
 						placeholder="Number of Pages..." 
 						component={Input} 
 						validate={[required, number]}
-					/>
+					/>}
 
 					<Field 
 						id="publisher" 
@@ -155,13 +186,15 @@ const selector = formValueSelector("booksForm");
 const mapStateToProps = (state, ownProps) => {
 
 	const hasISBN 	= selector(state, "hasISBN");
-	const hasISBN10 = selector(state, "isbn10");
-	const hasISBN13 = selector(state, "isbn13");
-	//console.log("mapStateToProps", { ownProps });
+	// const hasISBN10 = selector(state, "isbn10");
+	// const hasISBN13 = selector(state, "isbn13");
+	const hasPageCount = selector(state, "yesno");
+	console.log("mapStateToProps", { state, ownProps });
 	return {
 		hasISBN,
-		hasISBN10,
-		hasISBN13,
+		// hasISBN10,
+		// hasISBN13,
+		hasPageCount,
 		initialValues: ownProps.book === undefined ? null : state.books[ownProps.book.id],
 	};
 };
