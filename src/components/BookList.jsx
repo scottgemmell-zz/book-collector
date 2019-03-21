@@ -81,11 +81,11 @@ export class BookList extends Component {
 							<ListGroup.Item className="" key={book.id} as="li">
 								<h3>
 									<Link className="list__title" to={`/book/view/${book.id}`}>
-										{book.bookTitle}
+										{book.title}
 									</Link>
 								</h3>
 								<p className="h4">
-									{book.author}
+									{book.authors}
 								</p>
 							</ListGroup.Item>
 						);

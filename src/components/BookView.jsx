@@ -50,22 +50,16 @@ class BookView extends Component {
 								{book.id}
 							</dd>
 							<dt className="col-sm-3">
-								Book Title
-							</dt>
-							<dd className="col-sm-9">
-								{book.bookTitle}
-							</dd>
-							<dt className="col-sm-3">
 								Title
 							</dt>
 							<dd className="col-sm-9">
 								{book.title}
 							</dd>
 							<dt className="col-sm-3">
-								Author
+								Authors
 							</dt>
 							<dd className="col-sm-9">
-								{book.author}
+								{book.authors}
 							</dd>
 
 							<dt className="col-sm-3">

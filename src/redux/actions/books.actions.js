@@ -19,9 +19,8 @@ export const setBooks = ({ books }) => {
 
 export const addBook = ({ 
 	id, 
-	author, 
-	title, 
-	bookTitle,
+	authors, 
+	title,
 	noOfPages,
 	publisher, 
 	lang, 
@@ -34,9 +33,8 @@ export const addBook = ({
 		type: ADD_BOOK,
 		payload: {
 			id: +id,
-			author,
+			authors,
 			title,
-			bookTitle,
 			noOfPages: +noOfPages,
 			publisher,
 			lang,
@@ -53,9 +51,8 @@ export const addBook = ({
 
 export const editBook = ({ 
 	id, 
-	author, 
-	title, 
-	bookTitle,
+	authors, 
+	title,
 	noOfPages,
 	publisher, 
 	lang, 
@@ -67,9 +64,8 @@ export const editBook = ({
 		type: EDIT_BOOK,
 		payload: {
 			id: +id,
-			author,
+			authors,
 			title,
-			bookTitle,
 			noOfPages: +noOfPages,
 			publisher,
 			lang,

@@ -14,7 +14,7 @@ import {
 	minLength3,
 	validatorYesNo,
 } from "../helpers/validation.utils.js";
-import { Input, Select } from "./common";
+import { Input } from "./common";
 
 export let BookFormFirstPage = ({ handleSubmit, submitting, reset }) => {
 	
@@ -36,7 +36,7 @@ export let BookFormFirstPage = ({ handleSubmit, submitting, reset }) => {
 						validate={[required, number]}
 					/>
 
-					<Field 
+					{/* <Field 
 						id="title" 
 						name="title" 
 						label="Title" 
@@ -47,31 +47,21 @@ export let BookFormFirstPage = ({ handleSubmit, submitting, reset }) => {
 						<option value="Mr">Mr</option>
 						<option value="Mrs">Mrs</option>
 						<option value="Miss">Miss</option>
-					</Field>
-
-					{/* <Field 
-						id="bookYesNo" 
-						name="fieldYesNo" 
-						label="Yes / No [1]"  
-						component={FieldYesNo} 
-						// validate={[required]}
-					/> */}
-
-					
+					</Field> */}
 
 					<Field 
 						id="bookTitle" 
-						name="bookTitle" 
-						label="Book Title" 
-						placeholder="Book Title..." 
+						name="title" 
+						label="Title" 
+						placeholder="Title..." 
 						component={Input} 
 						validate={[required, alphaNumeric]}
 					/>
 					<Field 
-						id="author" 
-						name="author" 
-						label="Author" 
-						placeholder="Author..." 
+						id="authors" 
+						name="authors" 
+						label="Authors" 
+						placeholder="Authors..." 
 						component={Input} 
 						validate={[required, alpha, minLength3]}
 					/>
