@@ -16,10 +16,12 @@ export const normalizeMiddleware = ({ dispatch }) => next => action => {
 			book.authors = book.authors[0];
 			book.lang = book.language;
 			const dateVal = book.publishedDate.split("-");
+			const full = (dateVal && dateVal[2] || dateVal[2]  !== undefined) ? `${dateVal[2]}-${dateVal[1]}-${dateVal[0]}` : dateVal[0] ;
 			book.publicationDate = {
 				dd: dateVal[2],
 				mm: dateVal[1],
-				yyyy: dateVal[0]
+				yyyy: dateVal[0],
+				full,
 			};
 			book.isbn10 = book.industryIdentifiers[0].identifier;
 			book.isbn13 = book.industryIdentifiers[1].identifier;

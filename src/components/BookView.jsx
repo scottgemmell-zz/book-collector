@@ -35,6 +35,7 @@ class BookView extends Component {
 
 		const book = books.find(book => book !== null && +book.id === +id);
 
+		
 		return (
 			<>
 				<h2>
@@ -98,7 +99,7 @@ class BookView extends Component {
 								Publication Date
 							</dt>
 							<dd className="col-sm-9">
-								{book.publicationDate.dd}-{book.publicationDate.mm}-{book.publicationDate.yyyy}
+								{book.publicationDate.full}
 							</dd>
 						</dl>		
 					</div>
