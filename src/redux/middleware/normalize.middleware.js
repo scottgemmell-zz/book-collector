@@ -1,4 +1,4 @@
-import * as R from "ramda";
+// import * as R from "ramda";
 import { dataNormalized } from "../actions/data.actions";
 
 export const normalizeMiddleware = ({ dispatch }) => next => action => {
@@ -10,24 +10,36 @@ export const normalizeMiddleware = ({ dispatch }) => next => action => {
 
 		// transform the data structure
 		const books = action.payload.map(book => {
-			//book.id = book.id;
-			book = { id: book.id, ...book.volumeInfo };
-			book.authors = book.authors[0];
 			
+			book = { id: book.id, ...book.volumeInfo };
+			
+			book.authors = book.authors[0];
 			book.lang = book.language;
-			delete book.language;
-
 			const dateVal = book.publishedDate.split("-");
 			book.publicationDate = {
 				dd: dateVal[2],
 				mm: dateVal[1],
 				yyyy: dateVal[0]
 			};
-			delete book.publishedDate;
-
 			book.isbn10 = book.industryIdentifiers[0].identifier;
 			book.isbn13 = book.industryIdentifiers[1].identifier;
+			
+			delete book.language;
+			delete book.publishedDate;
 			delete book.industryIdentifiers;
+			delete book.description;
+			delete book.categories;
+			delete book.averageRating;
+			delete book.ratingsCount;
+			delete book.imageLinks;
+			delete book.readingModes;
+			delete book.printType;
+			delete book.maturityRating;
+			delete book.allowAnonLogging;
+			delete book.contentVersion;
+			delete book.previewLink;
+			delete book.infoLink;
+			delete book.canonicalVolumeLink;
 
 			return book;
 		});

@@ -1,27 +1,201 @@
 {
-	"books": [
-		{
-			"id": 0,
-			"volumeInfo": {
-				"title": "Child 44",
-				"authors": [
-					"Tom Rob Smith"
-				],
-				"publisher": "Simon and Schuster",
-				"publishedDate": "2009-04-01",
-				"industryIdentifiers": [
-					{
-						"type": "ISBN_10",
-						"identifier": "1847398081"
-					},
-					{
-						"type": "ISBN_13",
-						"identifier": "9781847398086"
-					}
-				],
-				"pageCount": 480,
-				"language": "en"
+  "books": [
+    {
+		"kind": "books#volume",
+		"id": 0,
+		"volumeInfo": {
+			"title": "Child 44",
+			"authors": [
+				"Tom Rob Smith"
+			],
+			"publisher": "Simon and Schuster",
+			"publishedDate": "2009-04-01",
+			"description": "<b>OVER 2 MILLION COPIES SOLD</b><br><br> MOSCOW, 1953.<br> Under Stalin’s terrifying regime, families live in fear. When the all-powerful State claims there is no such thing as crime, who dares disagree?<br><br><b>AN INTERNATIONAL BESTSELLER IN OVER 30 LANGUAGES</b><br><br> An ambitious secret police officer, Leo Demidov believes he’s helping to build the perfect society. But when he uncovers evidence of a killer at large – a threat the state won’t admit exists – Demidov must risk everything, including the lives of those he loves, in order to expose the truth.<br><br><b>A THRILLER UNLIKE ANY YOU HAVE EVER READ</b><br><br> But what if the danger isn’t from the killer he is trying to catch, but from the country he is fighting to protect?<br><br><b>Nominated for seventeen international awards and inspired by a real-life investigation<i>, CHILD 44</i> is a relentless story of love, hope and bravery in a totalitarian world. From the screenwriter of the acclaimed television series, <i>THE ASSASSINATION OF GIANNI VERSACE: AMERICAN CRIME STORY.</i></b>",
+			"industryIdentifiers": [
+				{
+					"type": "ISBN_10",
+					"identifier": "1847398081"
+				},
+				{
+					"type": "ISBN_13",
+					"identifier": "9781847398086"
+				}
+			],
+			"pageCount": 480,
+			"categories": [
+				"Fiction / General"
+			],
+			"averageRating": 4,
+			"ratingsCount": 111,
+			"imageLinks": {
+				"smallThumbnail": "http://books.google.com/books/content?id=puflhzV-RjgC&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE71YXnVs3uZEJ2SyHGkuWeIldBP-5fn9YDzZ1TYSZMUuX8UR3Q5YzmmZBvyvxyjLYoW9a-LqfVUZI4SrJFnE9niNnY2_Y7ZTfmCX9D3yRm3P7obea70oHKMvYsyxPzlrWEovdkQM&source=gbs_api",
+				"thumbnail": "http://books.google.com/books/content?id=puflhzV-RjgC&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE71D1At95rdFcxnKmJeEZ0HNn6Vg3wEPIIcfttk5tOqfmd8-k_08_O1k4fr4xcuY55S7yt6Lh0iB5QOBTXmKA7tOL85rLGQcGfN1xgVb4OQhdulcfvVpuPI4eC7drVtk9YWZsMOf&source=gbs_api",
+				"small": "http://books.google.com/books/content?id=puflhzV-RjgC&printsec=frontcover&img=1&zoom=2&edge=curl&imgtk=AFLRE718UBOFuHRFBKbHDTyUpVk6yUs3HMIfIuhFw5L_FyBCiF9AH4zoP0ARtJrLZ9Lsd9NZlGhwRnefMUdN-YBUcfg21IlnAE1X_qbt3hfSu2-PMNfu3U5QO2sOfFtYVJD0E7aNhIK2&source=gbs_api",
+				"medium": "http://books.google.com/books/content?id=puflhzV-RjgC&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE72zG6bGXemlAasD52xghsFPQQAQex2oSaFGeF28D-dA_NfxwQ5Zyp3UgVoOhk8BQJC8eM8I_Rl7W-hfjnhWjnbgVbUZG2m5PQgDgff495v_v-HFmVj0nJQenDZPbGl3ZcYGS3xA&source=gbs_api",
+				"large": "http://books.google.com/books/content?id=puflhzV-RjgC&printsec=frontcover&img=1&zoom=4&edge=curl&imgtk=AFLRE73GrLgyFQmg6faE-_BSuqDI431Wm4cy0MfM49p6iD72iZ9AvRvf3gRAzrHBu9IEkce0Uo2CLqth6gJoCXzxiSaeUDHaUGS1JevEVrp7DJiLhUWd0YMeE_8uR_dypMV78KOYodGG&source=gbs_api",
+				"extraLarge": "http://books.google.com/books/content?id=puflhzV-RjgC&printsec=frontcover&img=1&zoom=6&edge=curl&imgtk=AFLRE703lW_uxdACe-eYU4vC4QSPjD_BsYxOB3y3xHib13_m5tG0899Jda9o1Ps2Kji2k5XUQ-hwst-NjEnO88RSnBJ6L6RnpmMUObeh2qmDmvX6Kuq5wv05w-ZUXH_pS743CoHGtMnJ&source=gbs_api"
+			},
+			"language": "en"
+		},
+		"saleInfo": {
+			"country": "GB",
+			"listPrice": {
+				"amount": 5.99,
+				"currencyCode": "GBP"
+			},
+			"retailPrice": {
+				"amount": 5.99,
+				"currencyCode": "GBP"
 			}
 		}
-	]
+	},
+	{
+		"kind": "books#volume",
+		"id": 1,
+		"etag": "zASlzpmKRVo",
+		"selfLink": "https://www.googleapis.com/books/v1/volumes/--WjlVs1rAsC",
+		"volumeInfo": {
+			"title": "Fantastic Mr Fox",
+			"authors": [
+				"Roald Dahl"
+			],
+			"publisher": "Penguin Books Limited",
+			"publishedDate": "1988",
+			"description": "Every night Mr Fox would raid the mouth-watering stores of Farmers Boggis, Bunce and Bean. One day they decide to put an end to his raids by destroying his home, but Mr Fox remains one step ahead and comes up with a wonderful plan. This audio cassette contains the complete and unabridged story.",
+			"industryIdentifiers": [
+				{
+					"type": "ISBN_10",
+					"identifier": "0140326715"
+				},
+				{
+					"type": "ISBN_13",
+					"identifier": "9780140326710"
+				}
+			],
+			"readingModes": {
+				"text": false,
+				"image": false
+			},
+			"pageCount": 90,
+			"printType": "BOOK",
+			"categories": [
+				"Children's stories"
+			],
+			"averageRating": 5,
+			"ratingsCount": 3,
+			"maturityRating": "NOT_MATURE",
+			"allowAnonLogging": false,
+			"contentVersion": "0.0.1.0.preview.0",
+			"imageLinks": {
+				"smallThumbnail": "http://books.google.com/books/content?id=--WjlVs1rAsC&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+				"thumbnail": "http://books.google.com/books/content?id=--WjlVs1rAsC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+			},
+			"language": "en",
+			"previewLink": "http://books.google.co.uk/books?id=--WjlVs1rAsC&q=intitle:Fantastic+Mr+Fox&dq=intitle:Fantastic+Mr+Fox&hl=&cd=1&source=gbs_api",
+			"infoLink": "http://books.google.co.uk/books?id=--WjlVs1rAsC&dq=intitle:Fantastic+Mr+Fox&hl=&source=gbs_api",
+			"canonicalVolumeLink": "https://books.google.com/books/about/Fantastic_Mr_Fox.html?hl=&id=--WjlVs1rAsC"
+		},
+		"saleInfo": {
+			"country": "GB",
+			"saleability": "NOT_FOR_SALE",
+			"isEbook": false
+		},
+		"accessInfo": {
+			"country": "GB",
+			"viewability": "NO_PAGES",
+			"embeddable": false,
+			"publicDomain": false,
+			"textToSpeechPermission": "ALLOWED",
+			"epub": {
+				"isAvailable": false
+			},
+			"pdf": {
+				"isAvailable": false
+			},
+			"webReaderLink": "http://play.google.com/books/reader?id=--WjlVs1rAsC&hl=&printsec=frontcover&source=gbs_api",
+			"accessViewStatus": "NONE",
+			"quoteSharingAllowed": false
+		},
+		"searchInfo": {
+			"textSnippet": "One of the world&#39;s #1 storyteller&#39;s most beloved books available as a full-color picture book for the first time Someone&#39;s been stealing from the three meanest farmers around, and they know the identity of the thief--it&#39;s Fantastic Mr. Fox ..."
+		}
+	},
+	{
+		"kind": "books#volume",
+		"id": 2,
+		"etag": "AXljorkzSVE",
+		"selfLink": "https://www.googleapis.com/books/v1/volumes/dlWwX4lnjEMC",
+		"volumeInfo": {
+			"title": "Relentless",
+			"subtitle": "A Thriller",
+			"authors": [
+			"Simon Kernick"
+			],
+			"publisher": "Simon and Schuster",
+			"publishedDate": "2012-09-18",
+			"description": "The #1 international bestseller. One day Tom Meron, a happily married father of two who’s never been in trouble, receives a phone call that will change his life forever: his friend Jack Calley, a high-flying city lawyer, is screaming down the phone for help. As Meron listens, Calley is murdered. His last words, spoken to his killer, are the first two lines of Meron’s address. Confused and terrified, Meron grabs his children and hurries out of the house as soon as he can. It is only just in time. Within minutes, a car pulls up outside, and three men get out. It’s clear that they’re coming for him. And with his wife missing, an unidentified corpse in her office, and the police after him for murder, his life’s about to get a whole lot more interesting.",
+			"industryIdentifiers": [
+				{
+				"type": "ISBN_13",
+				"identifier": "9781476706597"
+				},
+				{
+				"type": "ISBN_10",
+				"identifier": "147670659X"
+				}
+			],
+			"readingModes": {
+				"text": true,
+				"image": false
+			},
+			"pageCount": 352,
+			"printType": "BOOK",
+			"categories": [
+				"Fiction"
+			],
+			"averageRating": 4.5,
+			"ratingsCount": 10,
+			"maturityRating": "NOT_MATURE",
+			"allowAnonLogging": true,
+			"contentVersion": "2.12.13.0.preview.2",
+			"panelizationSummary": {
+			"containsEpubBubbles": false,
+			"containsImageBubbles": false
+			},
+			"imageLinks": {
+				"smallThumbnail": "http://books.google.com/books/content?id=dlWwX4lnjEMC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+				"thumbnail": "http://books.google.com/books/content?id=dlWwX4lnjEMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+			},
+			"language": "en",
+			"previewLink": "http://books.google.co.uk/books?id=dlWwX4lnjEMC&printsec=frontcover&dq=title:Relentless&hl=&cd=2&source=gbs_api",
+			"infoLink": "http://books.google.co.uk/books?id=dlWwX4lnjEMC&dq=title:Relentless&hl=&source=gbs_api",
+			"canonicalVolumeLink": "https://books.google.com/books/about/Relentless.html?hl=&id=dlWwX4lnjEMC"
+		},
+		"saleInfo": {
+			"country": "GB",
+			"saleability": "NOT_FOR_SALE",
+			"isEbook": false
+		},
+		"accessInfo": {
+			"country": "GB",
+			"viewability": "PARTIAL",
+			"embeddable": true,
+			"publicDomain": false,
+			"textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+			"epub": {
+				"isAvailable": true,
+				"acsTokenLink": "http://books.google.co.uk/books/download/Relentless-sample-epub.acsm?id=dlWwX4lnjEMC&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+			},
+			"pdf": {
+				"isAvailable": false
+			},
+			"webReaderLink": "http://play.google.com/books/reader?id=dlWwX4lnjEMC&hl=&printsec=frontcover&source=gbs_api",
+			"accessViewStatus": "SAMPLE",
+			"quoteSharingAllowed": false
+		},
+		"searchInfo": {
+			"textSnippet": "The #1 international bestseller."
+		}
+	}
+  ]
 }
