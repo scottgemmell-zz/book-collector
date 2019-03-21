@@ -66,7 +66,7 @@ export const booksMiddleware = () => next => action => {
 	
 	case `${BOOKS} ${API_SUCCESS}`:
 		if (Array.isArray(action.payload) || action.payload === null) {
-			next(setBooks({ books: action.payload }));
+			next(setBooks({ books: action.payload, normalizeKey: "id"}));
 		}
 		history.push("/");
 		next(setLoader({ state: false, feature: BOOKS }));

@@ -3,6 +3,7 @@ import { booksMiddleware } from "./redux/middleware/books.middleware";
 import { apiMiddleware } from "./redux/middleware/api.middleware";
 import thunk from "redux-thunk";
 import { notificationMiddleware } from "./redux/middleware/notification.middleware";
+import { normalizeMiddleware } from "./redux/middleware/normalize.middleware";
 
 const logger = createLogger({
 	collapsed: true,
@@ -18,6 +19,7 @@ const featureMiddleware = [
 // create the core middleware array
 const coreMiddleware = [
 	apiMiddleware,
+	normalizeMiddleware,
 ];
 //
 

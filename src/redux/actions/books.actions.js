@@ -12,11 +12,11 @@ export const fetchBooks = () => ({
 	meta: { feature: BOOKS }
 });
 
-export const setBooks = ({ books }) => {
+export const setBooks = ({ books, normalizeKey }) => {
 	return {
 		type: SET_BOOKS,
 		payload: books,
-		meta: { feature: BOOKS }
+		meta: { normalizeKey, feature: BOOKS }
 	};
 };
 
