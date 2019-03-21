@@ -8,12 +8,6 @@ export const normalizeMiddleware = ({ dispatch }) => next => action => {
 		// notify about the transformation
 		dispatch(dataNormalized({ feature: action.meta.feature }));
 
-		// {
-
-		// 	"isbn10": 9780000000,
-		// 	"isbn13": "978-0000000000",
-		// },
-
 		// transform the data structure
 		const books = action.payload.map(book => {
 			//book.id = book.id;

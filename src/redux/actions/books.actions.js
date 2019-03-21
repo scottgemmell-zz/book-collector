@@ -36,17 +36,23 @@ export const addBook = ({
 		type: ADD_BOOK,
 		payload: {
 			id: +id,
-			authors,
-			title,
-			pageCount: +pageCount,
-			publisher,
-			lang,
-			isbn10: +isbn10,
-			isbn13,
-			publicationDate: {
-				dd: publicationDate.dd,
-				mm: publicationDate.mm,
-				yyyy: publicationDate.yyyy
+			volumeInfo: {
+				authors: [authors],
+				title,
+				pageCount: +pageCount,
+				publisher,
+				language: lang,
+				industryIdentifiers: [
+					{
+						type: "ISBN_10",
+						identifier: isbn10,
+					},
+					{
+						type: "ISBN_13",
+						identifier: isbn13,
+					}
+				],
+				publishedDate: `${publicationDate.yyyy}-${publicationDate.mm}-${publicationDate.dd}`
 			}
 		},
 		meta: { feature: BOOKS }
@@ -68,17 +74,23 @@ export const editBook = ({
 		type: EDIT_BOOK,
 		payload: {
 			id: +id,
-			authors,
-			title,
-			pageCount: +pageCount,
-			publisher,
-			lang,
-			isbn10: +isbn10,
-			isbn13,
-			publicationDate: {
-				dd: publicationDate.dd,
-				mm: publicationDate.mm,
-				yyyy: publicationDate.yyyy
+			volumeInfo: {
+				authors: [authors],
+				title,
+				pageCount: +pageCount,
+				publisher,
+				language: lang,
+				industryIdentifiers: [
+					{
+						type: "ISBN_10",
+						identifier: isbn10,
+					},
+					{
+						type: "ISBN_13",
+						identifier: isbn13,
+					}
+				],
+				publishedDate: `${publicationDate.yyyy}-${publicationDate.mm}-${publicationDate.dd}`
 			}
 		},
 		meta: { feature: BOOKS }
