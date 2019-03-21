@@ -1,4 +1,5 @@
 import { 
+	BOOKS,
 	ADD_BOOK, 
 	FETCH_BOOKS,
 	SET_BOOKS,
@@ -8,12 +9,14 @@ import {
 
 export const fetchBooks = () => ({
 	type: FETCH_BOOKS,
+	meta: { feature: BOOKS }
 });
 
 export const setBooks = ({ books }) => {
 	return {
 		type: SET_BOOKS,
-		books
+		payload: books,
+		meta: { feature: BOOKS }
 	};
 };
 
@@ -46,6 +49,7 @@ export const addBook = ({
 				yyyy: publicationDate.yyyy
 			}
 		},
+		meta: { feature: BOOKS }
 	};
 };
 
@@ -77,6 +81,7 @@ export const editBook = ({
 				yyyy: publicationDate.yyyy
 			}
 		},
+		meta: { feature: BOOKS }
 	};
 };
 
@@ -86,5 +91,6 @@ export const deleteBook = id => {
 	return {
 		type: DELETE_BOOK,
 		payload: +id,
+		meta: { feature: BOOKS }
 	};
 };

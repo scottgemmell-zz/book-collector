@@ -12,7 +12,7 @@ export const booksReducer = (books = initState, action) => {
 	switch(action.type) {
 	
 	case SET_BOOKS:
-		return action.books;
+		return action.payload;
 
 	case DELETE_BOOK:
 		
