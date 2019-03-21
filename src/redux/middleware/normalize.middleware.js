@@ -8,10 +8,33 @@ export const normalizeMiddleware = ({ dispatch }) => next => action => {
 		// notify about the transformation
 		dispatch(dataNormalized({ feature: action.meta.feature }));
 
+		// {
+
+		// 	"isbn10": 9780000000,
+		// 	"isbn13": "978-0000000000",
+		// },
+
 		// transform the data structure
 		const books = action.payload.map(book => {
-			book.title = R.toUpper(book.title);
-			book.authors = R.toLower(book.authors);
+			//book.id = book.id;
+			book = { id: book.id, ...book.volumeInfo };
+			book.authors = book.authors[0];
+			
+			book.lang = book.language;
+			delete book.language;
+
+			const dateVal = book.publishedDate.split("-");
+			book.publicationDate = {
+				dd: dateVal[2],
+				mm: dateVal[1],
+				yyyy: dateVal[0]
+			};
+			delete book.publishedDate;
+
+			book.isbn10 = book.industryIdentifiers[0].identifier;
+			book.isbn13 = book.industryIdentifiers[1].identifier;
+			delete book.industryIdentifiers;
+
 			return book;
 		});
 

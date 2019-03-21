@@ -1,109 +1,27 @@
 {
-  "books": [
-    {
-      "id": 0,
-      "authors": "Tom Rob Smith",
-      "title": "Child 44",
-      "pageCount": 1000,
-      "publisher": "Penguin",
-      "lang": "en",
-      "isbn10": 9780000000,
-      "isbn13": "978-0000000000",
-      "publicationDate": {
-        "dd": "01",
-        "mm": "01",
-        "yyyy": "1900"
-      }
-    },
-    {
-      "id": 1,
-      "authors": "Tom Rob Smith",
-      "title": "The Secret Speech",
-      "pageCount": 1001,
-      "publisher": "Penguin",
-      "lang": "en",
-      "isbn10": 9780000000,
-      "isbn13": "978-0000000000",
-      "publicationDate": {
-        "dd": "01",
-        "mm": "01",
-        "yyyy": "1911"
-      }
-    },
-    {
-      "id": 2,
-      "authors": "Tom Rob Smith",
-      "title": "Agent 6",
-      "pageCount": 1002,
-      "publisher": "Penguin",
-      "lang": "en",
-      "isbn10": 9780000000,
-      "isbn13": "978-0000000000",
-      "publicationDate": {
-        "dd": "02",
-        "mm": "02",
-        "yyyy": "1922"
-      }
-    },
-    {
-      "id": 3,
-      "authors": "Lee Child",
-      "title": "Make Me",
-      "pageCount": 1003,
-      "publisher": "Penguin",
-      "lang": "en",
-      "isbn10": 9780000000,
-      "isbn13": "978-0000000000",
-      "publicationDate": {
-        "dd": "09",
-        "mm": "11",
-        "yyyy": "1999"
-      }
-    },
-    {
-      "id": 4,
-      "authors": "Lee Child",
-      "title": "Past Tense",
-      "pageCount": 400,
-      "publisher": "Penguin",
-      "lang": "en",
-      "isbn10": 0,
-      "isbn13": "978-0000000000",
-      "publicationDate": {
-        "dd": "04",
-        "mm": "04",
-        "yyyy": "1944"
-      }
-    },
-    {
-      "id": 5,
-      "authors": "Roald Dahl",
-      "title": "BFG",
-      "pageCount": 1000,
-      "publisher": "Penguin",
-      "lang": "en",
-      "isbn10": 0,
-      "isbn13": "978-0000000000",
-      "publicationDate": {
-        "dd": "05",
-        "mm": "05",
-        "yyyy": "1955"
-      }
-    },
-    {
-      "id": 6,
-      "authors": "Roald Dahl",
-      "title": "Fantastic Mr Fox",
-      "pageCount": 666,
-      "publisher": "Penguin",
-      "lang": "En",
-      "isbn10": 9780000000,
-      "isbn13": "978-0000000000",
-      "publicationDate": {
-        "dd": "06",
-        "mm": "06",
-        "yyyy": "1966"
-      }
-    }
-  ]
+	"books": [
+		{
+			"id": 0,
+			"volumeInfo": {
+				"title": "Child 44",
+				"authors": [
+					"Tom Rob Smith"
+				],
+				"publisher": "Simon and Schuster",
+				"publishedDate": "2009-04-01",
+				"industryIdentifiers": [
+					{
+						"type": "ISBN_10",
+						"identifier": "1847398081"
+					},
+					{
+						"type": "ISBN_13",
+						"identifier": "9781847398086"
+					}
+				],
+				"pageCount": 480,
+				"language": "en"
+			}
+		}
+	]
 }
