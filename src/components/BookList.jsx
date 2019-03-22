@@ -40,9 +40,9 @@ export class BookList extends Component {
 
 			const note = R.values(notification);
 
-			return <div data-test="book-list"><Alert style={{marginTop: 20}}>
+			return <div data-test="book-list"><Alert style={{ marginTop: 20 }}>
 				<p>
-					<strong>Notification</strong>: {note[0]+" "+note[1]}
+					<strong>Notification</strong>: {`${note[0]} ${note[1]}`}
 				</p>
 			</Alert></div>;
 		}
@@ -76,9 +76,9 @@ export class BookList extends Component {
 				</Row>
 	
 				<ListGroup as="ul">
-					{books.map((book) => {
-						return (
-							<ListGroup.Item className="" key={book.id} as="li">
+					{books.map((book, i) => {
+						{return !book.error ? 
+							<ListGroup.Item key={`${book.id}-${i}`} as="li">
 								<h3>
 									<Link className="list__title" to={`/book/view/${book.id}`}>
 										{book.title}
@@ -88,7 +88,15 @@ export class BookList extends Component {
 									{book.authors}
 								</p>
 							</ListGroup.Item>
-						);
+							: 
+							<ListGroup.Item key={`${book.id}-${i}`} as="li">
+								<div style={{ color: "#bbb" }}>
+									<strong>:( An error has occurred.</strong>
+									<br/>
+									<small>Invalid book object</small>
+								</div>
+							</ListGroup.Item>;
+						}
 					})}
 				</ListGroup>
 			</div>

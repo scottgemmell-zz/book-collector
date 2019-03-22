@@ -11,6 +11,7 @@ import {
 	alphaNumeric,  
 	validatorDate, 
 } from "../helpers/validation.utils.js";
+// import normalizeDate from "../helpers/normalize.utils.js"
 import { Input, Conditional, FieldDate, FieldYesNo } from "./common";
 
 let BookFormSecondPage = (props) => {
@@ -95,6 +96,7 @@ let BookFormSecondPage = (props) => {
 							"publicationDate.yyyy"
 						]} 
 						label="Publication Date" 
+						// normalize={normalizeDate} Why?
 						component={FieldDate} 
 					/>
 
@@ -189,7 +191,7 @@ const mapStateToProps = (state, ownProps) => {
 	// const hasISBN10 = selector(state, "isbn10");
 	// const hasISBN13 = selector(state, "isbn13");
 	const hasPageCount = selector(state, "hasPageCount");
-	console.log("mapStateToProps", { state, ownProps });
+	// console.log("mapStateToProps", { state, ownProps });
 	return {
 		hasISBN,
 		// hasISBN10,

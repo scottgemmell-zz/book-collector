@@ -36,6 +36,7 @@ export const exactLength3 = exactLength(3);
 export const exactLength4 = exactLength(4);
 
 export const validatorDate = values => {
+	// console.log('validatorDate', values)
 	const errors = {};
 	const { dd, mm, yyyy } = values;
 	const date = moment(`${dd}-${mm}-${yyyy}`, "DD-MM-YYYY");
