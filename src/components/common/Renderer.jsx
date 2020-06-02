@@ -9,7 +9,7 @@ const Renderer = render => ({
 	disabled, 
 	placeholder, 
 	meta: { touched, error },
-	...rest, 
+	...rest
 }) => 
 	<Form.Group
 		controlId={id} 
