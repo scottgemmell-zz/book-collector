@@ -11,11 +11,11 @@ import {
 	number, 
 	alphaNumeric, 
 	alpha, 
-	exactLength2,
-	exactLength4,
-	minLength2,
+	//exactLength2,
+	//exactLength4,
+	//minLength2,
 	minLength3, 
-	minLength4,
+	//minLength4,
 	validatorDate 
 } from "../helpers/validation.utils.js";
 import { Input, Select, FieldDate } from "./common";
